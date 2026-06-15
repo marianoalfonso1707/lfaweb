@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LFA - La Herramienta Definitiva para Organizadores</title>
+    <title>LFA</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -453,6 +453,22 @@
             .whatsapp-sticky { width: 80px; }
         }
     </style>
+
+    <script>
+    !function(f,b,e,v,n,t,s)
+    {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+    if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+    n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];
+    s.parentNode.insertBefore(t,s)}(window, document,'script',
+    'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '4051734525137066');
+    fbq('track', 'PageView');
+    </script>
+    <noscript><img height="1" width="1" style="display:none"
+    src="https://www.facebook.com/tr?id=4051734525137066&ev=PageView&noscript=1"
+    /></noscript>
 </head>
 <body>
 
@@ -701,10 +717,10 @@
         const translations = {
             es: {
                 "nav-login": "Login Admin",
-                "nav-subscribe": "Quiero Suscribirme",
+                "nav-subscribe": "Iniciar Prueba",
                 "hero-title": "REVOLUCIONANDO<br><span>EL FUTBOL AMATEUR</span>",
                 "hero-slogan": "No es solo administrar un torneo, es que tus jugadores vivan una experiencia distinta.",
-                "hero-cta": "Quiero Suscribirme",
+                "hero-cta": "Iniciar Prueba",
                 "lfa-title": "REVOLUCIONA TU TORNEO",
                 "lfa-desc1": "No se trata solo de administrar, LFA no es solo una herramienta, <strong>es una solucion</strong>. Armar el fixture para tantos equipos, coordinar horarios, sedes, tener que acomodar imprevistos, no es facil y lo sabemos. No venimos a ofrecerte un sistema para que simplemente administres tus torneos, te ofrecemos una solucion a tus problemas, <strong>una plataforma que te apoya y asiste en cada punto critico de tu organizacion</strong>. Desde la interfaz hasta el soporte, LFA esta ahi para brindarte soluciones, es mucho mas que una aplicacion.",
                 "lfa-desc2": "Vos disfrutas y tus jugadores tambien.",
@@ -1057,6 +1073,49 @@
                     setLang('en'); // Default seguro en caso de error
                     updateDynamicPricing();
                 });
+        });
+    </script>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            
+            // 1. Track Pricing Subscription Clicks (High Intent)
+            // This fires an "InitiateCheckout" event when they click any "Suscribirme" button
+            const subscribeButtons = ['dyn-t1-btn', 'dyn-t2-btn', 'dyn-t3-btn'];
+            subscribeButtons.forEach(function(id) {
+                const btn = document.getElementById(id);
+                if(btn) {
+                    btn.addEventListener('click', function() {
+                        fbq('track', 'InitiateCheckout', {
+                            content_name: 'Subscription Click',
+                            content_category: currentTier // Passes "under30" or "over30"
+                        });
+                    });
+                }
+            });
+
+            // 2. Track WhatsApp Clicks (Leads)
+            // This fires a "Lead" event when they click the sticky bubble or the pricing contact links
+            const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
+            waLinks.forEach(function(link) {
+                link.addEventListener('click', function() {
+                    fbq('track', 'Lead', {
+                        content_name: 'WhatsApp Contact'
+                    });
+                });
+            });
+            
+            // Optional: Track clicks on the top navigation "Quiero Suscribirme" 
+            // This fires a standard "ViewContent" to track engagement
+            const heroBtns = document.querySelectorAll('a[href="#pricing"]');
+            heroBtns.forEach(function(btn) {
+                btn.addEventListener('click', function() {
+                    fbq('track', 'ViewContent', {
+                        content_name: 'Scrolled to Pricing'
+                    });
+                });
+            });
+            
         });
     </script>
 </body>
