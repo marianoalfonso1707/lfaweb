@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LFA</title>
+    <title>LFA - La Herramienta Definitiva para Organizadores</title>
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -710,6 +710,8 @@
     </div>
 
     <script>
+        // La variable global ahora no se inicializa con un valor rígido
+        // para permitir que GeoJS decida el primer idioma.
         let currentLang = '';
         let currentCountry = 'ROW'; 
         let currentTier = 'under30';
@@ -781,16 +783,16 @@
                 "t1-title": "Mensual",
                 "t2-title": "Semestral",
                 "t3-title": "Anual",
-                "pricing-features": "<li>Web App de Administrador</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li>",
-                "pricing-contact": "o hablá con nuestro equipo",
+                "pricing-features": "<li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>",
+                "pricing-contact": "",
                 "lbl-under30": "Hasta 30 equipos",
                 "lbl-over30": "+30 Equipos",
                 
                 "dyn-ar-price-under30": "Consultar", "dyn-ar-sub-under30": "Onboarding Personalizado", "dyn-ar-btn-under30": "Contactar Asesor",
                 "dyn-ar-price-over30": "Consultar", "dyn-ar-sub-over30": "Planes a medida para grandes ligas", "dyn-ar-btn-over30": "Hablar con Ventas",
                 
-                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Assinar Agora",
-                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Assinar Agora",
+                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Iniciar Teste",
+                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste",
 
                 "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Valor por mes.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Valor Semestral US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Valor anual US$ 72.", "dyn-row-btn-under30": "Suscribirme ahora",
                 "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Suscribirme ahora"
@@ -861,8 +863,8 @@
                 "t1-title": "Monthly",
                 "t2-title": "Semi-Annual",
                 "t3-title": "Annual",
-                "pricing-features": "<li>Admin Web App</li><li>Player Mobile App</li><li>Smart Fixture & Mass Editing</li>",
-                "pricing-contact": "or talk to our team",
+                "pricing-features": "<li>Admin Web App</li><li>Unlimited Tournaments</li><li>Player Mobile App</li><li>Smart Fixture & Mass Editing</li><li>Face ID</li><li>Playoffs Draw</li>",
+                "pricing-contact": "",
                 "lbl-under30": "Up to 30 Teams",
                 "lbl-over30": "30+ Teams",
                 
@@ -872,15 +874,15 @@
                 "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Monthly via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Single payment of R$ 420", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Single payment of R$ 480", "dyn-br-btn-under30": "Subscribe Now",
                 "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Monthly via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Single payment of R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Single payment of R$ 780", "dyn-br-btn-over30": "Subscribe Now",
 
-                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Billed monthly.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Billed as US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Billed as US$ 72.", "dyn-row-btn-under30": "Subscribe Now",
-                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Billed monthly.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Billed as US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Billed as US$ 144.", "dyn-row-btn-over30": "Subscribe Now"
+                "dyn-row-t1-price-under30": "US$ 49", "dyn-row-t1-sub-under30": "Billed monthly.", "dyn-row-t2-price-under30": "US$ 44", "dyn-row-t2-sub-under30": "Billed as US$ 264.", "dyn-row-t3-price-under30": "US$ 32", "dyn-row-t3-sub-under30": "Billed as US$ 384.", "dyn-row-btn-under30": "Subscribe Now",
+                "dyn-row-t1-price-over30": "US$ 89", "dyn-row-t1-sub-over30": "Billed monthly.", "dyn-row-t2-price-over30": "US$ 79", "dyn-row-t2-sub-over30": "Billed as US$ 474.", "dyn-row-t3-price-over30": "US$ 64", "dyn-row-t3-sub-over30": "Billed as US$ 768.", "dyn-row-btn-over30": "Subscribe Now"
             },
             pt: {
                 "nav-login": "Login Admin",
-                "nav-subscribe": "Quero Assinar",
+                "nav-subscribe": "Iniciar Teste",
                 "hero-title": "REVOLUCIONANDO<br><span>O FUTEBOL AMADOR</span>",
                 "hero-slogan": "Não é apenas administrar um torneio, é proporcionar aos seus jogadores uma experiência única.",
-                "hero-cta": "Quero Assinar",
+                "hero-cta": "Iniciar Teste",
                 "lfa-title": "REVOLUCIONE SEU TORNEIO",
                 "lfa-desc1": "Não se trata apenas de administrar; o LFA não é apenas uma ferramenta, <strong>é uma solução</strong>. Montar a tabela para tantas equipes, coordenar horários, sedes e lidar com imprevistos não é fácil e nós sabemos disso. Não estamos aqui para oferecer um sistema apenas para administrar seus torneios; oferecemos uma solução para seus problemas, <strong>uma plataforma que apoia e auxilia em cada ponto crítico da sua organização</strong>. Desde a interface até o suporte ao cliente, o LFA está lá para fornecer soluções; é muito mais do que um aplicativo.",
                 "lfa-desc2": "Você aproveita, e seus jogadores também.",
@@ -941,22 +943,23 @@
                 "t1-title": "Mensal",
                 "t2-title": "Semestral",
                 "t3-title": "Anual",
-                "pricing-features": "<li>Web App de Administrador</li><li>App Móvel para Jogadores</li><li>Tabela e Edição em Massa</li>",
-                "pricing-contact": "ou fale com nossa equipe",
+                "pricing-features": "<li>Web App de Administrador</li><li>Torneios Ilimitados</li><li>App Móvel para Jogadores</li><li>Tabela e Edição em Massa</li><li>Face ID</li><li>Mata-Mata</li>",
+                "pricing-contact": "",
                 "lbl-under30": "Até 30 equipes",
                 "lbl-over30": "+30 Equipes",
                 
                 "dyn-ar-price-under30": "Consultar", "dyn-ar-sub-under30": "Onboarding Personalizado", "dyn-ar-btn-under30": "Falar com Consultor",
                 "dyn-ar-price-over30": "Consultar", "dyn-ar-sub-over30": "Planos para grandes ligas", "dyn-ar-btn-over30": "Falar com Vendas",
                 
-                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Assinar Agora",
-                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Assinar Agora",
+                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Iniciar Teste",
+                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste",
 
-                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Cobrado mensalmente.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Pagamento de US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Pagamento de US$ 72.", "dyn-row-btn-under30": "Assinar Agora",
-                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Cobrado mensalmente.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Pagamento de US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Pagamento de US$ 144.", "dyn-row-btn-over30": "Assinar Agora"
+                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Cobrado mensalmente.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Pagamento de US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Pagamento de US$ 72.", "dyn-row-btn-under30": "Iniciar Teste",
+                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Cobrado mensalmente.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Pagamento de US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Pagamento de US$ 144.", "dyn-row-btn-over30": "Iniciar Teste"
             }
         };
 
+        // Función para cerrar el globito de WhatsApp
         function closeWABubble(event) {
             event.preventDefault(); 
             event.stopPropagation();
@@ -1040,47 +1043,15 @@
                     
                     const btn = document.getElementById(`dyn-t${i}-btn`);
                     btn.innerHTML = langData[`${prefix}-btn-${currentTier}`];
-                    btn.href = 'https://portal.ligasfutbolamateur.com/auth?tab=signup';
+                    
+                    // --- NUEVA LÓGICA DE REDIRECCIÓN DINÁMICA DE IDIOMA ---
+                    btn.href = `https://portal.ligasfutbolamateur.com/${currentLang}/?signup=1`;
                 });
             }
         }
 
         document.addEventListener('DOMContentLoaded', function() {
-            // Ya no forzamos 'es' aquí. Esperamos la respuesta de GeoJS.
-            fetch('https://get.geojs.io/v1/ip/country.json')
-                .then(response => response.json())
-                .then(data => {
-                    currentCountry = data.country;
-                    
-                    // --- NUEVA LÓGICA DE AUTOSELECCIÓN DE IDIOMA ---
-                    // Definimos una lista de países hispanohablantes
-                    const spanishSpeakingCountries = ['AR', 'MX', 'ES', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'GT', 'CU', 'BO', 'DO', 'DO', 'HN', 'HN', 'PY', 'SV', 'SV', 'PY', 'NI', 'NI', 'CR', 'CR', 'CR', 'PA', 'PA', 'PR', 'UY'];
-                    
-                    if (currentCountry === 'BR') {
-                        setLang('pt');
-                    } else if (spanishSpeakingCountries.includes(currentCountry)) {
-                        setLang('es');
-                    } else {
-                        // Si no es BR ni un país de habla hispana, el default es Inglés
-                        setLang('en');
-                    }
-                    
-                    updateDynamicPricing();
-                })
-                .catch(error => {
-                    console.error('Error GeoJS:', error);
-                    currentCountry = 'ROW'; 
-                    setLang('en'); // Default seguro en caso de error
-                    updateDynamicPricing();
-                });
-        });
-    </script>
-
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            
-            // 1. Track Pricing Subscription Clicks (High Intent)
-            // This fires an "InitiateCheckout" event when they click any "Suscribirme" button
+            // Tracking initialization
             const subscribeButtons = ['dyn-t1-btn', 'dyn-t2-btn', 'dyn-t3-btn'];
             subscribeButtons.forEach(function(id) {
                 const btn = document.getElementById(id);
@@ -1088,14 +1059,12 @@
                     btn.addEventListener('click', function() {
                         fbq('track', 'InitiateCheckout', {
                             content_name: 'Subscription Click',
-                            content_category: currentTier // Passes "under30" or "over30"
+                            content_category: currentTier
                         });
                     });
                 }
             });
 
-            // 2. Track WhatsApp Clicks (Leads)
-            // This fires a "Lead" event when they click the sticky bubble or the pricing contact links
             const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
             waLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
@@ -1105,8 +1074,6 @@
                 });
             });
             
-            // Optional: Track clicks on the top navigation "Quiero Suscribirme" 
-            // This fires a standard "ViewContent" to track engagement
             const heroBtns = document.querySelectorAll('a[href="#pricing"]');
             heroBtns.forEach(function(btn) {
                 btn.addEventListener('click', function() {
@@ -1115,7 +1082,31 @@
                     });
                 });
             });
-            
+
+            // Fetch IP location and set language
+            fetch('https://get.geojs.io/v1/ip/country.json')
+                .then(response => response.json())
+                .then(data => {
+                    currentCountry = data.country;
+                    
+                    const spanishSpeakingCountries = ['AR', 'MX', 'ES', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'GT', 'CU', 'BO', 'DO', 'DO', 'HN', 'HN', 'PY', 'SV', 'SV', 'PY', 'NI', 'NI', 'CR', 'CR', 'CR', 'PA', 'PA', 'PR', 'UY'];
+                    
+                    if (currentCountry === 'BR') {
+                        setLang('pt');
+                    } else if (spanishSpeakingCountries.includes(currentCountry)) {
+                        setLang('es');
+                    } else {
+                        setLang('en');
+                    }
+                    
+                    updateDynamicPricing();
+                })
+                .catch(error => {
+                    console.error('Error GeoJS:', error);
+                    currentCountry = 'ROW'; 
+                    setLang('en'); 
+                    updateDynamicPricing();
+                });
         });
     </script>
 </body>
