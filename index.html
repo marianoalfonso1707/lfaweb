@@ -454,6 +454,15 @@
         }
     </style>
 
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-11536482334"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-11536482334');
+    </script>
+
     <script>
     !function(f,b,e,v,n,t,s)
     {if(f.fbq)return;n=f.fbq=function(){n.callMethod?
@@ -490,6 +499,7 @@
                 <button onclick="setLang('es')" class="active" id="btn-es">ES</button>
                 <button onclick="setLang('en')" id="btn-en">EN</button>
                 <button onclick="setLang('pt')" id="btn-pt">PT</button>
+                <button onclick="setLang('it')" id="btn-it">IT</button>
             </div>
         </div>
     </nav>
@@ -710,8 +720,6 @@
     </div>
 
     <script>
-        // La variable global ahora no se inicializa con un valor rígido
-        // para permitir que GeoJS decida el primer idioma.
         let currentLang = '';
         let currentCountry = 'ROW'; 
         let currentTier = 'under30';
@@ -879,10 +887,10 @@
             },
             pt: {
                 "nav-login": "Login Admin",
-                "nav-subscribe": "Iniciar Teste",
+                "nav-subscribe": "Quero Assinar",
                 "hero-title": "REVOLUCIONANDO<br><span>O FUTEBOL AMADOR</span>",
                 "hero-slogan": "Não é apenas administrar um torneio, é proporcionar aos seus jogadores uma experiência única.",
-                "hero-cta": "Iniciar Teste",
+                "hero-cta": "Quero Assinar",
                 "lfa-title": "REVOLUCIONE SEU TORNEIO",
                 "lfa-desc1": "Não se trata apenas de administrar; o LFA não é apenas uma ferramenta, <strong>é uma solução</strong>. Montar a tabela para tantas equipes, coordenar horários, sedes e lidar com imprevistos não é fácil e nós sabemos disso. Não estamos aqui para oferecer um sistema apenas para administrar seus torneios; oferecemos uma solução para seus problemas, <strong>uma plataforma que apoia e auxilia em cada ponto crítico da sua organização</strong>. Desde a interface até o suporte ao cliente, o LFA está lá para fornecer soluções; é muito mais do que um aplicativo.",
                 "lfa-desc2": "Você aproveita, e seus jogadores também.",
@@ -910,7 +918,7 @@
                 "c-export-link": "Ver Exportações ➔",
                 "c-player-title": "LFA PLAYER APP",
                 "c-player-desc": "O aplicativo móvel exclusivo para seus usuários. Seus jogadores acompanham suas estatísticas e resultados instantaneamente.",
-                "c-player-link": "Ver App Móvel ➔",
+                "c-player-link": "Ver App Móvil ➔",
                 "f-admin-title": "Seu Centro de Administração",
                 "f-admin-desc1": "Um Web App com uma interface desenvolvida para o organizador, entendendo que tínhamos que tornar o difícil, fácil. Gerencie todos os seus torneios, equipes, jogadores, tabelas, estatísticas e muito mais em uma plataforma projetada para que você aproveite a organização do seu torneio.",
                 "f-admin-desc2": "Configure temporadas, gerencie o Fair Play, aplique suspensões automáticas e veja tudo sincronizar ao vivo graças ao nosso banco de dados em tempo real.",
@@ -943,7 +951,7 @@
                 "t1-title": "Mensal",
                 "t2-title": "Semestral",
                 "t3-title": "Anual",
-                "pricing-features": "<li>Web App de Administrador</li><li>Torneios Ilimitados</li><li>App Móvel para Jogadores</li><li>Tabela e Edição em Massa</li><li>Face ID</li><li>Mata-Mata</li>",
+                "pricing-features": "<li>Web App de Administrador</li><li>Torneios Ilimitados</li><li>App Móvil para Jogadores</li><li>Tabela e Edição em Massa</li><li>Face ID</li><li>Mata-Mata</li>",
                 "pricing-contact": "",
                 "lbl-under30": "Até 30 equipes",
                 "lbl-over30": "+30 Equipes",
@@ -956,10 +964,89 @@
 
                 "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Cobrado mensalmente.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Pagamento de US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Pagamento de US$ 72.", "dyn-row-btn-under30": "Iniciar Teste",
                 "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Cobrado mensalmente.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Pagamento de US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Pagamento de US$ 144.", "dyn-row-btn-over30": "Iniciar Teste"
+            },
+            it: {
+                "nav-login": "Login Admin",
+                "nav-subscribe": "Inizia la Prova",
+                "hero-title": "RIVOLUZIONANDO<br><span>IL CALCIO AMATORIALE</span>",
+                "hero-slogan": "Non è solo gestire un torneo, è far vivere ai tuoi giocatori un'esperienza unica.",
+                "hero-cta": "Inizia la Prova",
+                "lfa-title": "RIVOLUZIONA IL TUO TORNEO",
+                "lfa-desc1": "Non si tratta solo di gestire, LFA non è solo uno strumento, <strong>è una soluzione</strong>. Creare il calendario per tante squadre, coordinare orari, sedi, e gestire gli imprevisti non è facile, e lo sappiamo. Non siamo qui per offrirti un sistema solo per amministrare i tuoi tornei; ti offriamo una soluzione ai tuoi problemi, <strong>una piattaforma che ti supporta e assiste in ogni punto critico della tua organizzazione</strong>. Dall'interfaccia al supporto, LFA è qui per darti soluzioni; è molto più di un'applicazione.",
+                "lfa-desc2": "Tu ti diverti e anche i tuoi giocatori.",
+                "pilares-title": "I Pilastri dell'Organizzatore",
+                "c-admin-title": "WEB APP ADMIN",
+                "c-admin-desc": "Il tuo pannello di controllo completo. Crea tornei, genera calendari automaticamente e gestisci tutte le tue squadre da un unico posto.",
+                "c-admin-link": "Vedi Web App ➔",
+                "c-fixture-title": "CALENDARIO INTELLIGENTE",
+                "c-fixture-desc": "Un calendario intelligente, organizza tutte le partite dei tuoi tornei in un secondo, con strumenti di modifica massiva.",
+                "c-fixture-link": "Vedi Calendario ➔",
+                "c-db-title": "TEMPO REALE",
+                "c-db-desc": "Database in tempo reale, tutte le informazioni dei tuoi tornei disponibili istantaneamente per i tuoi giocatori.",
+                "c-db-link": "Vedi Database ➔",
+                "c-face-title": "FACE ID",
+                "c-face-desc": "Verifica l'identità dei giocatori in campo con la scansione facciale. Controllo assoluto delle presenze.",
+                "c-face-link": "Vedi Face ID ➔",
+                "c-perfil-title": "PROFILO GIOCATORE",
+                "c-perfil-desc": "Un profilo unico per ogni giocatore con le sue statistiche personali, lo storico delle partite e le foto.",
+                "c-perfil-link": "Vedi Profilo Giocatore ➔",
+                "c-ediciones-title": "MODIFICHE MASSIVE",
+                "c-ediciones-desc": "Modifica centinaia di partite contemporaneamente. Cambia orari, sedi e squadre in tempo reale senza complicazioni.",
+                "c-ediciones-link": "Vedi Modifiche ➔",
+                "c-export-title": "ESPORTAZIONI",
+                "c-export-desc": "Esporta tutte le informazioni di cui hai bisogno: distinte di gara, tesserini, classifiche e altro ancora, direttamente in PDF o Excel.",
+                "c-export-link": "Vedi Esportazioni ➔",
+                "c-player-title": "LFA PLAYER APP",
+                "c-player-desc": "L'applicazione mobile esclusiva per i tuoi utenti. I tuoi giocatori seguono le loro statistiche e i risultati all'istante.",
+                "c-player-link": "Vedi App Mobile ➔",
+                "f-admin-title": "Il Tuo Centro di Amministrazione",
+                "f-admin-desc1": "Una Web App con un'interfaccia sviluppata per l'organizzatore, capendo che dovevamo rendere facile ciò che è difficile. Gestisci tutti i tuoi tornei, squadre, giocatori, calendari, statistiche e molto altro da una piattaforma progettata per farti godere l'organizzazione del tuo torneo.",
+                "f-admin-desc2": "Configura le stagioni, gestisci il Fair Play, applica squalifiche automatiche e guarda come tutto si sincronizza in vivo grazie al nostro database in tempo reale.",
+                "f-fixture-title": "Calendario Intelligente",
+                "f-fixture-desc1": "Capiamo quanto sia importante il coordinamento delle partite in un torneo, poter gestire gli orari, le sedi, i diversi campi e gli imprevisti dell'ultimo minuto. Per questo motivo, non solo abbiamo un calendario in grado di generare tutte le partite in modo automatico e istantaneo, ma che può anche adattarsi ai cambiamenti in modo semplice e veloce, dandoti la flessibilità di cui tu e le tue squadre avete bisogno.",
+                "f-fixture-desc2": "Prepara tutto il tuo torneo in pochi secondi.",
+                "f-db-title": "DATABASE",
+                "f-db-desc1": "L'infrastruttura è fondamentale per una piattaforma solida e il database ne è un elemento essenziale. Ecco perché abbiamo un database in tempo reale. Fai un clic, aggiorni una statistica, sospendi una partita e assolutamente tutto si aggiorna all'istante nell'applicazione dell'amministratore e del giocatore. Ciò significa che i tuoi giocatori sono informati istantaneamente di tutte le informazioni dei tuoi tornei.",
+                "f-face-title": "FACE ID",
+                "f-face-desc1": "Il giocatore è davvero autorizzato a giocare? È squalificato, registrato o ha il numero minimo di partite per partecipare ai playoff? È il giorno della partita e devi autorizzare molti giocatori su campi diversi, forse anche in sedi diverse. Con LFA FACE ID scansioni semplicemente il giocatore e il nostro sistema di riconoscimento facciale verifica se è autorizzato a giocare.",
+                "f-perfil-title": "PROFILO GIOCATORE",
+                "f-perfil-desc1": "Il giocatore amatoriale è unico ed è un fanatico della sua squadra e delle sue statistiche, per questo ha un profilo su misura per le sue esigenze.",
+                "f-ediciones-title": "MODIFICHE MASSIVE",
+                "f-ediciones-desc1": "Una giornata viene sospesa per pioggia, una squadra si ritira all'ultimo momento, un campo o una sede non è disponibile e possono verificarsi molti altri imprevisti. Per questi momenti hai bisogno di una soluzione su misura, che ti permetta di apportare modifiche a centinaia di partite contemporaneamente, poter cambiare orari, campi, squadre simultaneamente in tempo reale. I nostri strumenti di modifica massiva ti permettono di fare tutto questo e fanno in modo che questi problemi non incidano sull'operatività dei tuoi tornei.",
+                "f-export-title": "ESPORTAZIONE DI DISTINTE",
+                "f-export-desc1": "Dal cloud alla carta, esporta tutte le info di cui hai bisogno da condividere con osservatori, arbitri, giocatori. Dal calendario completo alle distinte di gara, tesserini dei giocatori, classifiche dei marcatori, ecc.",
+                "f-player-title": "LFA Player: Il Servizio per i tuoi Clienti",
+                "f-player-desc1": "Conosciamo la passione con cui il giocatore amatoriale vive il calcio, il senso di appartenenza che ha con la sua squadra e il torneo. La partita non c'è solo quando è in campo, è in attesa tutta la settimana, seguendo le statistiche, vedendo contro chi giocherà, come sono in classifica, quanti gol ha fatto, quando è la prossima partita. Per questo, quando abbiamo sviluppato LFA Player, abbiamo pensato a tutto questo perché quando i tuoi giocatori non sono al centro sportivo, stanno comunque giocando.",
+                "f-player-desc2": "Installano l'applicazione sui loro cellulari per vedere la classifica marcatori, il calendario della prossima giornata, le reti inviolate e tutte le statistiche dei tuoi tornei.",
+                "yt-title": "Guarda LFA in Azione",
+                "yt-desc": "Scopri come gli organizzatori più di successo stanno trasformando i loro tornei con la nostra piattaforma.",
+                "yt-btn-text": "Guarda su YouTube",
+                "footer-text": "© 2026 Ligas Fútbol Amateur. Tutti i diritti riservati.",
+                "wa-bubble-text": "Contattaci su WhatsApp",
+                
+                "pricing-title": "Unisciti alla Rivoluzione",
+                "pricing-desc": "Scegli il piano che meglio si adatta al tuo torneo. Nessun costo nascosto.",
+                "free-trial-notice": "Tutti i piani includono 30 giorni di prova gratuita.",
+                "pricing-plan-title": "PIANO PRO",
+                "t1-title": "Mensile",
+                "t2-title": "Semestrale",
+                "t3-title": "Annuale",
+                "pricing-features": "<li>Web App Admin</li><li>Tornei Illimitati</li><li>App Mobile Giocatori</li><li>Calendario e Modifica Massiva</li><li>Face ID</li><li>Tabellone Playoff</li>",
+                "pricing-contact": "o parla con il nostro team",
+                "lbl-under30": "Fino a 30 squadre",
+                "lbl-over30": "+30 Squadre",
+                
+                "dyn-ar-price-under30": "Consultare", "dyn-ar-sub-under30": "Onboarding Personalizzato", "dyn-ar-btn-under30": "Contatta Consulente",
+                "dyn-ar-price-over30": "Consultare", "dyn-ar-sub-over30": "Piani su misura per grandi leghe", "dyn-ar-btn-over30": "Parla con le Vendite",
+                
+                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensile tramite Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento unico di R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento unico di R$ 420", "dyn-br-btn-under30": "Inizia la Prova",
+                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensile tramite Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento unico di R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento unico di R$ 780", "dyn-br-btn-over30": "Inizia la Prova",
+
+                "dyn-row-t1-price-under30": "US$ 49", "dyn-row-t1-sub-under30": "Fatturato mensilmente.", "dyn-row-t2-price-under30": "US$ 44", "dyn-row-t2-sub-under30": "Fatturato come US$ 264.", "dyn-row-t3-price-under30": "US$ 32", "dyn-row-t3-sub-under30": "Fatturato come US$ 384.", "dyn-row-btn-under30": "Inizia la Prova",
+                "dyn-row-t1-price-over30": "US$ 89", "dyn-row-t1-sub-over30": "Fatturato mensilmente.", "dyn-row-t2-price-over30": "US$ 79", "dyn-row-t2-sub-over30": "Fatturato come US$ 474.", "dyn-row-t3-price-over30": "US$ 64", "dyn-row-t3-sub-over30": "Fatturato come US$ 768.", "dyn-row-btn-over30": "Inizia la Prova"
             }
         };
 
-        // Función para cerrar el globito de WhatsApp
         function closeWABubble(event) {
             event.preventDefault(); 
             event.stopPropagation();
@@ -1044,7 +1131,6 @@
                     const btn = document.getElementById(`dyn-t${i}-btn`);
                     btn.innerHTML = langData[`${prefix}-btn-${currentTier}`];
                     
-                    // --- NUEVA LÓGICA DE REDIRECCIÓN DINÁMICA DE IDIOMA ---
                     btn.href = `https://portal.ligasfutbolamateur.com/${currentLang}/?signup=1`;
                 });
             }
@@ -1057,9 +1143,17 @@
                 const btn = document.getElementById(id);
                 if(btn) {
                     btn.addEventListener('click', function() {
+                        // Facebook Pixel
                         fbq('track', 'InitiateCheckout', {
                             content_name: 'Subscription Click',
                             content_category: currentTier
+                        });
+                        
+                        // Google Ads Conversion Tag
+                        gtag('event', 'conversion', {
+                            'send_to': 'AW-11536482334/prmlCIi8pcQcEJ6Ag_0q',
+                            'value': 1.0,
+                            'currency': 'USD'
                         });
                     });
                 }
@@ -1068,8 +1162,16 @@
             const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
             waLinks.forEach(function(link) {
                 link.addEventListener('click', function() {
+                    // Facebook Pixel
                     fbq('track', 'Lead', {
                         content_name: 'WhatsApp Contact'
+                    });
+                    
+                    // Google Ads Conversion Tag
+                    gtag('event', 'conversion', {
+                        'send_to': 'AW-11536482334/prmlCIi8pcQcEJ6Ag_0q',
+                        'value': 1.0,
+                        'currency': 'USD'
                     });
                 });
             });
@@ -1093,6 +1195,8 @@
                     
                     if (currentCountry === 'BR') {
                         setLang('pt');
+                    } else if (currentCountry === 'IT') {
+                        setLang('it');
                     } else if (spanishSpeakingCountries.includes(currentCountry)) {
                         setLang('es');
                     } else {
