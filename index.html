@@ -170,6 +170,89 @@
         .hero-image { flex: 1; display: flex; justify-content: center; }
         .hero-image img { max-width: 90%; drop-shadow: 0 20px 30px rgba(0,0,0,0.5); }
 
+        /* Trusted Leagues Marquee */
+        .trusted-leagues {
+            padding: 40px 0;
+            background-color: var(--thunder-black);
+            border-bottom: 1px solid var(--foul-black);
+            text-align: center;
+        }
+
+        .trusted-leagues h3 {
+            font-size: 1.2rem;
+            color: var(--text-muted);
+            margin-bottom: 5px;
+            letter-spacing: 2px;
+        }
+
+        .trusted-subtitle {
+            font-size: 1.1rem;
+            color: var(--sinergy-yellow);
+            margin-bottom: 30px;
+            font-style: italic;
+        }
+
+        .marquee-container {
+            width: 100%;
+            overflow: hidden;
+            white-space: nowrap;
+            position: relative;
+            padding: 10px 0;
+        }
+
+        /* Fade effects for the sides */
+        .marquee-container::before, .marquee-container::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            width: 100px;
+            height: 100%;
+            z-index: 2;
+        }
+        .marquee-container::before {
+            left: 0;
+            background: linear-gradient(to right, var(--thunder-black), transparent);
+        }
+        .marquee-container::after {
+            right: 0;
+            background: linear-gradient(to left, var(--thunder-black), transparent);
+        }
+
+        .marquee-track {
+            display: inline-block;
+            animation: marquee 25s linear infinite;
+        }
+
+        /* Pauses animation when the user hovers over it */
+        .marquee-track:hover {
+            animation-play-state: paused;
+        }
+
+        .league-logo {
+            display: inline-block;
+            margin: 0 40px;
+            transition: transform 0.3s ease;
+        }
+
+        .league-logo:hover {
+            transform: scale(1.15);
+        }
+
+        .league-logo img {
+            height: 80px;
+            width: 80px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 2px solid var(--foul-black);
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            background-color: #fff; /* Por si algún logo tiene transparencia */
+        }
+
+        @keyframes marquee {
+            0% { transform: translateX(0); }
+            100% { transform: translateX(-50%); }
+        }
+
         /* Pilares Section */
         .pilares-section {
             padding: 100px 5%;
@@ -379,7 +462,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-right: 15px; /* Para centrarlo mejor sobre Capi */
+            margin-right: 15px;
             animation: bounceIn 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
         }
 
@@ -438,19 +521,18 @@
 
         /* OPTIMIZACIÓN PARA CELULARES */
         @media (max-width: 768px) {
-            /* Ocultamos los botones del header en móvil */
             .btn-head-primary, .btn-head-secondary { 
                 display: none; 
             }
-            
-            /* Ajustamos la tipografía del Hero para que encaje mejor */
             .hero h1 {
                 font-size: 2.5rem; 
             }
-            
             .nav-actions { gap: 10px; }
             .whatsapp-wrapper { bottom: 20px; right: 20px; }
             .whatsapp-sticky { width: 80px; }
+            .marquee-container::before, .marquee-container::after {
+                width: 40px;
+            }
         }
     </style>
 
@@ -514,6 +596,50 @@
             <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/CAPI.png" alt="Capi Avatar Pointing">
         </div>
     </header>
+
+    <section class="trusted-leagues">
+        <h3 id="trusted-title" class="brand-font">Ligas que ya confían en nosotros</h3>
+        <p id="trusted-subtitle" class="trusted-subtitle">Haz clic en los logos para explorar sus torneos en vivo.</p>
+        <div class="marquee-container">
+            <div class="marquee-track">
+                <a href="https://app.ligasfutbolamateur.com/torneos-mendoza" target="_blank" class="league-logo" title="Torneos Mendoza">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/765e3bf5-be9e-49e0-97c3-3ec4e4d5b46f_200x200" alt="Torneos Mendoza Logo">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/copa-rey-del-sur-3" target="_blank" class="league-logo" title="Copa Rey del Sur">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/9c94d1bb-a4d3-4c65-9307-a927c79fac77_200x200" alt="Copa Rey del Sur">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/torneos-del-sur" target="_blank" class="league-logo" title="Torneos Del Sur">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/0027bf00-b928-4f7d-981f-37d409e36d41_200x200" alt="Torneos del Sur">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/m90-deportivo-san-luis" target="_blank" class="league-logo" title="M90 Deportivo SL">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/3e241736-041a-4203-bc20-ab43b30a90e1_200x200" alt="M90 Deportivo SL">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/la-villa-2" target="_blank" class="league-logo" title="La Villa">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/99e559be-2a26-4463-a4de-791f64bba4d8_200x200" alt="La Villa">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/soccer-pro-f11" target="_blank" class="league-logo" title="Soccer Pro F11">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/7a2efc37-15cd-4328-b7a3-3b81434916ba_200x200" alt="Soccer Pro F11">
+                </a>
+
+               
+                <a href="https://app.ligasfutbolamateur.com/la-estancia-super-8" target="_blank" class="league-logo" title="La Estancia Super 8">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/7a8378bb-2659-4961-8006-234abc166f9f_200x200" alt="La Estancia Super 8">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/liga-intercolegial-de-flag-football" target="_blank" class="league-logo" title="Liga Intercolegial de Flag Football">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/ad774b27-b1b2-492f-b005-74d21f18c3b6_200x200" alt="Liga Intercolegial de Flag Football">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/la-chilena-senior" target="_blank" class="league-logo" title="La Chilena Senior">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/2271c314-c26b-42b4-884f-48b8a3b9cb11_200x200" alt="La Chilena Senior">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/las-cabanas-liga-de-futbol-7" target="_blank" class="league-logo" title="Las Cabanas">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/70f236de-bf16-46e8-ab4e-2bec0649778c" alt="Las Cabanas">
+                </a>
+                <a href="https://app.ligasfutbolamateur.com/la-copa-play" target="_blank" class="league-logo" title="Copa Play">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/8253b052-0f70-472c-a12e-ec984410dbbe_200x200" alt="Copa Play">
+                </a>
+            </div>
+        </div>
+    </section>
 
      <section id="que-es-lfa" style="padding: 100px 5%; background-color: var(--thunder-black); text-align: center; display: flex; flex-direction: column; align-items: center; gap: 50px;">
         <div class="feature-text" style="max-width: 900px; margin: 0 auto;">
@@ -731,6 +857,8 @@
                 "hero-title": "REVOLUCIONANDO<br><span>EL FUTBOL AMATEUR</span>",
                 "hero-slogan": "No es solo administrar un torneo, es que tus jugadores vivan una experiencia distinta.",
                 "hero-cta": "Iniciar Prueba",
+                "trusted-title": "Ligas que ya confían en nosotros",
+                "trusted-subtitle": "Ingresa para ver como revolucionaron sus torneos",
                 "lfa-title": "REVOLUCIONA TU TORNEO",
                 "lfa-desc1": "No se trata solo de administrar, LFA no es solo una herramienta, <strong>es una solucion</strong>. Armar el fixture para tantos equipos, coordinar horarios, sedes, tener que acomodar imprevistos, no es facil y lo sabemos. No venimos a ofrecerte un sistema para que simplemente administres tus torneos, te ofrecemos una solucion a tus problemas, <strong>una plataforma que te apoya y asiste en cada punto critico de tu organizacion</strong>. Desde la interfaz hasta el soporte, LFA esta ahi para brindarte soluciones, es mucho mas que una aplicacion.",
                 "lfa-desc2": "Vos disfrutas y tus jugadores tambien.",
@@ -803,8 +931,7 @@
                 "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste",
 
                 "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Valor por mes.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Valor Semestral US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Valor anual US$ 72.", "dyn-row-btn-under30": "Suscribirme ahora",
-                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Suscribirme ahora",
-                "wa-prefill": "Hola,%20quiero%20información%20sobre%20LFA%20para%20organizar%20mi%20torneo."
+                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Suscribirme ahora"
             },
             en: {
                 "nav-login": "Admin Login",
@@ -812,6 +939,8 @@
                 "hero-title": "REVOLUTIONIZING<br><span>AMATEUR SOCCER</span>",
                 "hero-slogan": "It's not just about managing a tournament, it's about giving your players a unique experience.",
                 "hero-cta": "Subscribe Now",
+                "trusted-title": "Leagues already trusting us",
+                "trusted-subtitle": "Click on the logos to explore their live tournaments.",
                 "lfa-title": "REVOLUTIONIZE YOUR TOURNAMENT",
                 "lfa-desc1": "It's not just about managing; LFA is not just a tool, <strong>it's a solution</strong>. Creating fixtures for so many teams, coordinating schedules, venues, and dealing with unforeseen events is not easy, and we know it. We are not here to offer you a system just to manage your tournaments; we offer a solution to your problems, <strong>a platform that supports and assists you at every critical point of your organization</strong>. From the interface to customer support, LFA is there to provide solutions; it's much more than an application.",
                 "lfa-desc2": "You enjoy it, and your players do too.",
@@ -893,6 +1022,8 @@
                 "hero-title": "REVOLUCIONANDO<br><span>O FUTEBOL AMADOR</span>",
                 "hero-slogan": "Não é apenas administrar um torneio, é proporcionar aos seus jogadores uma experiência única.",
                 "hero-cta": "Quero Assinar",
+                "trusted-title": "Ligas que já confiam em nós",
+                "trusted-subtitle": "Clique nos logotipos para explorar seus torneios ao vivo.",
                 "lfa-title": "REVOLUCIONE SEU TORNEIO",
                 "lfa-desc1": "Não se trata apenas de administrar; o LFA não é apenas uma ferramenta, <strong>é uma solução</strong>. Montar a tabela para tantas equipes, coordenar horários, sedes e lidar com imprevistos não é fácil e nós sabemos disso. Não estamos aqui para oferecer um sistema apenas para administrar seus torneios; oferecemos uma solução para seus problemas, <strong>uma plataforma que apoia e auxilia em cada ponto crítico da sua organização</strong>. Desde a interface até o suporte ao cliente, o LFA está lá para fornecer soluções; é muito mais do que um aplicativo.",
                 "lfa-desc2": "Você aproveita, e seus jogadores também.",
@@ -950,7 +1081,7 @@
                 "pricing-desc": "Escolha o plano que melhor se adapta ao seu torneio. Sem taxas ocultas.",
                 "free-trial-notice": "Todos os planos incluem 30 dias de teste grátis.",
                 "pricing-plan-title": "PLANO PRO",
-                "t1-title": "Mensual",
+                "t1-title": "Mensal",
                 "t2-title": "Semestral",
                 "t3-title": "Anual",
                 "pricing-features": "<li>Web App de Administrador</li><li>Torneios Ilimitados</li><li>App Móvil para Jogadores</li><li>Tabela e Edição em Massa</li><li>Face ID</li><li>Mata-Mata</li>",
@@ -974,6 +1105,8 @@
                 "hero-title": "RIVOLUZIONANDO<br><span>IL CALCIO AMATORIALE</span>",
                 "hero-slogan": "Non è solo gestire un torneo, è far vivere ai tuoi giocatori un'esperienza unica.",
                 "hero-cta": "Inizia la Prova",
+                "trusted-title": "Leghe che si fidano già di noi",
+                "trusted-subtitle": "Clicca sui loghi per esplorare i loro tornei dal vivo.",
                 "lfa-title": "RIVOLUZIONA IL TUO TORNEO",
                 "lfa-desc1": "Non si tratta solo di gestire, LFA non è solo uno strumento, <strong>è una soluzione</strong>. Creare il calendario per tante squadre, coordinare orari, sedi, e gestire gli imprevisti non è facile, e lo sappiamo. Non siamo qui per offrirti un sistema solo per amministrare i tuoi tornei; ti offriamo una soluzione ai tuoi problemi, <strong>una piattaforma che ti supporta e assiste in ogni punto critico della tua organizzazione</strong>. Dall'interfaccia al supporto, LFA è qui per darti soluzioni; è molto più di un'applicazione.",
                 "lfa-desc2": "Tu ti diverti e anche i tuoi giocatori.",
