@@ -412,6 +412,31 @@
 
         .pricing-secondary-link:hover { color: var(--sinergy-yellow); }
 
+        /* About Us Section */
+        .about-section {
+            padding: 80px 5%;
+            background-color: var(--thunder-black);
+            border-top: 1px solid #222;
+            text-align: center;
+        }
+
+        .about-section h2 {
+            font-size: 3rem;
+            color: var(--sinergy-yellow);
+            margin-bottom: 25px;
+            line-height: 1.1;
+        }
+
+        .about-section p {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: 1.2rem;
+            color: #d1d1d1;
+            line-height: 1.8;
+            text-align: justify;
+            text-align-last: center;
+        }
+
         /* YouTube Section */
         .youtube-section {
             padding: 100px 5%;
@@ -462,7 +487,7 @@
             display: flex;
             align-items: center;
             gap: 10px;
-            margin-right: 15px;
+            margin-right: 15px; /* Para centrarlo mejor sobre Capi */
             animation: bounceIn 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) forwards;
         }
 
@@ -532,6 +557,10 @@
             .whatsapp-sticky { width: 80px; }
             .marquee-container::before, .marquee-container::after {
                 width: 40px;
+            }
+            .about-section p {
+                text-align: center; /* En móviles queda mejor todo centrado */
+                text-align-last: center;
             }
         }
     </style>
@@ -621,7 +650,9 @@
                     <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/7a2efc37-15cd-4328-b7a3-3b81434916ba_200x200" alt="Soccer Pro F11">
                 </a>
 
-               
+                <a href="https://app.ligasfutbolamateur.com/futbol-city" target="_blank" class="league-logo" title="Futbol City">
+                    <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/564d2eef-ec05-4312-94a1-669d559e32a7" alt="Futbol City">
+                </a>
                 <a href="https://app.ligasfutbolamateur.com/la-estancia-super-8" target="_blank" class="league-logo" title="La Estancia Super 8">
                     <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/7a8378bb-2659-4961-8006-234abc166f9f_200x200" alt="La Estancia Super 8">
                 </a>
@@ -756,6 +787,14 @@
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/ediciones_masivas.png" alt="Ediciones Masivas"></div>
     </section>
 
+    <section id="exportaciones" class="feature-row">
+        <div class="feature-text">
+            <h2 id="f-export-title">EXPORTACION DE PLANILLAS</h2>
+            <p id="f-export-desc1">De la nube al papel, exporta toda la info que necesites para compartir con veedores, arbitros, jugadores. Desde el fixture completo, a planillas de partidos, carnets de jugadores, tablas de goleadores, etc.</p>
+        </div>
+        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/data_exports.png" alt="Exportaciones"></div>
+    </section>
+
      <section id="player" class="feature-row">
         <div class="feature-text">
             <h2 id="f-player-title">LFA Player: El Servicio para tus Clientes</h2>
@@ -763,14 +802,6 @@
             <p id="f-player-desc2">Ellos instalan la aplicación en sus celulares para ver la tabla de goleadores, el fixture de la próxima fecha, las vallas invictas y todas las estadísticas de tus torneos.</p>
         </div>
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi_player_app.jpeg" alt="Capi using LFA Player App"></div>
-    </section>
-
-    <section id="exportaciones" class="feature-row">
-        <div class="feature-text">
-            <h2 id="f-export-title">EXPORTACION DE PLANILLAS</h2>
-            <p id="f-export-desc1">De la nube al papel, exporta toda la info que necesites para compartir con veedores, arbitros, jugadores. Desde el fixture completo, a planillas de partidos, carnets de jugadores, tablas de goleadores, etc.</p>
-        </div>
-        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/data_exports.png" alt="Exportaciones"></div>
     </section>
 
     <section id="pricing" style="padding: 100px 5%; background-color: var(--foul-black); text-align: center;">
@@ -824,6 +855,13 @@
         </div>
     </section>
 
+    <section id="about-us" class="about-section">
+        <h2 id="about-title" class="brand-font">¿Quiénes Somos?</h2>
+        <p id="about-desc">
+            Ligas Futbol Amateur, LLC es una empresa Argentina con sede en Atlanta, Georgia. Su enfoque principal es el desarrollo de software y servicios especializados para la organización y gestión de torneos de fútbol. La oferta principal de la empresa incluye una aplicación móvil descargable diseñada para gestionar torneos de fútbol, coordinar horarios, equipos y administrar los partidos. Esta plataforma está categorizada bajo servicios tecnológicos y desarrollo de software, específicamente para eventos relacionados con el fútbol, lo que resalta su intención de proporcionar soluciones tecnológicas para ligas de fútbol amateur mediante aplicaciones móviles y servicios web. La compañía funciona como un proveedor de Software como Servicio ofreciendo características como la gestión de torneos, la programación y la coordinación de eventos de fútbol, ofreciendo herramientas tecnológicas para simplificar las operaciones de dichas ligas.
+        </p>
+    </section>
+
     <section class="youtube-section">
         <h2 id="yt-title">Mira a LFA en Acción</h2>
         <p id="yt-desc">Descubre cómo los organizadores más exitosos están transformando sus torneos con nuestra plataforma.</p>
@@ -858,7 +896,7 @@
                 "hero-slogan": "No es solo administrar un torneo, es que tus jugadores vivan una experiencia distinta.",
                 "hero-cta": "Iniciar Prueba",
                 "trusted-title": "Ligas que ya confían en nosotros",
-                "trusted-subtitle": "Ingresa para ver como revolucionaron sus torneos",
+                "trusted-subtitle": "Haz clic en los logos para explorar sus torneos en vivo.",
                 "lfa-title": "REVOLUCIONA TU TORNEO",
                 "lfa-desc1": "No se trata solo de administrar, LFA no es solo una herramienta, <strong>es una solucion</strong>. Armar el fixture para tantos equipos, coordinar horarios, sedes, tener que acomodar imprevistos, no es facil y lo sabemos. No venimos a ofrecerte un sistema para que simplemente administres tus torneos, te ofrecemos una solucion a tus problemas, <strong>una plataforma que te apoya y asiste en cada punto critico de tu organizacion</strong>. Desde la interfaz hasta el soporte, LFA esta ahi para brindarte soluciones, es mucho mas que una aplicacion.",
                 "lfa-desc2": "Vos disfrutas y tus jugadores tambien.",
@@ -909,6 +947,8 @@
                 "yt-title": "Mira a LFA en Acción",
                 "yt-desc": "Descubre cómo los organizadores más exitosos están transformando sus torneos con nuestra plataforma.",
                 "yt-btn-text": "Ver en Youtube",
+                "about-title": "¿Quiénes Somos?",
+                "about-desc": "Ligas Futbol Amateur, LLC es una empresa Argentina con sede en Atlanta, Georgia. Su enfoque principal es el desarrollo de software y servicios especializados para la organización y gestión de torneos de fútbol. La oferta principal de la empresa incluye una aplicación móvil descargable diseñada para gestionar torneos de fútbol, coordinar horarios, equipos y administrar los partidos. Esta plataforma está categorizada bajo servicios tecnológicos y desarrollo de software, específicamente para eventos relacionados con el fútbol, lo que resalta su intención de proporcionar soluciones tecnológicas para ligas de fútbol amateur mediante aplicaciones móviles y servicios web. La compañía funciona como un proveedor de Software como Servicio ofreciendo características como la gestión de torneos, la programación y la coordinación de eventos de fútbol, ofreciendo herramientas tecnológicas para simplificar las operaciones de dichas ligas.",
                 "footer-text": "© 2026 Ligas Fútbol Amateur. Todos los derechos reservados.",
                 "wa-bubble-text": "Consultanos vía WhatsApp",
                 
@@ -991,6 +1031,8 @@
                 "yt-title": "Watch LFA in Action",
                 "yt-desc": "Discover how the most successful organizers are transforming their tournaments with our platform.",
                 "yt-btn-text": "Watch on YouTube",
+                "about-title": "About Us",
+                "about-desc": "Ligas Futbol Amateur, LLC is an Argentine company based in Atlanta, Georgia. Its main focus is the development of specialized software and services for the organization and management of soccer tournaments. The company's core offering includes a downloadable mobile application designed to manage soccer tournaments, coordinate schedules, teams, and administer matches. This platform is categorized under technological services and software development, specifically for soccer-related events, highlighting its intention to provide technological solutions for amateur soccer leagues through mobile apps and web services. The company operates as a Software as a Service (SaaS) provider, offering features like tournament management, scheduling, and coordination of soccer events, delivering tech tools to simplify league operations.",
                 "footer-text": "© 2026 Ligas Fútbol Amateur. All rights reserved.",
                 "wa-bubble-text": "Contact us via WhatsApp",
                 
@@ -1074,6 +1116,8 @@
                 "yt-title": "Assista ao LFA em Ação",
                 "yt-desc": "Descubra como os organizadores mais bem-sucedidos estão transformando seus torneios com a nossa plataforma.",
                 "yt-btn-text": "Ver no YouTube",
+                "about-title": "Quem Somos",
+                "about-desc": "Ligas Futbol Amateur, LLC é uma empresa argentina com sede em Atlanta, Geórgia. Seu foco principal é o desenvolvimento de software e serviços especializados para a organização e gestão de torneios de futebol. A principal oferta da empresa inclui um aplicativo móvel disponível para download, projetado para gerenciar torneios de futebol, coordenar horários, equipes e administrar partidas. Esta plataforma está categorizada em serviços tecnológicos e desenvolvimento de software, especificamente para eventos relacionados ao futebol, o que destaca sua intenção de fornecer soluções tecnológicas para ligas de futebol amador por meio de aplicativos móveis e serviços web. A empresa atua como provedora de Software como Serviço (SaaS), oferecendo recursos como gestão de torneios, agendamento e coordenação de eventos de futebol, oferecendo ferramentas tecnológicas para simplificar as operações dessas ligas.",
                 "footer-text": "© 2026 Ligas Fútbol Amateur. Todos os direitos reservados.",
                 "wa-bubble-text": "Fale conosco no WhatsApp",
                 
@@ -1157,6 +1201,8 @@
                 "yt-title": "Guarda LFA in Azione",
                 "yt-desc": "Scopri come gli organizzatori più di successo stanno trasformando i loro tornei con la nostra piattaforma.",
                 "yt-btn-text": "Guarda su YouTube",
+                "about-title": "Chi Siamo",
+                "about-desc": "Ligas Futbol Amateur, LLC è un'azienda argentina con sede ad Atlanta, Georgia. Il suo obiettivo principale è lo sviluppo di software e servizi specializzati per l'organizzazione e la gestione di tornei di calcio. L'offerta principale dell'azienda include un'applicazione mobile scaricabile progettata per gestire tornei di calcio, coordinare orari, squadre e amministrare le partite. Questa piattaforma è categorizzata tra i servizi tecnologici e lo sviluppo di software, in particolare per eventi legati al calcio, evidenziando la sua intenzione di fornire soluzioni tecnologiche per le leghe di calcio amatoriale tramite app mobili e servizi web. L'azienda opera come fornitore di Software as a Service (SaaS), offrendo funzionalità come la gestione dei tornei, la programmazione e il coordinamento di eventi calcistici, e fornendo strumenti tecnologici per semplificare le operazioni di tali leghe.",
                 "footer-text": "© 2026 Ligas Fútbol Amateur. Tutti i diritti riservati.",
                 "wa-bubble-text": "Contattaci su WhatsApp",
                 
