@@ -787,14 +787,6 @@
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/ediciones_masivas.png" alt="Ediciones Masivas"></div>
     </section>
 
-    <section id="exportaciones" class="feature-row">
-        <div class="feature-text">
-            <h2 id="f-export-title">EXPORTACION DE PLANILLAS</h2>
-            <p id="f-export-desc1">De la nube al papel, exporta toda la info que necesites para compartir con veedores, arbitros, jugadores. Desde el fixture completo, a planillas de partidos, carnets de jugadores, tablas de goleadores, etc.</p>
-        </div>
-        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/data_exports.png" alt="Exportaciones"></div>
-    </section>
-
      <section id="player" class="feature-row">
         <div class="feature-text">
             <h2 id="f-player-title">LFA Player: El Servicio para tus Clientes</h2>
@@ -802,6 +794,14 @@
             <p id="f-player-desc2">Ellos instalan la aplicación en sus celulares para ver la tabla de goleadores, el fixture de la próxima fecha, las vallas invictas y todas las estadísticas de tus torneos.</p>
         </div>
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi_player_app.jpeg" alt="Capi using LFA Player App"></div>
+    </section>
+
+    <section id="exportaciones" class="feature-row">
+        <div class="feature-text">
+            <h2 id="f-export-title">EXPORTACION DE PLANILLAS</h2>
+            <p id="f-export-desc1">De la nube al papel, exporta toda la info que necesites para compartir con veedores, arbitros, jugadores. Desde el fixture completo, a planillas de partidos, carnets de jugadores, tablas de goleadores, etc.</p>
+        </div>
+        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/data_exports.png" alt="Exportaciones"></div>
     </section>
 
     <section id="pricing" style="padding: 100px 5%; background-color: var(--foul-black); text-align: center;">
@@ -971,7 +971,8 @@
                 "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste",
 
                 "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Valor por mes.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Valor Semestral US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Valor anual US$ 72.", "dyn-row-btn-under30": "Suscribirme ahora",
-                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Suscribirme ahora"
+                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Suscribirme ahora",
+                "wa-prefill": "Hola,%20quiero%20información%20sobre%20LFA%20para%20organizar%20mi%20torneo."
             },
             en: {
                 "nav-login": "Admin Login",
@@ -1275,7 +1276,7 @@
             // --- DYNAMIC WHATSAPP LINKS ---
             // Grab all WhatsApp links (the sticky bubble and any pricing card links)
             const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
-            const prefillText = langData['wa-prefill'];
+            const prefillText = langData['wa-prefill'] || "";
             const phoneNumber = "5491144169568"; // Your core WhatsApp number
             
             waLinks.forEach(link => {
