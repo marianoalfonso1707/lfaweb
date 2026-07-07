@@ -59,14 +59,12 @@
 
         .lang-toggle button:hover, .lang-toggle button.active { color: var(--sinergy-yellow); }
 
-        /* Contenedor de acciones en el header */
         .nav-actions {
             display: flex;
             align-items: center;
             gap: 20px;
         }
 
-        /* Botón Header Primario (Amarillo) */
         .btn-head-primary {
             background-color: var(--sinergy-yellow);
             color: var(--thunder-black);
@@ -91,7 +89,6 @@
             transform: skewX(10deg);
         }
 
-        /* Botón Header Secundario */
         .btn-head-secondary {
             background-color: transparent;
             color: var(--powder-white);
@@ -200,7 +197,6 @@
             padding: 10px 0;
         }
 
-        /* Fade effects for the sides */
         .marquee-container::before, .marquee-container::after {
             content: "";
             position: absolute;
@@ -223,7 +219,6 @@
             animation: marquee 25s linear infinite;
         }
 
-        /* Pauses animation when the user hovers over it */
         .marquee-track:hover {
             animation-play-state: paused;
         }
@@ -245,7 +240,7 @@
             object-fit: cover;
             border: 2px solid var(--foul-black);
             box-shadow: 0 4px 10px rgba(0,0,0,0.3);
-            background-color: #fff; /* Por si algún logo tiene transparencia */
+            background-color: #fff;
         }
 
         @keyframes marquee {
@@ -618,7 +613,7 @@
     <header class="hero">
         <div class="hero-text">
             <h1 id="hero-title">REVOLUCIONANDO<br><span>EL FUTBOL AMATEUR</span></h1>
-            <div class="slogan" id="hero-slogan">No es solo administrar un torneo, es que tus jugadores vivan una experiencia distinta.</div>
+            <div class="slogan" id="hero-slogan">La plataforma todo-en-uno para organizadores de ligas amateur. Automatizá tu fixture en segundos y dale a tus jugadores una experiencia profesional.</div>
             <a href="#pricing" class="cta-btn"><span id="hero-cta">Quiero Suscribirme</span></a>
         </div>
         <div class="hero-image">
@@ -628,7 +623,7 @@
 
     <section class="trusted-leagues">
         <h3 id="trusted-title" class="brand-font">Ligas que ya confían en nosotros</h3>
-        <p id="trusted-subtitle" class="trusted-subtitle">Haz clic en los logos para explorar sus torneos en vivo.</p>
+        <p id="trusted-subtitle" class="trusted-subtitle">Más de 12 ligas activas y miles de partidos gestionados en LatAm y EE.UU.</p>
         <div class="marquee-container">
             <div class="marquee-track">
                 <a href="https://app.ligasfutbolamateur.com/torneos-mendoza" target="_blank" class="league-logo" title="Torneos Mendoza">
@@ -649,7 +644,6 @@
                 <a href="https://app.ligasfutbolamateur.com/soccer-pro-f11" target="_blank" class="league-logo" title="Soccer Pro F11">
                     <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/7a2efc37-15cd-4328-b7a3-3b81434916ba_200x200" alt="Soccer Pro F11">
                 </a>
-
                 <a href="https://app.ligasfutbolamateur.com/futbol-city" target="_blank" class="league-logo" title="Futbol City">
                     <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/564d2eef-ec05-4312-94a1-669d559e32a7" alt="Futbol City">
                 </a>
@@ -707,7 +701,7 @@
             <div class="card">
                 <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/Face%20ID.jpeg" alt="FACE ID"></div>
                 <h3 class="card-title brand-font" id="c-face-title">FACE ID</h3>
-                <p class="card-desc" id="c-face-desc">Verifica la identidad de los jugadores en la cancha con escaneo facial. Control absoluto de asistencias.</p>
+                <p class="card-desc" id="c-face-desc">Verificá la identidad digital de cada jugador en segundos y terminá con las suplantaciones en tus torneos.</p>
                 <a href="#face" class="card-link" id="c-face-link">Ver Face ID ➔</a>
             </div>
             <div class="card">
@@ -787,14 +781,7 @@
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/ediciones_masivas.png" alt="Ediciones Masivas"></div>
     </section>
 
-     <section id="player" class="feature-row">
-        <div class="feature-text">
-            <h2 id="f-player-title">LFA Player: El Servicio para tus Clientes</h2>
-            <p id="f-player-desc1">Sabemos la pasion con la que el jugador amateur vive el futbol, el sentido de pertenecia que tiene con su equipo y el torneo. El partido no es solo cuando esta en la cancha, esta pendiente toda la semana, siguiendo las estadisticas, viendo con quien juegan, como estan en la tabla, cuantos goles hizo, cuando es el proximo partido. Por eso, cuando desarrollamos LFA Player, pensamos en todo esto porque cuando tus jugadores no estan en el predio, tambien estan jugando.</p>
-            <p id="f-player-desc2">Ellos instalan la aplicación en sus celulares para ver la tabla de goleadores, el fixture de la próxima fecha, las vallas invictas y todas las estadísticas de tus torneos.</p>
-        </div>
-        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi_player_app.jpeg" alt="Capi using LFA Player App"></div>
-    </section>
+  
 
     <section id="exportaciones" class="feature-row">
         <div class="feature-text">
@@ -802,6 +789,15 @@
             <p id="f-export-desc1">De la nube al papel, exporta toda la info que necesites para compartir con veedores, arbitros, jugadores. Desde el fixture completo, a planillas de partidos, carnets de jugadores, tablas de goleadores, etc.</p>
         </div>
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/data_exports.png" alt="Exportaciones"></div>
+    </section>
+
+       <section id="player" class="feature-row">
+        <div class="feature-text">
+            <h2 id="f-player-title">LFA Player: El Servicio para tus Clientes</h2>
+            <p id="f-player-desc1">Sabemos la pasion con la que el jugador amateur vive el futbol, el sentido de pertenecia que tiene con su equipo y el torneo. El partido no es solo cuando esta en la cancha, esta pendiente toda la semana, siguiendo las estadisticas, viendo con quien juegan, como estan en la tabla, cuantos goles hizo, cuando es el proximo partido. Por eso, cuando desarrollamos LFA Player, pensamos en todo esto porque cuando tus jugadores no estan en el predio, tambien estan jugando.</p>
+            <p id="f-player-desc2">Ellos instalan la aplicación en sus celulares para ver la tabla de goleadores, el fixture de la próxima fecha, las vallas invictas y todas las estadísticas de tus torneos.</p>
+        </div>
+        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi_player_app.jpeg" alt="Capi using LFA Player App"></div>
     </section>
 
     <section id="pricing" style="padding: 100px 5%; background-color: var(--foul-black); text-align: center;">
@@ -822,34 +818,40 @@
         <div class="pricing-grid" id="pricing-grid-container">
             <div class="pricing-card" id="card-t1">
                 <h3 id="t1-title" style="font-size: 1.8rem; color: var(--powder-white); margin-bottom: 20px; font-family: 'Oswald', sans-serif;">Mensual</h3>
-                <div id="dyn-t1-price" style="font-size: 3.5rem; color: var(--sinergy-yellow); font-weight: bold; line-height: 1; margin-bottom: 10px;">...</div>
-                <p id="dyn-t1-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Cargando...</p>
+                <div id="dyn-t1-price" style="font-size: 3.5rem; color: var(--sinergy-yellow); font-weight: bold; line-height: 1; margin-bottom: 10px;">US$ 10</div>
+                <p id="dyn-t1-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Valor por mes.</p>
                 
-                <ul class="pricing-features-list" id="t1-features"></ul>
+                <ul class="pricing-features-list" id="t1-features">
+                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>
+                </ul>
                 
-                <a href="#" id="dyn-t1-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
+                <a href="https://portal.ligasfutbolamateur.com/es/?signup=1" id="dyn-t1-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
                 <a href="https://wa.me/5491144169568" target="_blank" class="pricing-secondary-link" id="t1-contact">o hablá con nuestro equipo</a>
             </div>
 
             <div class="pricing-card" id="card-t2">
                 <h3 id="t2-title" style="font-size: 1.8rem; color: var(--powder-white); margin-bottom: 20px; font-family: 'Oswald', sans-serif;">Semestral</h3>
-                <div id="dyn-t2-price" style="font-size: 3.5rem; color: var(--sinergy-yellow); font-weight: bold; line-height: 1; margin-bottom: 10px;">...</div>
-                <p id="dyn-t2-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Cargando...</p>
+                <div id="dyn-t2-price" style="font-size: 3.5rem; color: var(--sinergy-yellow); font-weight: bold; line-height: 1; margin-bottom: 10px;">US$ 8</div>
+                <p id="dyn-t2-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Valor Semestral US$ 48.</p>
                 
-                <ul class="pricing-features-list" id="t2-features"></ul>
+                <ul class="pricing-features-list" id="t2-features">
+                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>
+                </ul>
                 
-                <a href="#" id="dyn-t2-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
+                <a href="https://portal.ligasfutbolamateur.com/es/?signup=1" id="dyn-t2-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
                 <a href="https://wa.me/5491144169568" target="_blank" class="pricing-secondary-link" id="t2-contact">o hablá con nuestro equipo</a>
             </div>
 
             <div class="pricing-card highlight" id="card-t3">
                 <h3 id="t3-title" style="font-size: 1.8rem; color: var(--powder-white); margin-bottom: 20px; font-family: 'Oswald', sans-serif;">Anual</h3>
-                <div id="dyn-t3-price" style="font-size: 3.5rem; color: var(--sinergy-yellow); font-weight: bold; line-height: 1; margin-bottom: 10px;">...</div>
-                <p id="dyn-t3-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Cargando...</p>
+                <div id="dyn-t3-price" style="font-size: 3.5rem; color: var(--sinergy-yellow); font-weight: bold; line-height: 1; margin-bottom: 10px;">US$ 6</div>
+                <p id="dyn-t3-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Valor anual US$ 72.</p>
                 
-                <ul class="pricing-features-list" id="t3-features"></ul>
+                <ul class="pricing-features-list" id="t3-features">
+                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>
+                </ul>
                 
-                <a href="#" id="dyn-t3-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
+                <a href="https://portal.ligasfutbolamateur.com/es/?signup=1" id="dyn-t3-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
                 <a href="https://wa.me/5491144169568" target="_blank" class="pricing-secondary-link" id="t3-contact">o hablá con nuestro equipo</a>
             </div>
         </div>
@@ -870,6 +872,7 @@
 
     <footer>
         <p id="footer-text">© 2026 Ligas Fútbol Amateur. Todos los derechos reservados.</p>
+        <p><a href="/privacy.html" style="color: var(--text-muted); text-decoration: underline; margin: 10px 0; display: inline-block;">Política de Privacidad y Manejo de Datos (Face ID)</a></p>
         <p>info@ligasfutbolamateur.com</p>
     </footer>
 
@@ -893,10 +896,10 @@
                 "nav-login": "Login Admin",
                 "nav-subscribe": "Iniciar Prueba",
                 "hero-title": "REVOLUCIONANDO<br><span>EL FUTBOL AMATEUR</span>",
-                "hero-slogan": "No es solo administrar un torneo, es que tus jugadores vivan una experiencia distinta.",
+                "hero-slogan": "La plataforma todo-en-uno para organizadores de ligas amateur. Automatizá tu fixture en segundos y dale a tus jugadores una experiencia profesional.",
                 "hero-cta": "Iniciar Prueba",
                 "trusted-title": "Ligas que ya confían en nosotros",
-                "trusted-subtitle": "Haz clic en los logos para explorar sus torneos en vivo.",
+                "trusted-subtitle": "Más de 12 ligas activas y miles de partidos gestionados en LatAm y EE.UU.",
                 "lfa-title": "REVOLUCIONA TU TORNEO",
                 "lfa-desc1": "No se trata solo de administrar, LFA no es solo una herramienta, <strong>es una solucion</strong>. Armar el fixture para tantos equipos, coordinar horarios, sedes, tener que acomodar imprevistos, no es facil y lo sabemos. No venimos a ofrecerte un sistema para que simplemente administres tus torneos, te ofrecemos una solucion a tus problemas, <strong>una plataforma que te apoya y asiste en cada punto critico de tu organizacion</strong>. Desde la interfaz hasta el soporte, LFA esta ahi para brindarte soluciones, es mucho mas que una aplicacion.",
                 "lfa-desc2": "Vos disfrutas y tus jugadores tambien.",
@@ -911,7 +914,7 @@
                 "c-db-desc": "Base de datos en tiempo real, toda la informacion de tus torneos disponible para tus jugadores de manera instantanea.",
                 "c-db-link": "Ver Base de datos ➔",
                 "c-face-title": "FACE ID",
-                "c-face-desc": "Verifica la identidad de los jugadores en la cancha con escaneo facial. Control absoluto de asistencias.",
+                "c-face-desc": "Verificá la identidad digital de cada jugador en segundos y terminá con las suplantaciones en tus torneos.",
                 "c-face-link": "Ver Face ID ➔",
                 "c-perfil-title": "PERFIL JUGADOR",
                 "c-perfil-desc": "Un perfil único para cada jugador con sus estadísticas personales, historial de partidos y fotos.",
@@ -978,10 +981,10 @@
                 "nav-login": "Admin Login",
                 "nav-subscribe": "Subscribe Now",
                 "hero-title": "REVOLUTIONIZING<br><span>AMATEUR SOCCER</span>",
-                "hero-slogan": "It's not just about managing a tournament, it's about giving your players a unique experience.",
+                "hero-slogan": "The all-in-one platform for amateur league organizers. Automate your fixture in seconds and give your players a professional experience.",
                 "hero-cta": "Subscribe Now",
                 "trusted-title": "Leagues already trusting us",
-                "trusted-subtitle": "Click on the logos to explore their live tournaments.",
+                "trusted-subtitle": "More than 12 active leagues and thousands of matches managed in LatAm and the US.",
                 "lfa-title": "REVOLUTIONIZE YOUR TOURNAMENT",
                 "lfa-desc1": "It's not just about managing; LFA is not just a tool, <strong>it's a solution</strong>. Creating fixtures for so many teams, coordinating schedules, venues, and dealing with unforeseen events is not easy, and we know it. We are not here to offer you a system just to manage your tournaments; we offer a solution to your problems, <strong>a platform that supports and assists you at every critical point of your organization</strong>. From the interface to customer support, LFA is there to provide solutions; it's much more than an application.",
                 "lfa-desc2": "You enjoy it, and your players do too.",
@@ -996,7 +999,7 @@
                 "c-db-desc": "Real-time database; all your tournament information available to your players instantly.",
                 "c-db-link": "View Database ➔",
                 "c-face-title": "FACE ID",
-                "c-face-desc": "Verify player identity on the pitch with facial scanning. Absolute control over attendance.",
+                "c-face-desc": "Verify every player's digital identity in seconds and end impersonations in your tournaments.",
                 "c-face-link": "View Face ID ➔",
                 "c-perfil-title": "PLAYER PROFILE",
                 "c-perfil-desc": "A unique profile for each player with their personal stats, match history, and photos.",
@@ -1063,11 +1066,11 @@
                 "nav-login": "Login Admin",
                 "nav-subscribe": "Quero Assinar",
                 "hero-title": "REVOLUCIONANDO<br><span>O FUTEBOL AMADOR</span>",
-                "hero-slogan": "Não é apenas administrar um torneio, é proporcionar aos seus jogadores uma experiência única.",
+                "hero-slogan": "A plataforma completa para organizadores de ligas amadoras. Automatize sua tabela em segundos e dê aos seus jogadores uma experiência profissional.",
                 "hero-cta": "Quero Assinar",
                 "trusted-title": "Ligas que já confiam em nós",
-                "trusted-subtitle": "Clique nos logotipos para explorar seus torneios ao vivo.",
-                "lfa-title": "REVOLUCIONE SEU TORNEIO",
+                "trusted-subtitle": "Mais de 12 ligas ativas e milhares de partidas gerenciadas na América Latina e nos EUA.",
+                "lfa-title": "REVOLUCIONE SEU TORNEO",
                 "lfa-desc1": "Não se trata apenas de administrar; o LFA não é apenas uma ferramenta, <strong>é uma solução</strong>. Montar a tabela para tantas equipes, coordenar horários, sedes e lidar com imprevistos não é fácil e nós sabemos disso. Não estamos aqui para oferecer um sistema apenas para administrar seus torneios; oferecemos uma solução para seus problemas, <strong>uma plataforma que apoia e auxilia em cada ponto crítico da sua organização</strong>. Desde a interface até o suporte ao cliente, o LFA está lá para fornecer soluções; é muito mais do que um aplicativo.",
                 "lfa-desc2": "Você aproveita, e seus jogadores também.",
                 "pilares-title": "Os Pilares do Organizador",
@@ -1081,7 +1084,7 @@
                 "c-db-desc": "Banco de dados em tempo real; todas as informações do seu torneio disponíveis para seus jogadores instantaneamente.",
                 "c-db-link": "Ver Banco de Dados ➔",
                 "c-face-title": "FACE ID",
-                "c-face-desc": "Verifique a identidade dos jogadores em campo com escaneamento facial. Controle absoluto de presenças.",
+                "c-face-desc": "Verifique a identidade digital de cada jogador em segundos e acabe com as falsificações em seus torneios.",
                 "c-face-link": "Ver Face ID ➔",
                 "c-perfil-title": "PERFIL DO JOGADOR",
                 "c-perfil-desc": "Um perfil exclusivo para cada jogador com suas estatísticas pessoais, histórico de partidas e fotos.",
@@ -1148,10 +1151,10 @@
                 "nav-login": "Login Admin",
                 "nav-subscribe": "Inizia la Prova",
                 "hero-title": "RIVOLUZIONANDO<br><span>IL CALCIO AMATORIALE</span>",
-                "hero-slogan": "Non è solo gestire un torneo, è far vivere ai tuoi giocatori un'esperienza unica.",
+                "hero-slogan": "La piattaforma all-in-one per gli organizzatori di leghe amatoriali. Automatizza il tuo calendario in pochi secondi e offri ai tuoi giocatori un'esperienza professionale.",
                 "hero-cta": "Inizia la Prova",
                 "trusted-title": "Leghe che si fidano già di noi",
-                "trusted-subtitle": "Clicca sui loghi per esplorare i loro tornei dal vivo.",
+                "trusted-subtitle": "Più di 12 leghe attive e migliaia di partite gestite in America Latina e negli Stati Uniti.",
                 "lfa-title": "RIVOLUZIONA IL TUO TORNEO",
                 "lfa-desc1": "Non si tratta solo di gestire, LFA non è solo uno strumento, <strong>è una soluzione</strong>. Creare il calendario per tante squadre, coordinare orari, sedi, e gestire gli imprevisti non è facile, e lo sappiamo. Non siamo qui per offrirti un sistema solo per amministrare i tuoi tornei; ti offriamo una soluzione ai tuoi problemi, <strong>una piattaforma che ti supporta e assiste in ogni punto critico della tua organizzazione</strong>. Dall'interfaccia al supporto, LFA è qui per darti soluzioni; è molto più di un'applicazione.",
                 "lfa-desc2": "Tu ti diverti e anche i tuoi giocatori.",
@@ -1166,7 +1169,7 @@
                 "c-db-desc": "Database in tempo reale, tutte le informazioni dei tuoi tornei disponibili istantaneamente per i tuoi giocatori.",
                 "c-db-link": "Vedi Database ➔",
                 "c-face-title": "FACE ID",
-                "c-face-desc": "Verifica l'identità dei giocatori in campo con la scansione facciale. Controllo assoluto delle presenze.",
+                "c-face-desc": "Verifica l'identità digitale di ogni giocatore in pochi secondi e metti fine alle sostituzioni nei tuoi tornei.",
                 "c-face-link": "Vedi Face ID ➔",
                 "c-perfil-title": "PROFILO GIOCATORE",
                 "c-perfil-desc": "Un profilo unico per ogni giocatore con le sue statistiche personali, lo storico delle partite e le foto.",
@@ -1262,8 +1265,8 @@
                 [1, 2, 3].forEach(i => {
                     const featEl = document.getElementById(`t${i}-features`);
                     const contEl = document.getElementById(`t${i}-contact`);
-                    if (featEl) featEl.innerHTML = featureHtml;
-                    if (contEl) contEl.innerHTML = contactHtml;
+                    if (featEl && featureHtml) featEl.innerHTML = featureHtml;
+                    if (contEl && contactHtml) contEl.innerHTML = contactHtml;
                 });
             }
             updateDynamicPricing();
@@ -1273,16 +1276,13 @@
             const langData = translations[currentLang];
             const trialNotice = document.getElementById('free-trial-notice');
             
-            // --- DYNAMIC WHATSAPP LINKS ---
-            // Grab all WhatsApp links (the sticky bubble and any pricing card links)
             const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
             const prefillText = langData['wa-prefill'] || "";
-            const phoneNumber = "5491144169568"; // Your core WhatsApp number
+            const phoneNumber = "5491144169568"; 
             
             waLinks.forEach(link => {
                 link.href = `https://wa.me/${phoneNumber}?text=${prefillText}`;
             });
-            // -----------------------------------
             
             if (currentCountry === 'AR') {
                 if(trialNotice) trialNotice.style.display = 'none';
@@ -1293,15 +1293,13 @@
                 grid.style.gridTemplateColumns = '1fr';
                 grid.style.maxWidth = '450px';
                 
-                document.getElementById('t1-title').innerHTML = langData['pricing-plan-title'];
-                document.getElementById('dyn-t1-price').innerHTML = langData[`dyn-ar-price-${currentTier}`];
-                document.getElementById('dyn-t1-sub').innerHTML = langData[`dyn-ar-sub-${currentTier}`];
+                if (langData['pricing-plan-title']) document.getElementById('t1-title').innerHTML = langData['pricing-plan-title'];
+                if (langData[`dyn-ar-price-${currentTier}`]) document.getElementById('dyn-t1-price').innerHTML = langData[`dyn-ar-price-${currentTier}`];
+                if (langData[`dyn-ar-sub-${currentTier}`]) document.getElementById('dyn-t1-sub').innerHTML = langData[`dyn-ar-sub-${currentTier}`];
                 
                 const btn = document.getElementById('dyn-t1-btn');
-                btn.innerHTML = langData[`dyn-ar-btn-${currentTier}`];
-                
-                // In AR, the main pricing button goes to WhatsApp instead of the Portal
-                btn.href = `https://wa.me/${phoneNumber}?text=${prefillText}`; 
+                if (btn && langData[`dyn-ar-btn-${currentTier}`]) btn.innerHTML = langData[`dyn-ar-btn-${currentTier}`];
+                if (btn) btn.href = `https://wa.me/${phoneNumber}?text=${prefillText}`; 
                 
                 const contactLink = document.getElementById('t1-contact');
                 if (contactLink) contactLink.style.display = 'none';
@@ -1315,20 +1313,22 @@
                 grid.style.gridTemplateColumns = 'repeat(auto-fit, minmax(300px, 1fr))';
                 grid.style.maxWidth = '1100px';
                 
-                document.getElementById('t1-title').innerHTML = langData['t1-title'];
+                if (langData['t1-title']) document.getElementById('t1-title').innerHTML = langData['t1-title'];
                 const contactLink = document.getElementById('t1-contact');
                 if (contactLink) contactLink.style.display = 'block';
                 
                 const prefix = currentCountry === 'BR' ? 'dyn-br' : 'dyn-row';
                 
                 [1, 2, 3].forEach(i => {
-                    document.getElementById(`dyn-t${i}-price`).innerHTML = langData[`${prefix}-t${i}-price-${currentTier}`];
-                    document.getElementById(`dyn-t${i}-sub`).innerHTML = langData[`${prefix}-t${i}-sub-${currentTier}`];
-                    
+                    const priceEl = document.getElementById(`dyn-t${i}-price`);
+                    const subEl = document.getElementById(`dyn-t${i}-sub`);
                     const btn = document.getElementById(`dyn-t${i}-btn`);
-                    btn.innerHTML = langData[`${prefix}-btn-${currentTier}`];
                     
-                    btn.href = `https://portal.ligasfutbolamateur.com/${currentLang}/?signup=1`;
+                    if(priceEl && langData[`${prefix}-t${i}-price-${currentTier}`]) priceEl.innerHTML = langData[`${prefix}-t${i}-price-${currentTier}`];
+                    if(subEl && langData[`${prefix}-t${i}-sub-${currentTier}`]) subEl.innerHTML = langData[`${prefix}-t${i}-sub-${currentTier}`];
+                    if(btn && langData[`${prefix}-btn-${currentTier}`]) btn.innerHTML = langData[`${prefix}-btn-${currentTier}`];
+                    
+                    if(btn) btn.href = `https://portal.ligasfutbolamateur.com/${currentLang}/?signup=1`;
                 });
             }
         }
@@ -1340,13 +1340,10 @@
                 const btn = document.getElementById(id);
                 if(btn) {
                     btn.addEventListener('click', function() {
-                        // Facebook Pixel
                         fbq('track', 'InitiateCheckout', {
                             content_name: 'Subscription Click',
                             content_category: currentTier
                         });
-                        
-                        // Google Ads Conversion Tag
                         gtag('event', 'conversion', {
                             'send_to': 'AW-11536482334/prmlCIi8pcQcEJ6Ag_0q',
                             'value': 1.0,
@@ -1356,39 +1353,13 @@
                 }
             });
 
-            const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
-            waLinks.forEach(function(link) {
-                link.addEventListener('click', function() {
-                    // Facebook Pixel
-                    fbq('track', 'Lead', {
-                        content_name: 'WhatsApp Contact'
-                    });
-                    
-                    // Google Ads Conversion Tag
-                    gtag('event', 'conversion', {
-                        'send_to': 'AW-11536482334/prmlCIi8pcQcEJ6Ag_0q',
-                        'value': 1.0,
-                        'currency': 'USD'
-                    });
-                });
-            });
-            
-            const heroBtns = document.querySelectorAll('a[href="#pricing"]');
-            heroBtns.forEach(function(btn) {
-                btn.addEventListener('click', function() {
-                    fbq('track', 'ViewContent', {
-                        content_name: 'Scrolled to Pricing'
-                    });
-                });
-            });
-
             // Fetch IP location and set language
             fetch('https://get.geojs.io/v1/ip/country.json')
                 .then(response => response.json())
                 .then(data => {
                     currentCountry = data.country;
                     
-                    const spanishSpeakingCountries = ['AR', 'MX', 'ES', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'GT', 'CU', 'BO', 'DO', 'DO', 'HN', 'HN', 'PY', 'SV', 'SV', 'PY', 'NI', 'NI', 'CR', 'CR', 'CR', 'PA', 'PA', 'PR', 'UY'];
+                    const spanishSpeakingCountries = ['AR', 'MX', 'ES', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'PR', 'UY'];
                     
                     if (currentCountry === 'BR') {
                         setLang('pt');
