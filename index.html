@@ -4,6 +4,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>LFA - La Herramienta Definitiva para Organizadores</title>
+    <meta name="description" content="LFA: la plataforma todo-en-uno para organizadores de ligas y torneos de fútbol amateur. Fixture automático, llaves de playoffs, Face ID, página web pública de tu liga y app para jugadores. 30 días de prueba gratis.">
+    <meta property="og:title" content="LFA - La Herramienta Definitiva para Organizadores">
+    <meta property="og:description" content="Automatizá tu fixture en segundos, armá llaves de playoffs y dale a tu liga su propia página web. 30 días de prueba gratis.">
+    <meta property="og:image" content="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/LFA_transparent.png">
+    <meta property="og:type" content="website">
     <link href="https://fonts.googleapis.com/css2?family=Archivo+Narrow:ital,wght@0,400;0,700;1,400&family=Oswald:wght@700&display=swap" rel="stylesheet">
     <style>
         :root {
@@ -137,10 +142,23 @@
         .slogan {
             font-size: 1.5rem;
             font-weight: 700;
-            margin-bottom: 40px;
+            margin-bottom: 25px;
             border-left: 5px solid var(--sinergy-yellow);
             padding-left: 15px;
             color: #d1d1d1;
+        }
+
+        .trial-badge {
+            display: inline-block;
+            background-color: rgba(243, 221, 48, 0.12);
+            border: 1px solid var(--sinergy-yellow);
+            color: var(--sinergy-yellow);
+            font-family: 'Oswald', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            padding: 8px 16px;
+            margin-bottom: 30px;
+            font-size: 1rem;
         }
 
         .cta-btn {
@@ -165,7 +183,7 @@
         .cta-btn span { display: inline-block; transform: skewX(10deg); }
 
         .hero-image { flex: 1; display: flex; justify-content: center; }
-        .hero-image img { max-width: 90%; drop-shadow: 0 20px 30px rgba(0,0,0,0.5); }
+        .hero-image img { max-width: 90%; filter: drop-shadow(0 20px 30px rgba(0,0,0,0.5)); }
 
         /* Trusted Leagues Marquee */
         .trusted-leagues {
@@ -598,7 +616,7 @@
             </a>
             
             <a href="#pricing" class="btn-head-primary">
-                <span id="nav-subscribe">Iniciar Prueba</span>
+                <span id="nav-subscribe">Prueba Gratis 30 Días</span>
             </a>
 
             <div class="lang-toggle">
@@ -614,7 +632,9 @@
         <div class="hero-text">
             <h1 id="hero-title">REVOLUCIONANDO<br><span>EL FUTBOL AMATEUR</span></h1>
             <div class="slogan" id="hero-slogan">La plataforma todo-en-uno para organizadores de ligas amateur. Automatizá tu fixture en segundos y dale a tus jugadores una experiencia profesional.</div>
-            <a href="#pricing" class="cta-btn"><span id="hero-cta">Iniciar Prueba</span></a>
+            <div class="trial-badge" id="hero-trial-badge">✓ 30 días de prueba gratis</div>
+            <br>
+            <a href="#pricing" class="cta-btn"><span id="hero-cta">Iniciar Prueba Gratis</span></a>
         </div>
         <div class="hero-image">
             <img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/CAPI.png" alt="Capi Avatar Pointing">
@@ -623,7 +643,7 @@
 
     <section class="trusted-leagues">
         <h3 id="trusted-title" class="brand-font">Ligas que ya confían en nosotros</h3>
-        <p id="trusted-subtitle" class="trusted-subtitle"></p>
+        <p id="trusted-subtitle" class="trusted-subtitle">Hacé clic en cualquier liga para ver su página web pública en acción</p>
         <div class="marquee-container">
             <div class="marquee-track">
                 <a href="https://app.ligasfutbolamateur.com/torneos-mendoza" target="_blank" class="league-logo" title="Torneos Mendoza">
@@ -689,7 +709,7 @@
             <div class="card">
                 <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/games_schedule%20(1).png" alt="FIXTURE INTELIGENTE"></div>
                 <h3 class="card-title brand-font" id="c-fixture-title">FIXTURE INTELIGENTE</h3>
-                <p class="card-desc" id="c-fixture-desc">Un fixture inteligente, arma todos los partidos de tus torneos en un segundo, con herramientas de edicion masiva.</p>
+                <p class="card-desc" id="c-fixture-desc">Doble poder: el Fixture Inteligente genera todos los partidos en un segundo y el Fixture Avanzado te da control total del calendario.</p>
                 <a href="#fixture" class="card-link" id="c-fixture-link">Ver Fixture ➔</a>
             </div>
             <div class="card">
@@ -703,6 +723,18 @@
                 <h3 class="card-title brand-font" id="c-face-title">FACE ID</h3>
                 <p class="card-desc" id="c-face-desc">Verificá la identidad digital de cada jugador en segundos y terminá con las suplantaciones en tus torneos.</p>
                 <a href="#face" class="card-link" id="c-face-link">Ver Face ID ➔</a>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/playoffs%20draws%20capi.png" alt="LLAVES DE PLAYOFFS"></div>
+                <h3 class="card-title brand-font" id="c-playoffs-title">LLAVES DE PLAYOFFS</h3>
+                <p class="card-desc" id="c-playoffs-desc">Armá llaves de playoffs visuales en segundos. Eliminación directa o series de ida y vuelta, el formato lo elegís vos.</p>
+                <a href="#playoffs" class="card-link" id="c-playoffs-link">Ver Playoffs ➔</a>
+            </div>
+            <div class="card">
+                <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi%20suspended.png" alt="SISTEMA DE SUSPENSIONES"></div>
+                <h3 class="card-title brand-font" id="c-susp-title">SUSPENSIONES</h3>
+                <p class="card-desc" id="c-susp-desc">Control exacto de cada fecha de sanción de cada jugador, en todos tus torneos, con descuento automático.</p>
+                <a href="#suspensiones" class="card-link" id="c-susp-link">Ver Suspensiones ➔</a>
             </div>
             <div class="card">
                 <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/player%20profile.png" alt="PERFIL JUGADOR"></div>
@@ -723,11 +755,12 @@
                 <a href="#exportaciones" class="card-link" id="c-export-link">Ver Exportaciones ➔</a>
             </div>
             <div class="card">
-                <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi_player_app.jpeg" alt="LFA PLAYER APP"></div>
-                <h3 class="card-title brand-font" id="c-player-title">LFA PLAYER APP</h3>
-                <p class="card-desc" id="c-player-desc">La aplicación móvil exclusiva para tus usuarios. Tus jugadores siguen sus estadísticas y resultados al instante.</p>
-                <a href="#player" class="card-link" id="c-player-link">Ver App Móvil ➔</a>
+                <div class="card-image"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi%20public%20page.png" alt="PÁGINA WEB PÚBLICA"></div>
+                <h3 class="card-title brand-font" id="c-web-title">PÁGINA WEB PÚBLICA</h3>
+                <p class="card-desc" id="c-web-desc">La página web de tu liga, con tu marca. Tablas, fixture y estadísticas accesibles desde cualquier navegador, sin descargas.</p>
+                <a href="#pagina-publica" class="card-link" id="c-web-link">Ver Página Web ➔</a>
             </div>
+          
         </div>
     </section>
    
@@ -745,6 +778,7 @@
             <h2 id="f-fixture-title">Fixture Inteligente</h2>
             <p id="f-fixture-desc1">Entendemos lo importante que es la coordinacion de partidos en un torneo, poder gestionar los horarios, las sedes, las distintas canchas y los imprevistos de ultimo minuto. Por eso, no solo contamos con un fixture que puede generarte todos los partidos, de manera automatica, instantaneamente. Pero sino ademas que pueda adaptarse a cambios de una manera sencilla y rapida, dandote la flexibilidad que vos y tus equipos necesitan.</p>
             <p id="f-fixture-desc2">Arma tu torneo completo en cuestión de segundos.</p>
+            <p id="f-fixture-desc3">¿Necesitás control total? El Fixture Avanzado te da flexibilidad completa para armar y ajustar el calendario partido por partido: horarios, canchas, sedes y cruces, exactamente como los necesitás.</p>
         </div>
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/games_schedule%20(1).png" alt="Fixture"></div>
     </section>
@@ -763,6 +797,22 @@
             <p id="f-face-desc1">¿El jugador realmente esta habilitado para jugar? ¿Se encuentra suspendido, esta registrado o tiene el minimo de partidos para participar en los playoffs? Es el dia del partido y tenes que habilitar a muchisimos jugadores en distintas canchas, incluso quizas en distintas sedes. Con LFA FACE ID simplemente escaneas al jugador y nuestro sistema de reconocimiento facial verifica si esta habilitado para jugar.</p>
         </div>
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/Face%20ID.jpeg" alt="Face ID"></div>
+    </section>
+
+    <section id="playoffs" class="feature-row">
+        <div class="feature-text">
+            <h2 id="f-playoffs-title">LLAVES DE PLAYOFFS</h2>
+            <p id="f-playoffs-desc1">Llega la etapa decisiva y la emoción se multiplica. Armá llaves de playoffs visuales que tus jugadores pueden seguir ronda por ronda: eliminación directa o series de ida y vuelta, con cruces automáticos según la tabla o definidos a tu manera. El cuadro se actualiza solo con cada resultado y tus jugadores lo ven al instante en la app y en la página web de tu liga.</p>
+        </div>
+        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/playoffs%20draws%20capi.png" alt="Llaves de Playoffs"></div>
+    </section>
+
+    <section id="suspensiones" class="feature-row">
+        <div class="feature-text">
+            <h2 id="f-susp-title">SISTEMA DE SUSPENSIONES</h2>
+            <p id="f-susp-desc1">¿Cuántas fechas de sanción le quedan? ¿La suspensión aplica solo a este torneo o a todos? Nuestro sistema de suspensiones lleva el control exacto de cada partido que un jugador debe cumplir, a través de todos tus torneos. Las sanciones se descuentan automáticamente fecha a fecha y se integran con Face ID: si el jugador está suspendido, el sistema lo marca como inhabilitado al instante.</p>
+        </div>
+        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi%20suspended.png" alt="Sistema de Suspensiones"></div>
     </section>
 
     <section id="jugador" class="feature-row">
@@ -791,14 +841,15 @@
         <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/data_exports.png" alt="Exportaciones"></div>
     </section>
 
-       <section id="player" class="feature-row">
+    <section id="pagina-publica" class="feature-row">
         <div class="feature-text">
-            <h2 id="f-player-title">LFA Player: El Servicio para tus Clientes</h2>
-            <p id="f-player-desc1">Sabemos la pasion con la que el jugador amateur vive el futbol, el sentido de pertenecia que tiene con su equipo y el torneo. El partido no es solo cuando esta en la cancha, esta pendiente toda la semana, siguiendo las estadisticas, viendo con quien juegan, como estan en la tabla, cuantos goles hizo, cuando es el proximo partido. Por eso, cuando desarrollamos LFA Player, pensamos en todo esto porque cuando tus jugadores no estan en el predio, tambien estan jugando.</p>
-            <p id="f-player-desc2">Ellos instalan la aplicación en sus celulares para ver la tabla de goleadores, el fixture de la próxima fecha, las vallas invictas y todas las estadísticas de tus torneos.</p>
+            <h2 id="f-web-title">TU LIGA, TU PÁGINA WEB</h2>
+            <p id="f-web-desc1">Cada liga tiene su propia página web pública con tu logo, tus colores y tu identidad. Tus jugadores, sus familias y los equipos que quieran sumarse acceden desde cualquier navegador, sin descargar nada: tablas de posiciones, fixture, goleadores, llaves de playoffs y todas las estadísticas de tus torneos.</p>
+            <p id="f-web-desc2">Compartí el link en tus redes y dale a tu torneo la presencia profesional que se merece. Las ligas del carrusel de arriba ya la usan: hacé clic en cualquiera y mirala en acción.</p>
         </div>
-        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi_player_app.jpeg" alt="Capi using LFA Player App"></div>
+        <div class="feature-media"><img src="https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/capi%20public%20page.png" alt="Página Web Pública de la Liga"></div>
     </section>
+
 
     <section id="pricing" style="padding: 100px 5%; background-color: var(--foul-black); text-align: center;">
         <h2 id="pricing-title" style="font-size: 3.5rem; color: var(--sinergy-yellow); margin-bottom: 20px; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase;">Unite a la Revolución</h2>
@@ -822,7 +873,7 @@
                 <p id="dyn-t1-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Valor por mes.</p>
                 
                 <ul class="pricing-features-list" id="t1-features">
-                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>
+                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>Página Web Pública de tu Liga</li><li>App Móvil para Jugadores</li><li>Fixture Inteligente y Avanzado</li><li>Edición Masiva</li><li>Sistema de Suspensiones</li><li>Face ID</li><li>Llaves de Playoffs (ida y vuelta)</li>
                 </ul>
                 
                 <a href="https://portal.ligasfutbolamateur.com/es/?signup=1" id="dyn-t1-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
@@ -835,7 +886,7 @@
                 <p id="dyn-t2-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Valor Semestral US$ 48.</p>
                 
                 <ul class="pricing-features-list" id="t2-features">
-                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>
+                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>Página Web Pública de tu Liga</li><li>App Móvil para Jugadores</li><li>Fixture Inteligente y Avanzado</li><li>Edición Masiva</li><li>Sistema de Suspensiones</li><li>Face ID</li><li>Llaves de Playoffs (ida y vuelta)</li>
                 </ul>
                 
                 <a href="https://portal.ligasfutbolamateur.com/es/?signup=1" id="dyn-t2-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
@@ -848,7 +899,7 @@
                 <p id="dyn-t3-sub" style="color: var(--text-muted); margin-bottom: 30px; font-size: 0.95rem; min-height: 40px;">Valor anual US$ 72.</p>
                 
                 <ul class="pricing-features-list" id="t3-features">
-                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>
+                    <li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>Página Web Pública de tu Liga</li><li>App Móvil para Jugadores</li><li>Fixture Inteligente y Avanzado</li><li>Edición Masiva</li><li>Sistema de Suspensiones</li><li>Face ID</li><li>Llaves de Playoffs (ida y vuelta)</li>
                 </ul>
                 
                 <a href="https://portal.ligasfutbolamateur.com/es/?signup=1" id="dyn-t3-btn" style="background-color: var(--sinergy-yellow); color: var(--thunder-black); padding: 15px; font-size: 1.1rem; font-family: 'VTF Gladius', 'Oswald', sans-serif; text-transform: uppercase; text-decoration: none; border-radius: 5px; display: block; font-weight: bold; text-align: center; transition: all 0.3s ease;">Suscribirme</a>
@@ -894,12 +945,13 @@
         const translations = {
             es: {
                 "nav-login": "Login Admin",
-                "nav-subscribe": "Iniciar Prueba",
+                "nav-subscribe": "Prueba Gratis 30 Días",
                 "hero-title": "REVOLUCIONANDO<br><span>EL FUTBOL AMATEUR</span>",
                 "hero-slogan": "La plataforma todo-en-uno para organizadores de ligas amateur. Automatizá tu fixture en segundos y dale a tus jugadores una experiencia profesional.",
-                "hero-cta": "Iniciar Prueba",
+                "hero-trial-badge": "✓ 30 días de prueba gratis",
+                "hero-cta": "Iniciar Prueba Gratis",
                 "trusted-title": "Ligas que ya confían en nosotros",
-                "trusted-subtitle": "",
+                "trusted-subtitle": "Hacé clic en cualquier liga para ver su página web pública en acción",
                 "lfa-title": "REVOLUCIONA TU TORNEO",
                 "lfa-desc1": "No se trata solo de administrar, LFA no es solo una herramienta, <strong>es una solucion</strong>. Armar el fixture para tantos equipos, coordinar horarios, sedes, tener que acomodar imprevistos, no es facil y lo sabemos. No venimos a ofrecerte un sistema para que simplemente administres tus torneos, te ofrecemos una solucion a tus problemas, <strong>una plataforma que te apoya y asiste en cada punto critico de tu organizacion</strong>. Desde la interfaz hasta el soporte, LFA esta ahi para brindarte soluciones, es mucho mas que una aplicacion.",
                 "lfa-desc2": "Vos disfrutas y tus jugadores tambien.",
@@ -908,7 +960,7 @@
                 "c-admin-desc": "Tu panel de control integral. Crea torneos, genera fixtures automáticamente y administra todos tus equipos desde un solo lugar.",
                 "c-admin-link": "Ver Web App ➔",
                 "c-fixture-title": "FIXTURE INTELIGENTE",
-                "c-fixture-desc": "Un fixture inteligente, arma todos los partidos de tus torneos en un segundo, con herramientas de edicion masiva.",
+                "c-fixture-desc": "Doble poder: el Fixture Inteligente genera todos los partidos en un segundo y el Fixture Avanzado te da control total del calendario.",
                 "c-fixture-link": "Ver Fixture ➔",
                 "c-db-title": "TIEMPO REAL",
                 "c-db-desc": "Base de datos en tiempo real, toda la informacion de tus torneos disponible para tus jugadores de manera instantanea.",
@@ -916,6 +968,15 @@
                 "c-face-title": "FACE ID",
                 "c-face-desc": "Verificá la identidad digital de cada jugador en segundos y terminá con las suplantaciones en tus torneos.",
                 "c-face-link": "Ver Face ID ➔",
+                "c-playoffs-title": "LLAVES DE PLAYOFFS",
+                "c-playoffs-desc": "Armá llaves de playoffs visuales en segundos. Eliminación directa o series de ida y vuelta, el formato lo elegís vos.",
+                "c-playoffs-link": "Ver Playoffs ➔",
+                "c-susp-title": "SUSPENSIONES",
+                "c-susp-desc": "Control exacto de cada fecha de sanción de cada jugador, en todos tus torneos, con descuento automático.",
+                "c-susp-link": "Ver Suspensiones ➔",
+                "c-web-title": "PÁGINA WEB PÚBLICA",
+                "c-web-desc": "La página web de tu liga, con tu marca. Tablas, fixture y estadísticas accesibles desde cualquier navegador, sin descargas.",
+                "c-web-link": "Ver Página Web ➔",
                 "c-perfil-title": "PERFIL JUGADOR",
                 "c-perfil-desc": "Un perfil único para cada jugador con sus estadísticas personales, historial de partidos y fotos.",
                 "c-perfil-link": "Ver Perfil Jugador ➔",
@@ -934,16 +995,24 @@
                 "f-fixture-title": "Fixture Inteligente",
                 "f-fixture-desc1": "Entendemos lo importante que es la coordinacion de partidos en un torneo, poder gestionar los horarios, las sedes, las distintas canchas y los imprevistos de ultimo minuto. Por eso, no solo contamos con un fixture que puede generarte todos los partidos, de manera automatica, instantaneamente. Pero sino ademas que pueda adaptarse a cambios de una manera sencilla y rapida, dandote la flexibilidad que vos y tus equipos necesitan.",
                 "f-fixture-desc2": "Arma tu torneo completo en cuestión de segundos.",
+                "f-fixture-desc3": "¿Necesitás control total? El Fixture Avanzado te da flexibilidad completa para armar y ajustar el calendario partido por partido: horarios, canchas, sedes y cruces, exactamente como los necesitás.",
                 "f-db-title": "BASE DE DATOS",
                 "f-db-desc1": "La infraestructura es clave para una plataforma robusta, y la base de datos es una pieza fundamental, por eso contamos con una base de datos en tiempo real. Haces un click, actualizas una estadistica, suspendes un partido y absolutamente todo se actualiza de manera instantanea en la applicacion de administrador y de jugador. Esto significa que tus jugadores estan informados al instante de toda la informacion de tus torneos.",
                 "f-face-title": "FACE ID",
                 "f-face-desc1": "¿El jugador realmente esta habilitado para jugar? ¿Se encuentra suspendido, esta registrado o tiene el minimo de partidos para participar en los playoffs? Es el dia del partido y tenes que habilitar a muchisimos jugadores en distintas canchas, incluso quizas en distintas sedes. Con LFA FACE ID simplemente escaneas al jugador y nuestro sistema de reconocimiento facial verifica si esta habilitado para jugar.",
+                "f-playoffs-title": "LLAVES DE PLAYOFFS",
+                "f-playoffs-desc1": "Llega la etapa decisiva y la emoción se multiplica. Armá llaves de playoffs visuales que tus jugadores pueden seguir ronda por ronda: eliminación directa o series de ida y vuelta, con cruces automáticos según la tabla o definidos a tu manera. El cuadro se actualiza solo con cada resultado y tus jugadores lo ven al instante en la app y en la página web de tu liga.",
+                "f-susp-title": "SISTEMA DE SUSPENSIONES",
+                "f-susp-desc1": "¿Cuántas fechas de sanción le quedan? ¿La suspensión aplica solo a este torneo o a todos? Nuestro sistema de suspensiones lleva el control exacto de cada partido que un jugador debe cumplir, a través de todos tus torneos. Las sanciones se descuentan automáticamente fecha a fecha y se integran con Face ID: si el jugador está suspendido, el sistema lo marca como inhabilitado al instante.",
                 "f-perfil-title": "PERFIL JUGADOR",
                 "f-perfil-desc1": "El jugador amateur es unico y un fanatico de su equipo y de sus estadisticas, por eso tiene un perfil hecho a medida de sus exigencias.",
                 "f-ediciones-title": "EDICIONES MASIVAS",
                 "f-ediciones-desc1": "Se suspende una fecha por lluvia, se baja un equipo a ultimo momento, una cancha o sede no esta disponible y muchos imprevistos mas que pueden suceder. Para esos momentos necesitas una solucion a medida, que te permita realizar cambios en cientos de partidos al mismo tiempo, poder cambiar horarios, canchas, equipos en tiempo real en simultaneo. Nuestras herramientas de edicion masiva te permiten todo eso y hacen que estos problemas no afecten la operativa de tus torneos.",
                 "f-export-title": "EXPORTACION DE PLANILLAS",
                 "f-export-desc1": "De la nube al papel, exporta toda la info que necesites para compartir con veedores, arbitros, jugadores. Desde el fixture completo, a planillas de partidos, carnets de jugadores, tablas de goleadores, etc.",
+                "f-web-title": "TU LIGA, TU PÁGINA WEB",
+                "f-web-desc1": "Cada liga tiene su propia página web pública con tu logo, tus colores y tu identidad. Tus jugadores, sus familias y los equipos que quieran sumarse acceden desde cualquier navegador, sin descargar nada: tablas de posiciones, fixture, goleadores, llaves de playoffs y todas las estadísticas de tus torneos.",
+                "f-web-desc2": "Compartí el link en tus redes y dale a tu torneo la presencia profesional que se merece. Las ligas del carrusel de arriba ya la usan: hacé clic en cualquiera y mirala en acción.",
                 "f-player-title": "LFA Player: El Servicio para tus Clientes",
                 "f-player-desc1": "Sabemos la pasion con la que el jugador amateur vive el futbol, el sentido de pertenecia que tiene con su equipo y el torneo. El partido no es solo cuando esta en la cancha, esta pendiente toda la semana, siguiendo las estadisticas, viendo con quien juegan, como estan en la tabla, cuantos goles hizo, cuando es el proximo partido. Por eso, cuando desarrollamos LFA Player, pensamos en todo esto porque cuando tus jugadores no estan en el predio, tambien estan jugando.",
                 "f-player-desc2": "Ellos instalan la aplicación en sus celulares para ver la tabla de goleadores, el fixture de la próxima fecha, las vallas invictas y todas las estadísticas de tus torneos.",
@@ -962,8 +1031,8 @@
                 "t1-title": "Mensual",
                 "t2-title": "Semestral",
                 "t3-title": "Anual",
-                "pricing-features": "<li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>App Móvil para Jugadores</li><li>Fixture y Edición Masiva</li><li>Face ID</li><li>Llaves de Playoffs</li>",
-                "pricing-contact": "",
+                "pricing-features": "<li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>Página Web Pública de tu Liga</li><li>App Móvil para Jugadores</li><li>Fixture Inteligente y Avanzado</li><li>Edición Masiva</li><li>Sistema de Suspensiones</li><li>Face ID</li><li>Llaves de Playoffs (ida y vuelta)</li>",
+                "pricing-contact": "o hablá con nuestro equipo",
                 "lbl-under30": "Hasta 30 equipos",
                 "lbl-over30": "+30 Equipos",
                 
@@ -973,18 +1042,19 @@
                 "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Iniciar Teste",
                 "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste",
 
-                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Valor por mes.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Valor Semestral US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Valor anual US$ 72.", "dyn-row-btn-under30": "Iniciar Prueba",
-                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Iniciar Prueba",
+                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Valor por mes.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Valor Semestral US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Valor anual US$ 72.", "dyn-row-btn-under30": "Iniciar Prueba Gratis",
+                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Valor por mes.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Valor Semestral US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Valor anual US$ 144.", "dyn-row-btn-over30": "Iniciar Prueba Gratis",
                 "wa-prefill": "Hola,%20quiero%20información%20sobre%20LFA%20para%20organizar%20mi%20torneo."
             },
             en: {
                 "nav-login": "Admin Login",
-                "nav-subscribe": "Subscribe Now",
+                "nav-subscribe": "30-Day Free Trial",
                 "hero-title": "REVOLUTIONIZING<br><span>AMATEUR SOCCER</span>",
                 "hero-slogan": "The all-in-one platform for amateur league organizers. Automate your fixture in seconds and give your players a professional experience.",
-                "hero-cta": "Subscribe Now",
+                "hero-trial-badge": "✓ 30-day free trial",
+                "hero-cta": "Start Free Trial",
                 "trusted-title": "Leagues already trusting us",
-                "trusted-subtitle": "",
+                "trusted-subtitle": "Click any league to see their public web page in action",
                 "lfa-title": "REVOLUTIONIZE YOUR TOURNAMENT",
                 "lfa-desc1": "It's not just about managing; LFA is not just a tool, <strong>it's a solution</strong>. Creating fixtures for so many teams, coordinating schedules, venues, and dealing with unforeseen events is not easy, and we know it. We are not here to offer you a system just to manage your tournaments; we offer a solution to your problems, <strong>a platform that supports and assists you at every critical point of your organization</strong>. From the interface to customer support, LFA is there to provide solutions; it's much more than an application.",
                 "lfa-desc2": "You enjoy it, and your players do too.",
@@ -993,7 +1063,7 @@
                 "c-admin-desc": "Your comprehensive control panel. Create tournaments, automatically generate fixtures, and manage all your teams from a single place.",
                 "c-admin-link": "View Web App ➔",
                 "c-fixture-title": "SMART FIXTURE",
-                "c-fixture-desc": "A smart fixture; set up all your tournament matches in a second, with mass editing tools.",
+                "c-fixture-desc": "Double power: the Smart Fixture generates every match in one second, and the Advanced Fixture gives you full control of the schedule.",
                 "c-fixture-link": "View Fixture ➔",
                 "c-db-title": "REAL TIME DATABASE",
                 "c-db-desc": "Real-time database; all your tournament information available to your players instantly.",
@@ -1001,6 +1071,15 @@
                 "c-face-title": "FACE ID",
                 "c-face-desc": "Verify every player's digital identity in seconds and end impersonations in your tournaments.",
                 "c-face-link": "View Face ID ➔",
+                "c-playoffs-title": "PLAYOFFS DRAW",
+                "c-playoffs-desc": "Build visual playoff brackets in seconds. Single elimination or home-and-away series — you choose the format.",
+                "c-playoffs-link": "View Playoffs ➔",
+                "c-susp-title": "SUSPENSIONS",
+                "c-susp-desc": "Exact tracking of every suspended game for every player, across all your tournaments, with automatic countdown.",
+                "c-susp-link": "View Suspensions ➔",
+                "c-web-title": "PUBLIC WEB PAGE",
+                "c-web-desc": "Your league's own web page, fully branded. Standings, fixtures, and stats accessible from any browser — no downloads.",
+                "c-web-link": "View Web Page ➔",
                 "c-perfil-title": "PLAYER PROFILE",
                 "c-perfil-desc": "A unique profile for each player with their personal stats, match history, and photos.",
                 "c-perfil-link": "View Player Profile ➔",
@@ -1019,16 +1098,24 @@
                 "f-fixture-title": "Smart Fixture",
                 "f-fixture-desc1": "We understand how important match coordination is in a tournament—managing schedules, venues, different pitches, and last-minute unforeseen events. That's why we not only have a fixture that can generate all matches automatically and instantly, but it can also adapt to changes simply and quickly, giving you the flexibility you and your teams need.",
                 "f-fixture-desc2": "Set up your entire tournament in a matter of seconds.",
+                "f-fixture-desc3": "Need full control? The Advanced Fixture gives you complete flexibility to build and adjust the schedule match by match: times, pitches, venues, and matchups, exactly the way you need them.",
                 "f-db-title": "DATABASE",
                 "f-db-desc1": "Infrastructure is key for a robust platform, and the database is a fundamental piece. That's why we have a real-time database. Make a click, update a stat, suspend a match, and absolutely everything updates instantly in both the admin and player apps. This means your players are instantly informed of all your tournament information.",
                 "f-face-title": "FACE ID",
                 "f-face-desc1": "Is the player really eligible to play? Are they suspended, registered, or do they have the minimum matches to participate in the playoffs? It's match day, and you have to clear many players across different pitches or venues. With LFA FACE ID, you simply scan the player, and our facial recognition system verifies if they are cleared to play.",
+                "f-playoffs-title": "PLAYOFFS DRAW",
+                "f-playoffs-desc1": "The decisive stage arrives and the excitement multiplies. Build visual playoff brackets your players can follow round by round: single elimination or home-and-away series, with matchups seeded automatically from the standings or defined your way. The bracket updates itself with every result, and your players see it instantly in the app and on your league's web page.",
+                "f-susp-title": "SUSPENSIONS SYSTEM",
+                "f-susp-desc1": "How many suspended games are left? Does the ban apply to this tournament or all of them? Our suspensions system keeps exact track of every match a player must serve, across all your tournaments. Suspensions count down automatically matchday by matchday and integrate with Face ID: if a player is suspended, the system flags them as ineligible instantly.",
                 "f-perfil-title": "PLAYER PROFILE",
                 "f-perfil-desc1": "The amateur player is unique and a fan of their team and their stats, which is why they have a profile tailored to their demands.",
                 "f-ediciones-title": "MASS EDITIONS",
                 "f-ediciones-desc1": "A matchday is suspended due to rain, a team drops out at the last minute, a pitch is unavailable, and many more unforeseen events can happen. For those moments, you need a custom solution that allows you to make changes to hundreds of matches at the same time—changing schedules, pitches, and teams simultaneously in real-time. Our mass editing tools allow you to do all of this, ensuring these problems don't affect your tournament operations.",
                 "f-export-title": "SPREADSHEET EXPORT",
                 "f-export-desc1": "From the cloud to paper, export all the info you need to share with observers, referees, and players. From the complete fixture to match sheets, player cards, top scorer tables, etc.",
+                "f-web-title": "YOUR LEAGUE, YOUR WEB PAGE",
+                "f-web-desc1": "Every league gets its own public web page with your logo, your colors, and your identity. Your players, their families, and teams looking to join can access it from any browser, with nothing to download: standings, fixtures, top scorers, playoff brackets, and every stat from your tournaments.",
+                "f-web-desc2": "Share the link on your social media and give your tournament the professional presence it deserves. The leagues in the carousel above already use it — click any of them to see it live.",
                 "f-player-title": "LFA Player: The Service for Your Clients",
                 "f-player-desc1": "We know the passion with which the amateur player lives soccer, the sense of belonging they have with their team and the tournament. The match isn't just when they are on the pitch; they are engaged all week, following stats, seeing who they play next, checking the standings, counting their goals, and anticipating the next match. That's why, when we developed LFA Player, we thought of all this—because when your players aren't at the facility, they are still playing.",
                 "f-player-desc2": "They install the app on their phones to view the top scorers table, the next matchday fixture, clean sheets, and all your tournament statistics.",
@@ -1047,29 +1134,30 @@
                 "t1-title": "Monthly",
                 "t2-title": "Semi-Annual",
                 "t3-title": "Annual",
-                "pricing-features": "<li>Admin Web App</li><li>Unlimited Tournaments</li><li>Player Mobile App</li><li>Smart Fixture & Mass Editing</li><li>Face ID</li><li>Playoffs Draw</li>",
-                "pricing-contact": "",
+                "pricing-features": "<li>Admin Web App</li><li>Unlimited Tournaments</li><li>Branded Public Web Page</li><li>Player Mobile App</li><li>Smart & Advanced Fixture</li><li>Mass Editing</li><li>Suspensions System</li><li>Face ID</li><li>Playoffs Draw (home & away)</li>",
+                "pricing-contact": "or talk to our team",
                 "lbl-under30": "Up to 30 Teams",
                 "lbl-over30": "30+ Teams",
                 
                 "dyn-ar-price-under30": "Consult", "dyn-ar-sub-under30": "Custom Onboarding", "dyn-ar-btn-under30": "Contact Us",
                 "dyn-ar-price-over30": "Consult", "dyn-ar-sub-over30": "Custom plans for large leagues", "dyn-ar-btn-over30": "Talk to Sales",
                 
-                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Monthly via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Single payment of R$ 420", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Single payment of R$ 480", "dyn-br-btn-under30": "Subscribe Now",
-                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Monthly via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Single payment of R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Single payment of R$ 780", "dyn-br-btn-over30": "Subscribe Now",
+                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Monthly via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Single payment of R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Single payment of R$ 420", "dyn-br-btn-under30": "Start Free Trial",
+                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Monthly via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Single payment of R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Single payment of R$ 780", "dyn-br-btn-over30": "Start Free Trial",
 
-                "dyn-row-t1-price-under30": "US$ 49", "dyn-row-t1-sub-under30": "Billed monthly.", "dyn-row-t2-price-under30": "US$ 44", "dyn-row-t2-sub-under30": "Billed as US$ 264.", "dyn-row-t3-price-under30": "US$ 32", "dyn-row-t3-sub-under30": "Billed as US$ 384.", "dyn-row-btn-under30": "Subscribe Now",
-                "dyn-row-t1-price-over30": "US$ 89", "dyn-row-t1-sub-over30": "Billed monthly.", "dyn-row-t2-price-over30": "US$ 79", "dyn-row-t2-sub-over30": "Billed as US$ 474.", "dyn-row-t3-price-over30": "US$ 64", "dyn-row-t3-sub-over30": "Billed as US$ 768.", "dyn-row-btn-over30": "Subscribe Now",
+                "dyn-row-t1-price-under30": "US$ 49", "dyn-row-t1-sub-under30": "Billed monthly.", "dyn-row-t2-price-under30": "US$ 44", "dyn-row-t2-sub-under30": "Billed as US$ 264.", "dyn-row-t3-price-under30": "US$ 32", "dyn-row-t3-sub-under30": "Billed as US$ 384.", "dyn-row-btn-under30": "Start Free Trial",
+                "dyn-row-t1-price-over30": "US$ 89", "dyn-row-t1-sub-over30": "Billed monthly.", "dyn-row-t2-price-over30": "US$ 79", "dyn-row-t2-sub-over30": "Billed as US$ 474.", "dyn-row-t3-price-over30": "US$ 64", "dyn-row-t3-sub-over30": "Billed as US$ 768.", "dyn-row-btn-over30": "Start Free Trial",
                 "wa-prefill": "Hi,%20I%20would%20like%20more%20information%20about%20LFA%20for%20my%20tournament."
             },
             pt: {
                 "nav-login": "Login Admin",
-                "nav-subscribe": "Quero Assinar",
+                "nav-subscribe": "30 Dias Grátis",
                 "hero-title": "REVOLUCIONANDO<br><span>O FUTEBOL AMADOR</span>",
                 "hero-slogan": "A plataforma completa para organizadores de ligas amadoras. Automatize sua tabela em segundos e dê aos seus jogadores uma experiência profissional.",
-                "hero-cta": "Quero Assinar",
+                "hero-trial-badge": "✓ 30 dias de teste grátis",
+                "hero-cta": "Iniciar Teste Grátis",
                 "trusted-title": "Ligas que já confiam em nós",
-                "trusted-subtitle": "",
+                "trusted-subtitle": "Clique em qualquer liga para ver sua página web pública em ação",
                 "lfa-title": "REVOLUCIONE SEU TORNEO",
                 "lfa-desc1": "Não se trata apenas de administrar; o LFA não é apenas uma ferramenta, <strong>é uma solução</strong>. Montar a tabela para tantas equipes, coordenar horários, sedes e lidar com imprevistos não é fácil e nós sabemos disso. Não estamos aqui para oferecer um sistema apenas para administrar seus torneios; oferecemos uma solução para seus problemas, <strong>uma plataforma que apoia e auxilia em cada ponto crítico da sua organização</strong>. Desde a interface até o suporte ao cliente, o LFA está lá para fornecer soluções; é muito mais do que um aplicativo.",
                 "lfa-desc2": "Você aproveita, e seus jogadores também.",
@@ -1078,7 +1166,7 @@
                 "c-admin-desc": "Seu painel de controle completo. Crie torneios, gere tabelas automaticamente e gerencie todas as suas equipes em um só lugar.",
                 "c-admin-link": "Ver Web App ➔",
                 "c-fixture-title": "TABELA INTELIGENTE",
-                "c-fixture-desc": "Uma tabela inteligente; organize todos os jogos do seu torneio em um segundo, com ferramentas de edição em massa.",
+                "c-fixture-desc": "Poder em dobro: a Tabela Inteligente gera todos os jogos em um segundo e a Tabela Avançada dá controle total do calendário.",
                 "c-fixture-link": "Ver Tabela ➔",
                 "c-db-title": "TEMPO REAL",
                 "c-db-desc": "Banco de dados em tempo real; todas as informações do seu torneio disponíveis para seus jogadores instantaneamente.",
@@ -1086,6 +1174,15 @@
                 "c-face-title": "FACE ID",
                 "c-face-desc": "Verifique a identidade digital de cada jogador em segundos e acabe com as falsificações em seus torneios.",
                 "c-face-link": "Ver Face ID ➔",
+                "c-playoffs-title": "MATA-MATA",
+                "c-playoffs-desc": "Monte chaveamentos visuais em segundos. Eliminação direta ou confrontos de ida e volta — você escolhe o formato.",
+                "c-playoffs-link": "Ver Mata-Mata ➔",
+                "c-susp-title": "SUSPENSÕES",
+                "c-susp-desc": "Controle exato de cada jogo de suspensão de cada jogador, em todos os seus torneios, com desconto automático.",
+                "c-susp-link": "Ver Suspensões ➔",
+                "c-web-title": "PÁGINA WEB PÚBLICA",
+                "c-web-desc": "A página web da sua liga, com a sua marca. Classificação, tabela e estatísticas acessíveis de qualquer navegador, sem downloads.",
+                "c-web-link": "Ver Página Web ➔",
                 "c-perfil-title": "PERFIL DO JOGADOR",
                 "c-perfil-desc": "Um perfil exclusivo para cada jogador com suas estatísticas pessoais, histórico de partidas e fotos.",
                 "c-perfil-link": "Ver Perfil do Jogador ➔",
@@ -1104,16 +1201,24 @@
                 "f-fixture-title": "Tabela Inteligente",
                 "f-fixture-desc1": "Entendemos o quão importante é a coordenação das partidas em um torneio — gerenciar horários, sedes, diferentes campos e imprevistos de última hora. É por isso que não só temos uma tabela que pode gerar todas as partidas de forma automática e instantânea, mas também pode se adaptar às mudanças de forma simples e rápida, dando-lhe a flexibilidade que você e suas equipes precisam.",
                 "f-fixture-desc2": "Monte seu torneio completo em questão de segundos.",
+                "f-fixture-desc3": "Precisa de controle total? A Tabela Avançada oferece flexibilidade completa para montar e ajustar o calendário jogo a jogo: horários, campos, sedes e confrontos, exatamente como você precisa.",
                 "f-db-title": "BANCO DE DADOS",
                 "f-db-desc1": "A infraestrutura é fundamental para uma plataforma robusta, e o banco de dados é uma peça essencial. É por isso que temos um banco de dados em tempo real. Você dá um clique, atualiza uma estatística, suspende uma partida e absolutamente tudo se atualiza instantaneamente no aplicativo do administrador e do jogador. Isso significa que seus jogadores são informados na hora sobre todas as informações do seu torneio.",
                 "f-face-title": "FACE ID",
                 "f-face-desc1": "O jogador está realmente apto para jogar? Ele está suspenso, registrado ou tem o mínimo de partidas para participar dos playoffs? É dia de jogo e você precisa liberar muitos jogadores em diferentes campos ou sedes. Com o LFA FACE ID, você simplesmente escaneia o jogador e nosso sistema de reconhecimento facial verifica se ele está liberado para jogar.",
+                "f-playoffs-title": "MATA-MATA",
+                "f-playoffs-desc1": "Chega a fase decisiva e a emoção se multiplica. Monte chaveamentos visuais que seus jogadores podem acompanhar rodada a rodada: eliminação direta ou confrontos de ida e volta, com cruzamentos automáticos pela classificação ou definidos do seu jeito. O chaveamento se atualiza sozinho a cada resultado, e seus jogadores veem tudo na hora no aplicativo e na página web da sua liga.",
+                "f-susp-title": "SISTEMA DE SUSPENSÕES",
+                "f-susp-desc1": "Quantos jogos de suspensão ainda faltam? A punição vale só para este torneio ou para todos? Nosso sistema de suspensões controla exatamente cada partida que um jogador precisa cumprir, em todos os seus torneios. As suspensões são descontadas automaticamente rodada a rodada e se integram ao Face ID: se o jogador está suspenso, o sistema o marca como inelegível na hora.",
                 "f-perfil-title": "PERFIL DO JOGADOR",
                 "f-perfil-desc1": "O jogador amador é único e fanático por sua equipe e suas estatísticas, por isso ele tem um perfil feito sob medida para suas exigências.",
                 "f-ediciones-title": "EDIÇÕES EM MASSA",
                 "f-ediciones-desc1": "Uma rodada é suspensa por causa da chuva, uma equipe desiste de última hora, um campo não está disponível e muitos outros imprevistos podem acontecer. Para esses momentos, você precisa de uma solução sob medida, que permita fazer alterações em centenas de partidas ao mesmo tempo — mudando horários, campos e equipes simultaneamente em tempo real. Nossas ferramentas de edição em massa permitem tudo isso, garantindo que esses problemas não afetem as operações do seu torneio.",
                 "f-export-title": "EXPORTAÇÃO DE SÚMULAS",
                 "f-export-desc1": "Da nuvem para o papel, exporte todas as informações que você precisa para compartilhar com observadores, árbitros e jogadores. Desde a tabela completa até súmulas de partidas, carteirinhas de jogadores, tabela de artilheiros, etc.",
+                "f-web-title": "SUA LIGA, SUA PÁGINA WEB",
+                "f-web-desc1": "Cada liga tem sua própria página web pública com seu logo, suas cores e sua identidade. Seus jogadores, as famílias e as equipes que querem entrar acessam de qualquer navegador, sem baixar nada: classificação, tabela, artilheiros, mata-mata e todas as estatísticas dos seus torneios.",
+                "f-web-desc2": "Compartilhe o link nas suas redes e dê ao seu torneio a presença profissional que ele merece. As ligas do carrossel acima já usam — clique em qualquer uma e veja ao vivo.",
                 "f-player-title": "LFA Player: O Serviço para Seus Clientes",
                 "f-player-desc1": "Sabemos da paixão com que o jogador amador vive o futebol, o senso de pertencimento que ele tem com sua equipe e com o torneio. A partida não é apenas quando ele está em campo; ele fica conectado a semana toda, acompanhando estatísticas, vendo contra quem vai jogar, checando a classificação, quantos gols fez e esperando a próxima partida. Por isso, quando desenvolvemos o LFA Player, pensamos em tudo isso — porque quando seus jogadores não estão no complexo esportivo, eles também estão jogando.",
                 "f-player-desc2": "Eles instalam o aplicativo no celular para ver a tabela de artilheiros, os jogos da próxima rodada, os goleiros menos vazados e todas as estatísticas dos seus torneios.",
@@ -1132,29 +1237,30 @@
                 "t1-title": "Mensal",
                 "t2-title": "Semestral",
                 "t3-title": "Anual",
-                "pricing-features": "<li>Web App de Administrador</li><li>Torneios Ilimitados</li><li>App Móvil para Jogadores</li><li>Tabela e Edição em Massa</li><li>Face ID</li><li>Mata-Mata</li>",
-                "pricing-contact": "",
+                "pricing-features": "<li>Web App de Administrador</li><li>Torneios Ilimitados</li><li>Página Web Pública da Liga</li><li>App Móvel para Jogadores</li><li>Tabela Inteligente e Avançada</li><li>Edição em Massa</li><li>Sistema de Suspensões</li><li>Face ID</li><li>Mata-Mata (ida e volta)</li>",
+                "pricing-contact": "ou fale com a nossa equipe",
                 "lbl-under30": "Até 30 equipes",
                 "lbl-over30": "+30 Equipes",
                 
                 "dyn-ar-price-under30": "Consultar", "dyn-ar-sub-under30": "Onboarding Personalizado", "dyn-ar-btn-under30": "Falar com Consultor",
                 "dyn-ar-price-over30": "Consultar", "dyn-ar-sub-over30": "Planos para grandes ligas", "dyn-ar-btn-over30": "Falar com Vendas",
                 
-                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Iniciar Teste",
-                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste",
+                "dyn-br-t1-price-under30": "R$ 49", "dyn-br-t1-sub-under30": "Pagamento mensal via Pix.", "dyn-br-t2-price-under30": "R$ 40", "dyn-br-t2-sub-under30": "Pagamento único de R$ 240", "dyn-br-t3-price-under30": "R$ 35", "dyn-br-t3-sub-under30": "Pagamento único de R$ 420", "dyn-br-btn-under30": "Iniciar Teste Grátis",
+                "dyn-br-t1-price-over30": "R$ 99", "dyn-br-t1-sub-over30": "Pagamento mensal via Pix.", "dyn-br-t2-price-over30": "R$ 80", "dyn-br-t2-sub-over30": "Pagamento único de R$ 480", "dyn-br-t3-price-over30": "R$ 65", "dyn-br-t3-sub-over30": "Pagamento único de R$ 780", "dyn-br-btn-over30": "Iniciar Teste Grátis",
 
-                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Cobrado mensalmente.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Pagamento de US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Pagamento de US$ 72.", "dyn-row-btn-under30": "Iniciar Teste",
-                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Cobrado mensalmente.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Pagamento de US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Pagamento de US$ 144.", "dyn-row-btn-over30": "Iniciar Teste",
+                "dyn-row-t1-price-under30": "US$ 10", "dyn-row-t1-sub-under30": "Cobrado mensalmente.", "dyn-row-t2-price-under30": "US$ 8", "dyn-row-t2-sub-under30": "Pagamento de US$ 48.", "dyn-row-t3-price-under30": "US$ 6", "dyn-row-t3-sub-under30": "Pagamento de US$ 72.", "dyn-row-btn-under30": "Iniciar Teste Grátis",
+                "dyn-row-t1-price-over30": "US$ 20", "dyn-row-t1-sub-over30": "Cobrado mensalmente.", "dyn-row-t2-price-over30": "US$ 15", "dyn-row-t2-sub-over30": "Pagamento de US$ 90.", "dyn-row-t3-price-over30": "US$ 12", "dyn-row-t3-sub-over30": "Pagamento de US$ 144.", "dyn-row-btn-over30": "Iniciar Teste Grátis",
                 "wa-prefill": "Olá,%20gostaria%20de%20mais%20informações%20sobre%20o%20LFA%20para%20o%20meu%20torneio."
             },
             it: {
                 "nav-login": "Login Admin",
-                "nav-subscribe": "Inizia la Prova",
+                "nav-subscribe": "30 Giorni Gratis",
                 "hero-title": "RIVOLUZIONANDO<br><span>IL CALCIO AMATORIALE</span>",
                 "hero-slogan": "La piattaforma all-in-one per gli organizzatori di leghe amatoriali. Automatizza il tuo calendario in pochi secondi e offri ai tuoi giocatori un'esperienza professionale.",
-                "hero-cta": "Inizia la Prova",
+                "hero-trial-badge": "✓ 30 giorni di prova gratuita",
+                "hero-cta": "Inizia la Prova Gratuita",
                 "trusted-title": "Leghe che si fidano già di noi",
-                "trusted-subtitle": "",
+                "trusted-subtitle": "Clicca su una lega per vedere la sua pagina web pubblica in azione",
                 "lfa-title": "RIVOLUZIONA IL TUO TORNEO",
                 "lfa-desc1": "Non si tratta solo di gestire, LFA non è solo uno strumento, <strong>è una soluzione</strong>. Creare il calendario per tante squadre, coordinare orari, sedi, e gestire gli imprevisti non è facile, e lo sappiamo. Non siamo qui per offrirti un sistema solo per amministrare i tuoi tornei; ti offriamo una soluzione ai tuoi problemi, <strong>una piattaforma che ti supporta e assiste in ogni punto critico della tua organizzazione</strong>. Dall'interfaccia al supporto, LFA è qui per darti soluzioni; è molto più di un'applicazione.",
                 "lfa-desc2": "Tu ti diverti e anche i tuoi giocatori.",
@@ -1163,7 +1269,7 @@
                 "c-admin-desc": "Il tuo pannello di controllo completo. Crea tornei, genera calendari automaticamente e gestisci tutte le tue squadre da un unico posto.",
                 "c-admin-link": "Vedi Web App ➔",
                 "c-fixture-title": "CALENDARIO INTELLIGENTE",
-                "c-fixture-desc": "Un calendario intelligente, organizza tutte le partite dei tuoi tornei in un secondo, con strumenti di modifica massiva.",
+                "c-fixture-desc": "Doppia potenza: il Calendario Intelligente genera tutte le partite in un secondo e il Calendario Avanzato ti dà il controllo totale.",
                 "c-fixture-link": "Vedi Calendario ➔",
                 "c-db-title": "TEMPO REALE",
                 "c-db-desc": "Database in tempo reale, tutte le informazioni dei tuoi tornei disponibili istantaneamente per i tuoi giocatori.",
@@ -1171,6 +1277,15 @@
                 "c-face-title": "FACE ID",
                 "c-face-desc": "Verifica l'identità digitale di ogni giocatore in pochi secondi e metti fine alle sostituzioni nei tuoi tornei.",
                 "c-face-link": "Vedi Face ID ➔",
+                "c-playoffs-title": "TABELLONE PLAYOFF",
+                "c-playoffs-desc": "Crea tabelloni playoff visivi in pochi secondi. Eliminazione diretta o andata e ritorno — il formato lo scegli tu.",
+                "c-playoffs-link": "Vedi Playoff ➔",
+                "c-susp-title": "SQUALIFICHE",
+                "c-susp-desc": "Controllo esatto di ogni giornata di squalifica di ogni giocatore, in tutti i tuoi tornei, con conteggio automatico.",
+                "c-susp-link": "Vedi Squalifiche ➔",
+                "c-web-title": "PAGINA WEB PUBBLICA",
+                "c-web-desc": "La pagina web della tua lega, con il tuo marchio. Classifiche, calendario e statistiche accessibili da qualsiasi browser, senza download.",
+                "c-web-link": "Vedi Pagina Web ➔",
                 "c-perfil-title": "PROFILO GIOCATORE",
                 "c-perfil-desc": "Un profilo unico per ogni giocatore con le sue statistiche personali, lo storico delle partite e le foto.",
                 "c-perfil-link": "Vedi Profilo Giocatore ➔",
@@ -1189,16 +1304,24 @@
                 "f-fixture-title": "Calendario Intelligente",
                 "f-fixture-desc1": "Capiamo quanto sia importante il coordinamento delle partite in un torneo, poter gestire gli orari, le sedi, i diversi campi e gli imprevisti dell'ultimo minuto. Per questo motivo, non solo abbiamo un calendario in grado di generare tutte le partite in modo automatico e istantaneo, ma che può anche adattarsi ai cambiamenti in modo semplice e veloce, dandoti la flessibilità di cui tu e le tue squadre avete bisogno.",
                 "f-fixture-desc2": "Prepara tutto il tuo torneo in pochi secondi.",
+                "f-fixture-desc3": "Hai bisogno del controllo totale? Il Calendario Avanzato ti offre piena flessibilità per costruire e modificare il calendario partita per partita: orari, campi, sedi e accoppiamenti, esattamente come ti servono.",
                 "f-db-title": "DATABASE",
                 "f-db-desc1": "L'infrastruttura è fondamentale per una piattaforma solida e il database ne è un elemento essenziale. Ecco perché abbiamo un database in tempo reale. Fai un clic, aggiorni una statistica, sospendi una partita e assolutamente tutto si aggiorna all'istante nell'applicazione dell'amministratore e del giocatore. Ciò significa che i tuoi giocatori sono informati istantaneamente di tutte le informazioni dei tuoi tornei.",
                 "f-face-title": "FACE ID",
                 "f-face-desc1": "Il giocatore è davvero autorizzato a giocare? È squalificato, registrato o ha il numero minimo di partite per partecipare ai playoff? È il giorno della partita e devi autorizzare molti giocatori su campi diversi, forse anche in sedi diverse. Con LFA FACE ID scansioni semplicemente il giocatore e il nostro sistema di riconoscimento facciale verifica se è autorizzato a giocare.",
+                "f-playoffs-title": "TABELLONE PLAYOFF",
+                "f-playoffs-desc1": "Arriva la fase decisiva e l'emozione si moltiplica. Crea tabelloni playoff visivi che i tuoi giocatori possono seguire turno dopo turno: eliminazione diretta o serie di andata e ritorno, con accoppiamenti automatici in base alla classifica o definiti a modo tuo. Il tabellone si aggiorna da solo con ogni risultato e i tuoi giocatori lo vedono all'istante nell'app e sulla pagina web della tua lega.",
+                "f-susp-title": "SISTEMA DI SQUALIFICHE",
+                "f-susp-desc1": "Quante giornate di squalifica mancano? La squalifica vale solo per questo torneo o per tutti? Il nostro sistema tiene il conto esatto di ogni partita che un giocatore deve scontare, in tutti i tuoi tornei. Le squalifiche si scalano automaticamente giornata dopo giornata e si integrano con Face ID: se il giocatore è squalificato, il sistema lo segna come non idoneo all'istante.",
                 "f-perfil-title": "PROFILO GIOCATORE",
                 "f-perfil-desc1": "Il giocatore amatoriale è unico ed è un fanatico della sua squadra e delle sue statistiche, per questo ha un profilo su misura per le sue esigenze.",
                 "f-ediciones-title": "MODIFICHE MASSIVE",
                 "f-ediciones-desc1": "Una giornata viene sospesa per pioggia, una squadra si ritira all'ultimo momento, un campo o una sede non è disponibile e possono verificarsi molti altri imprevisti. Per questi momenti hai bisogno di una soluzione su misura, che ti permetta di apportare modifiche a centinaia di partite contemporaneamente, poter cambiare orari, campi, squadre simultaneamente in tempo reale. I nostri strumenti di modifica massiva ti permettono di fare tutto questo e fanno in modo che questi problemi non incidano sull'operatività dei tuoi tornei.",
                 "f-export-title": "ESPORTAZIONE DI DISTINTE",
                 "f-export-desc1": "Dal cloud alla carta, esporta tutte le info di cui hai bisogno da condividere con osservatori, arbitri, giocatori. Dal calendario completo alle distinte di gara, tesserini dei giocatori, classifiche dei marcatori, ecc.",
+                "f-web-title": "LA TUA LEGA, LA TUA PAGINA WEB",
+                "f-web-desc1": "Ogni lega ha la propria pagina web pubblica con il tuo logo, i tuoi colori e la tua identità. I tuoi giocatori, le famiglie e le squadre che vogliono unirsi accedono da qualsiasi browser, senza scaricare nulla: classifiche, calendario, marcatori, tabelloni playoff e tutte le statistiche dei tuoi tornei.",
+                "f-web-desc2": "Condividi il link sui tuoi social e dai al tuo torneo la presenza professionale che merita. Le leghe nel carosello qui sopra la usano già: clicca su una qualsiasi e guardala in azione.",
                 "f-player-title": "LFA Player: Il Servizio per i tuoi Clienti",
                 "f-player-desc1": "Conosciamo la passione con cui il giocatore amatoriale vive il calcio, il senso di appartenenza che ha con la sua squadra e il torneo. La partita non c'è solo quando è in campo, è in attesa tutta la settimana, seguendo le statistiche, vedendo contro chi giocherà, come sono in classifica, quanti gol ha fatto, quando è la prossima partita. Per questo, quando abbiamo sviluppato LFA Player, abbiamo pensato a tutto questo perché quando i tuoi giocatori non sono al centro sportivo, stanno comunque giocando.",
                 "f-player-desc2": "Installano l'applicazione sui loro cellulari per vedere la classifica marcatori, il calendario della prossima giornata, le reti inviolate e tutte le statistiche dei tuoi tornei.",
@@ -1217,7 +1340,7 @@
                 "t1-title": "Mensile",
                 "t2-title": "Semestrale",
                 "t3-title": "Annuale",
-                "pricing-features": "<li>Web App Admin</li><li>Tornei Illimitati</li><li>App Mobile Giocatori</li><li>Calendario e Modifica Massiva</li><li>Face ID</li><li>Tabellone Playoff</li>",
+                "pricing-features": "<li>Web App Admin</li><li>Tornei Illimitati</li><li>Pagina Web Pubblica della Lega</li><li>App Mobile Giocatori</li><li>Calendario Intelligente e Avanzato</li><li>Modifica Massiva</li><li>Sistema di Squalifiche</li><li>Face ID</li><li>Tabellone Playoff (andata e ritorno)</li>",
                 "pricing-contact": "o parla con il nostro team",
                 "lbl-under30": "Fino a 30 squadre",
                 "lbl-over30": "+30 Squadre",
@@ -1275,6 +1398,7 @@
         function updateDynamicPricing() {
             const langData = translations[currentLang];
             const trialNotice = document.getElementById('free-trial-notice');
+            const heroBadge = document.getElementById('hero-trial-badge');
             
             const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
             const prefillText = langData['wa-prefill'] || "";
@@ -1286,6 +1410,7 @@
             
             if (currentCountry === 'AR') {
                 if(trialNotice) trialNotice.style.display = 'none';
+                if(heroBadge) heroBadge.style.display = 'none';
                 document.getElementById('card-t2').style.display = 'none';
                 document.getElementById('card-t3').style.display = 'none';
                 
@@ -1306,6 +1431,7 @@
                 
             } else {
                 if(trialNotice) trialNotice.style.display = 'block';
+                if(heroBadge) heroBadge.style.display = 'inline-block';
                 document.getElementById('card-t2').style.display = 'flex';
                 document.getElementById('card-t3').style.display = 'flex';
                 
@@ -1381,5 +1507,6 @@
                 });
         });
     </script>
+
 </body>
 </html>
