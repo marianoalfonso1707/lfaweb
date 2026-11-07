@@ -413,6 +413,30 @@
         .pricing-features-list li { margin-bottom: 15px; display: flex; align-items: center; gap: 10px; }
         .pricing-features-list li::before { content: "✓"; color: var(--sinergy-yellow); font-weight: bold; }
 
+        .custom-plan-box {
+            max-width: 800px;
+            margin: 50px auto 0;
+            padding: 30px 25px;
+            border: 1px dashed var(--sinergy-yellow);
+            border-radius: 16px;
+            background: rgba(255, 255, 255, 0.03);
+        }
+        .custom-plan-box h3 { margin: 0 0 10px; font-size: 1.6rem; color: var(--sinergy-yellow); }
+        .custom-plan-box p { margin: 0 0 20px; color: var(--text-muted); font-size: 1.05rem; line-height: 1.6; }
+        .custom-plan-actions { display: flex; gap: 14px; justify-content: center; flex-wrap: wrap; }
+        .custom-plan-box p.custom-plan-email { margin: 14px 0 0; font-size: 0.95rem; }
+        .custom-plan-btn {
+            display: inline-block;
+            padding: 12px 28px;
+            border: 2px solid var(--sinergy-yellow);
+            border-radius: 30px;
+            color: var(--sinergy-yellow);
+            font-weight: bold;
+            text-decoration: none;
+            transition: background 0.2s, color 0.2s;
+        }
+        .custom-plan-btn:hover { background: var(--sinergy-yellow); color: var(--foul-black); }
+
         .pricing-secondary-link {
             display: block;
             text-align: center;
@@ -624,6 +648,7 @@
                 <button onclick="setLang('en')" id="btn-en">EN</button>
                 <button onclick="setLang('pt')" id="btn-pt">PT</button>
                 <button onclick="setLang('it')" id="btn-it">IT</button>
+                <button onclick="setLang('ca')" id="btn-ca" style="display:none">CA</button>
             </div>
         </div>
     </nav>
@@ -918,6 +943,16 @@
                 <a href="https://wa.me/5491144169568" target="_blank" class="pricing-secondary-link" id="t3-contact">o hablá con nuestro equipo</a>
             </div>
         </div>
+
+        <div class="custom-plan-box">
+            <h3 id="custom-title" class="brand-font">¿Buscás algo a medida?</h3>
+            <p id="custom-desc">Si tu organización necesita una solución personalizada, adaptada a sus necesidades específicas, escribinos por WhatsApp o por email y armamos juntos el plan ideal para vos.</p>
+            <div class="custom-plan-actions">
+                <a href="https://wa.me/5491144169568" target="_blank" rel="noopener noreferrer" class="custom-plan-btn">WhatsApp</a>
+                <a href="mailto:info@ligasfutbolamateur.com" class="custom-plan-btn" id="custom-email-link"><span id="custom-email-btn">Email</span></a>
+            </div>
+            <p class="custom-plan-email">info@ligasfutbolamateur.com</p>
+        </div>
     </section>
 
     <section id="about-us" class="about-section">
@@ -1039,6 +1074,9 @@
                 "pricing-title": "Unite a la Revolución",
                 "pricing-desc": "Elegí el plan que mejor se adapte a tu torneo. Sin comisiones ocultas.",
                 "free-trial-notice": "Todos los planes incluyen 30 días de prueba gratuita.",
+                "custom-title": "¿Buscás algo a medida?",
+                "custom-desc": "Si tu organización necesita una solución personalizada, adaptada a sus necesidades específicas, escribinos por WhatsApp o por email y armamos juntos el plan ideal para vos.",
+                "custom-email-btn": "Email", "custom-email-subject": "Consulta por plan a medida - LFA",
                 "pricing-plan-title": "PLAN PRO",
                 "t1-title": "Mensual",
                 "t2-title": "Semestral",
@@ -1142,6 +1180,9 @@
                 "pricing-title": "Join the Revolution",
                 "pricing-desc": "Choose the plan that best fits your tournament. No hidden fees.",
                 "free-trial-notice": "All plans include a 30-day free trial.",
+                "custom-title": "Looking for something tailored?",
+                "custom-desc": "If your organization needs a personalized solution built around its specific needs, reach out on WhatsApp or by email and we will put together the right plan for you.",
+                "custom-email-btn": "Email", "custom-email-subject": "Custom plan inquiry - LFA",
                 "pricing-plan-title": "PRO PLAN",
                 "t1-title": "Monthly",
                 "t2-title": "Semi-Annual",
@@ -1245,6 +1286,9 @@
                 "pricing-title": "Junte-se à Revolução",
                 "pricing-desc": "Escolha o plano que melhor se adapta ao seu torneio. Sem taxas ocultas.",
                 "free-trial-notice": "Todos os planos incluem 30 dias de teste grátis.",
+                "custom-title": "Procura algo sob medida?",
+                "custom-desc": "Se a sua organização precisa de uma solução personalizada, adaptada às suas necessidades específicas, fale conosco pelo WhatsApp ou por e-mail e montamos juntos o plano ideal para você.",
+                "custom-email-btn": "E-mail", "custom-email-subject": "Consulta sobre plano sob medida - LFA",
                 "pricing-plan-title": "PLANO PRO",
                 "t1-title": "Mensal",
                 "t2-title": "Semestral",
@@ -1348,6 +1392,9 @@
                 "pricing-title": "Unisciti alla Rivoluzione",
                 "pricing-desc": "Scegli il piano che meglio si adatta al tuo torneo. Nessun costo nascosto.",
                 "free-trial-notice": "Tutti i piani includono 30 giorni di prova gratuita.",
+                "custom-title": "Cerchi qualcosa su misura?",
+                "custom-desc": "Se la tua organizzazione ha bisogno di una soluzione personalizzata, adattata alle sue esigenze specifiche, scrivici su WhatsApp o via email e costruiremo insieme il piano ideale per te.",
+                "custom-email-btn": "Email", "custom-email-subject": "Richiesta piano su misura - LFA",
                 "pricing-plan-title": "PIANO PRO",
                 "t1-title": "Mensile",
                 "t2-title": "Semestrale",
@@ -1369,6 +1416,201 @@
             }
         };
 
+        // ===== ESPAÑA: castellano de España (hereda de 'es' y sobrescribe) =====
+        translations['es-ES'] = Object.assign({}, translations.es, {
+            "hero-slogan": "La plataforma todo en uno para organizadores de ligas amateur. Automatiza tu calendario en segundos y ofrece a tus jugadores una experiencia profesional.",
+            "hero-cta": "Empezar Prueba Gratis",
+            "trusted-subtitle": "Haz clic en cualquier liga para ver su página web pública en acción",
+            "lfa-desc1": "No se trata solo de gestionar: LFA no es solo una herramienta, <strong>es una solución</strong>. Organizar el calendario para tantos equipos, coordinar horarios y sedes, y resolver imprevistos no es fácil, y lo sabemos. No venimos a ofrecerte un sistema para que simplemente gestiones tus torneos: te ofrecemos una solución a tus problemas, <strong>una plataforma que te apoya y te ayuda en cada punto crítico de tu organización</strong>. Desde la interfaz hasta el soporte, LFA está ahí para darte soluciones; es mucho más que una aplicación.",
+            "lfa-desc2": "Tú disfrutas, y tus jugadores también.",
+            "c-fixture-title": "CALENDARIO INTELIGENTE",
+            "c-fixture-desc": "Doble potencia: el Calendario Inteligente genera todos los partidos en un segundo y el Calendario Avanzado te da control total.",
+            "c-fixture-link": "Ver Calendario ➔",
+            "c-db-desc": "Base de datos en tiempo real: toda la información de tus torneos disponible al instante para tus jugadores.",
+            "c-face-desc": "Verifica la identidad digital de cada jugador en segundos y acaba con las suplantaciones en tus torneos.",
+            "c-playoffs-title": "ELIMINATORIAS",
+            "c-playoffs-desc": "Crea cuadros de eliminatorias visuales en segundos. Eliminación directa o ida y vuelta: el formato lo eliges tú.",
+            "c-playoffs-link": "Ver Eliminatorias ➔",
+            "c-susp-title": "SANCIONES",
+            "c-susp-desc": "Control exacto de cada partido de sanción de cada jugador, en todos tus torneos, con descuento automático.",
+            "c-susp-link": "Ver Sanciones ➔",
+            "c-ediciones-title": "EDICIÓN MASIVA",
+            "c-ediciones-link": "Ver Edición ➔",
+            "c-export-desc": "Exporta toda la información que necesites: actas de partido, carnés, clasificaciones y más, directamente a PDF o Excel.",
+            "f-admin-title": "Tu Centro de Administración",
+            "f-admin-desc1": "Una aplicación web con una interfaz pensada para el organizador: sabíamos que había que hacer fácil lo difícil. Gestiona todos tus torneos, equipos, jugadores, calendario, estadísticas y más desde una plataforma diseñada para que disfrutes organizando tu torneo.",
+            "f-admin-desc2": "Configura temporadas, gestiona el Fair Play, aplica sanciones automáticas y observa cómo todo se sincroniza en directo gracias a nuestra base de datos en tiempo real.",
+            "f-fixture-title": "Calendario Inteligente",
+            "f-fixture-desc1": "Sabemos lo importante que es coordinar los partidos de un torneo: gestionar horarios, sedes, campos y los imprevistos de última hora. Por eso no solo tenemos un calendario que genera todos los partidos de forma automática e instantánea, sino que además se adapta a los cambios de forma sencilla y rápida, dándote la flexibilidad que tú y tus equipos necesitáis.",
+            "f-fixture-desc2": "Monta tu torneo completo en cuestión de segundos.",
+            "f-fixture-desc3": "¿Necesitas control total? El Calendario Avanzado te da flexibilidad completa para montar y ajustar el calendario partido a partido: horarios, campos, sedes y cruces, exactamente como los necesitas.",
+            "f-db-desc1": "La infraestructura es clave para una plataforma robusta, y la base de datos es una pieza fundamental; por eso contamos con una base de datos en tiempo real. Haces clic, actualizas una estadística, suspendes un partido y absolutamente todo se actualiza al instante en la aplicación del administrador y del jugador. Así tus jugadores están informados al momento de todo lo que pasa en tus torneos.",
+            "f-face-desc1": "¿El jugador está realmente habilitado para jugar? ¿Está sancionado, inscrito o tiene el mínimo de partidos para disputar los playoffs? Es día de partido y tienes que habilitar a muchísimos jugadores en distintos campos, quizá incluso en distintas sedes. Con LFA FACE ID simplemente escaneas al jugador y nuestro sistema de reconocimiento facial verifica si está habilitado para jugar.",
+            "f-playoffs-title": "ELIMINATORIAS",
+            "f-playoffs-desc1": "Llega la fase decisiva y la emoción se multiplica. Crea cuadros de eliminatorias visuales que tus jugadores pueden seguir ronda a ronda: eliminación directa o ida y vuelta, con cruces automáticos según la clasificación o definidos a tu manera. El cuadro se actualiza solo con cada resultado y tus jugadores lo ven al instante en la app y en la página web de tu liga.",
+            "f-susp-title": "SISTEMA DE SANCIONES",
+            "f-susp-desc1": "¿Cuántos partidos de sanción le quedan? ¿La sanción se aplica solo a este torneo o a todos? Nuestro sistema lleva el control exacto de cada partido que un jugador debe cumplir, en todos tus torneos. Las sanciones se descuentan automáticamente jornada a jornada y se integran con Face ID: si el jugador está sancionado, el sistema lo marca como no habilitado al instante.",
+            "f-perfil-desc1": "El jugador amateur es único y un fanático de su equipo y de sus estadísticas; por eso tiene un perfil hecho a la medida de sus exigencias.",
+            "f-ediciones-title": "EDICIÓN MASIVA",
+            "f-ediciones-desc1": "Se suspende una jornada por lluvia, un equipo se retira a última hora, un campo o una sede no está disponible... y muchos imprevistos más. Para esos momentos necesitas una solución a medida que te permita cambiar cientos de partidos a la vez: horarios, campos y equipos, en tiempo real y de forma simultánea. Nuestras herramientas de edición masiva te permiten todo eso y hacen que estos problemas no afecten al funcionamiento de tus torneos.",
+            "f-export-title": "EXPORTACIÓN DE ACTAS",
+            "f-export-desc1": "De la nube al papel: exporta toda la información que necesites para compartir con delegados, árbitros y jugadores. Desde el calendario completo hasta actas de partido, carnés de jugadores, tablas de goleadores, etc.",
+            "f-web-desc1": "Cada liga tiene su propia página web pública con tu logo, tus colores y tu identidad. Tus jugadores, sus familias y los equipos que quieran sumarse acceden desde cualquier navegador, sin descargar nada: clasificaciones, calendario, goleadores, eliminatorias y todas las estadísticas de tus torneos.",
+            "f-web-desc2": "Comparte el enlace en tus redes y dale a tu torneo la presencia profesional que se merece. Las ligas del carrusel de arriba ya la usan: haz clic en cualquiera y mírala en acción.",
+            "yt-title": "Mira LFA en Acción",
+            "pricing-title": "Únete a la Revolución",
+            "pricing-desc": "Elige el plan que mejor se adapte a tu torneo. Sin comisiones ocultas.",
+            "pricing-features": "<li>Web App de Administrador</li><li>Torneos Ilimitados</li><li>Página Web Pública de tu Liga</li><li>App Móvil para Jugadores</li><li>Calendario Inteligente y Avanzado</li><li>Edición Masiva</li><li>Sistema de Sanciones</li><li>Face ID</li><li>Eliminatorias (ida y vuelta)</li>",
+            "pricing-contact": "o habla con nuestro equipo",
+            "custom-title": "¿Buscas algo a medida?",
+            "custom-desc": "Si tu organización necesita una solución personalizada, adaptada a sus necesidades específicas, escríbenos por WhatsApp o por correo y diseñaremos juntos el plan ideal para ti.",
+            "custom-email-btn": "Correo", "custom-email-subject": "Consulta por plan a medida - LFA",
+            "wa-bubble-text": "Escríbenos por WhatsApp",
+            "dyn-es-title": "Mensual",
+            "dyn-es-price-under30": "19,99 €", "dyn-es-sub-under30": "Precio por mes.",
+            "dyn-es-price-over30": "39,99 €", "dyn-es-sub-over30": "Precio por mes.",
+            "dyn-es-btn": "Empezar Prueba Gratis"
+        });
+
+        // ===== ESPAÑA: catalán =====
+        translations.ca = Object.assign({}, translations['es-ES'], {
+            "nav-login": "Accés Admin",
+            "nav-subscribe": "Prova Gratis 30 Dies",
+            "hero-title": "REVOLUCIONANT<br><span>EL FUTBOL AMATEUR</span>",
+            "hero-slogan": "La plataforma tot en un per a organitzadors de lligues amateurs. Automatitza el teu calendari en segons i ofereix als teus jugadors una experiència professional.",
+            "hero-trial-badge": "✓ 30 dies de prova gratuïta",
+            "hero-cta": "Comença la Prova Gratuïta",
+            "trusted-title": "Lligues que ja confien en nosaltres",
+            "trusted-subtitle": "Fes clic a qualsevol lliga per veure la seva pàgina web pública en acció",
+            "lfa-title": "REVOLUCIONA EL TEU TORNEIG",
+            "lfa-desc1": "No es tracta només de gestionar: LFA no és només una eina, <strong>és una solució</strong>. Organitzar el calendari per a tants equips, coordinar horaris i seus, i resoldre imprevistos no és fàcil, i ho sabem. No venim a oferir-te un sistema perquè simplement gestionis els teus tornejos: t'oferim una solució als teus problemes, <strong>una plataforma que et dona suport i t'ajuda en cada punt crític de la teva organització</strong>. Des de la interfície fins al suport, LFA hi és per donar-te solucions; és molt més que una aplicació.",
+            "lfa-desc2": "Tu gaudeixes, i els teus jugadors també.",
+            "pilares-title": "Els Pilars de l'Organitzador",
+            "c-admin-desc": "El teu tauler de control integral. Crea tornejos, genera calendaris automàticament i gestiona tots els teus equips des d'un sol lloc.",
+            "c-admin-link": "Veure Web App ➔",
+            "c-fixture-title": "CALENDARI INTEL·LIGENT",
+            "c-fixture-desc": "Doble potència: el Calendari Intel·ligent genera tots els partits en un segon i el Calendari Avançat et dona control total.",
+            "c-fixture-link": "Veure Calendari ➔",
+            "c-db-title": "TEMPS REAL",
+            "c-db-desc": "Base de dades en temps real: tota la informació dels teus tornejos disponible a l'instant per als teus jugadors.",
+            "c-db-link": "Veure Base de dades ➔",
+            "c-face-desc": "Verifica la identitat digital de cada jugador en segons i acaba amb les suplantacions als teus tornejos.",
+            "c-face-link": "Veure Face ID ➔",
+            "c-playoffs-title": "ELIMINATÒRIES",
+            "c-playoffs-desc": "Crea quadres d'eliminatòries visuals en segons. Eliminació directa o anada i tornada: el format el tries tu.",
+            "c-playoffs-link": "Veure Eliminatòries ➔",
+            "c-susp-title": "SANCIONS",
+            "c-susp-desc": "Control exacte de cada partit de sanció de cada jugador, en tots els teus tornejos, amb descompte automàtic.",
+            "c-susp-link": "Veure Sancions ➔",
+            "c-web-title": "PÀGINA WEB PÚBLICA",
+            "c-web-desc": "La pàgina web de la teva lliga, amb la teva marca. Classificacions, calendari i estadístiques accessibles des de qualsevol navegador, sense descàrregues.",
+            "c-web-link": "Veure Pàgina Web ➔",
+            "c-perfil-title": "PERFIL JUGADOR",
+            "c-perfil-desc": "Un perfil únic per a cada jugador amb les seves estadístiques personals, historial de partits i fotos.",
+            "c-perfil-link": "Veure Perfil Jugador ➔",
+            "c-ediciones-title": "EDICIÓ MASSIVA",
+            "c-ediciones-desc": "Edita centenars de partits alhora. Canvia horaris, seus i equips en temps real sense complicacions.",
+            "c-ediciones-link": "Veure Edició ➔",
+            "c-export-title": "EXPORTACIONS",
+            "c-export-desc": "Exporta tota la informació que necessitis: actes de partit, carnets, classificacions i més, directament a PDF o Excel.",
+            "c-export-link": "Veure Exportacions ➔",
+            "f-admin-title": "El Teu Centre d'Administració",
+            "f-admin-desc1": "Una aplicació web amb una interfície pensada per a l'organitzador: sabíem que calia fer fàcil allò que és difícil. Gestiona tots els teus tornejos, equips, jugadors, calendari, estadístiques i més des d'una plataforma dissenyada perquè gaudeixis organitzant el teu torneig.",
+            "f-admin-desc2": "Configura temporades, gestiona el Fair Play, aplica sancions automàtiques i mira com tot se sincronitza en directe gràcies a la nostra base de dades en temps real.",
+            "f-fixture-title": "Calendari Intel·ligent",
+            "f-fixture-desc1": "Sabem com és d'important coordinar els partits d'un torneig: gestionar horaris, seus, camps i els imprevistos d'última hora. Per això no només tenim un calendari que genera tots els partits de manera automàtica i instantània, sinó que a més s'adapta als canvis de manera senzilla i ràpida, i et dona la flexibilitat que tu i els teus equips necessiteu.",
+            "f-fixture-desc2": "Munta el teu torneig complet en qüestió de segons.",
+            "f-fixture-desc3": "Necessites control total? El Calendari Avançat et dona flexibilitat completa per muntar i ajustar el calendari partit a partit: horaris, camps, seus i encreuaments, exactament com els necessites.",
+            "f-db-title": "BASE DE DADES",
+            "f-db-desc1": "La infraestructura és clau per a una plataforma robusta, i la base de dades n'és una peça fonamental; per això tenim una base de dades en temps real. Fas un clic, actualitzes una estadística, suspens un partit i absolutament tot s'actualitza a l'instant a l'aplicació de l'administrador i del jugador. Així els teus jugadors estan informats al moment de tot el que passa als teus tornejos.",
+            "f-face-desc1": "El jugador està realment habilitat per jugar? Està sancionat, inscrit o té el mínim de partits per disputar els playoffs? És dia de partit i has d'habilitar moltíssims jugadors en diferents camps, potser fins i tot en diferents seus. Amb LFA FACE ID simplement escanneges el jugador i el nostre sistema de reconeixement facial verifica si està habilitat per jugar.",
+            "f-playoffs-title": "ELIMINATÒRIES",
+            "f-playoffs-desc1": "Arriba la fase decisiva i l'emoció es multiplica. Crea quadres d'eliminatòries visuals que els teus jugadors poden seguir ronda a ronda: eliminació directa o anada i tornada, amb encreuaments automàtics segons la classificació o definits a la teva manera. El quadre s'actualitza sol amb cada resultat i els teus jugadors el veuen a l'instant a l'app i a la pàgina web de la teva lliga.",
+            "f-susp-title": "SISTEMA DE SANCIONS",
+            "f-susp-desc1": "Quants partits de sanció li queden? La sanció s'aplica només a aquest torneig o a tots? El nostre sistema porta el control exacte de cada partit que un jugador ha de complir, en tots els teus tornejos. Les sancions es descompten automàticament jornada a jornada i s'integren amb Face ID: si el jugador està sancionat, el sistema el marca com a no habilitat a l'instant.",
+            "f-perfil-title": "PERFIL JUGADOR",
+            "f-perfil-desc1": "El jugador amateur és únic i un fanàtic del seu equip i de les seves estadístiques; per això té un perfil fet a la mida de les seves exigències.",
+            "f-ediciones-title": "EDICIÓ MASSIVA",
+            "f-ediciones-desc1": "Se suspèn una jornada per pluja, un equip es retira a última hora, un camp o una seu no està disponible... i molts més imprevistos. Per a aquests moments necessites una solució a mida que et permeti canviar centenars de partits alhora: horaris, camps i equips, en temps real i de manera simultània. Les nostres eines d'edició massiva et permeten tot això i fan que aquests problemes no afectin el funcionament dels teus tornejos.",
+            "f-export-title": "EXPORTACIÓ D'ACTES",
+            "f-export-desc1": "Del núvol al paper: exporta tota la informació que necessitis per compartir amb delegats, àrbitres i jugadors. Des del calendari complet fins a actes de partit, carnets de jugadors, taules de golejadors, etc.",
+            "f-web-title": "LA TEVA LLIGA, LA TEVA PÀGINA WEB",
+            "f-web-desc1": "Cada lliga té la seva pròpia pàgina web pública amb el teu logo, els teus colors i la teva identitat. Els teus jugadors, les seves famílies i els equips que s'hi vulguin sumar hi accedeixen des de qualsevol navegador, sense descarregar res: classificacions, calendari, golejadors, eliminatòries i totes les estadístiques dels teus tornejos.",
+            "f-web-desc2": "Comparteix l'enllaç a les teves xarxes i dona al teu torneig la presència professional que es mereix. Les lligues del carrusel de dalt ja la fan servir: fes clic a qualsevol i mira-la en acció.",
+            "yt-title": "Mira LFA en Acció",
+            "yt-desc": "Descobreix com els organitzadors amb més èxit estan transformant els seus tornejos amb la nostra plataforma.",
+            "yt-btn-text": "Veure a YouTube",
+            "about-title": "Qui Som?",
+            "about-desc": "Ligas Futbol Amateur, LLC és una empresa argentina amb seu a Atlanta, Geòrgia. El seu focus principal és el desenvolupament de programari i serveis especialitzats per a l'organització i la gestió de tornejos de futbol. L'oferta principal de l'empresa inclou una aplicació mòbil descarregable dissenyada per gestionar tornejos de futbol, coordinar horaris i equips i administrar els partits. Aquesta plataforma s'emmarca en els serveis tecnològics i el desenvolupament de programari, específicament per a esdeveniments relacionats amb el futbol, cosa que en reflecteix la voluntat d'oferir solucions tecnològiques a les lligues de futbol amateur mitjançant aplicacions mòbils i serveis web. L'empresa funciona com a proveïdora de Programari com a Servei (SaaS) i ofereix funcionalitats com la gestió de tornejos, la programació i la coordinació d'esdeveniments de futbol, amb eines tecnològiques per simplificar les operacions d'aquestes lligues.",
+            "footer-text": "© 2026 Ligas Fútbol Amateur. Tots els drets reservats.",
+            "wa-bubble-text": "Escriu-nos per WhatsApp",
+            "pricing-title": "Uneix-te a la Revolució",
+            "pricing-desc": "Tria el pla que millor s'adapti al teu torneig. Sense comissions ocultes.",
+            "free-trial-notice": "Tots els plans inclouen 30 dies de prova gratuïta.",
+            "pricing-features": "<li>Web App d'Administrador</li><li>Tornejos Il·limitats</li><li>Pàgina Web Pública de la teva Lliga</li><li>App Mòbil per a Jugadors</li><li>Calendari Intel·ligent i Avançat</li><li>Edició Massiva</li><li>Sistema de Sancions</li><li>Face ID</li><li>Eliminatòries (anada i tornada)</li>",
+            "pricing-contact": "o parla amb el nostre equip",
+            "custom-title": "Busques alguna cosa a mida?",
+            "custom-desc": "Si la teva organització necessita una solució personalitzada, adaptada a les seves necessitats específiques, escriu-nos per WhatsApp o per correu i dissenyarem junts el pla ideal per a tu.",
+            "custom-email-btn": "Correu", "custom-email-subject": "Consulta sobre pla a mida - LFA",
+            "lbl-under30": "Fins a 30 equips",
+            "lbl-over30": "+30 Equips",
+            "dyn-es-title": "Mensual",
+            "dyn-es-sub-under30": "Preu per mes.",
+            "dyn-es-sub-over30": "Preu per mes.",
+            "dyn-es-btn": "Comença la Prova Gratuïta",
+            "wa-prefill": "Hola,%20vull%20informació%20sobre%20LFA%20per%20organitzar%20el%20meu%20torneig."
+        });
+
+        // ===== Precios en euros (España e Italia) para cualquier idioma elegido =====
+        Object.assign(translations.it, {
+            "dyn-es-title": "Mensile",
+            "dyn-es-price-under30": "19,99 €", "dyn-es-sub-under30": "Prezzo al mese.",
+            "dyn-es-price-over30": "39,99 €", "dyn-es-sub-over30": "Prezzo al mese.",
+            "dyn-es-btn": "Inizia la Prova Gratuita"
+        });
+        Object.assign(translations.en, {
+            "dyn-es-title": "Monthly",
+            "dyn-es-price-under30": "€19.99", "dyn-es-sub-under30": "Price per month.",
+            "dyn-es-price-over30": "€39.99", "dyn-es-sub-over30": "Price per month.",
+            "dyn-es-btn": "Start Free Trial"
+        });
+        Object.assign(translations.pt, {
+            "dyn-es-title": "Mensal",
+            "dyn-es-price-under30": "19,99 €", "dyn-es-sub-under30": "Preço por mês.",
+            "dyn-es-price-over30": "39,99 €", "dyn-es-sub-over30": "Preço por mês.",
+            "dyn-es-btn": "Iniciar Teste Grátis"
+        });
+        Object.assign(translations.es, {
+            "dyn-es-title": "Mensual",
+            "dyn-es-price-under30": "19,99 €", "dyn-es-sub-under30": "Precio por mes.",
+            "dyn-es-price-over30": "39,99 €", "dyn-es-sub-over30": "Precio por mes.",
+            "dyn-es-btn": "Iniciar Prueba Gratis"
+        });
+
+        // ===== Países que ven precios en euros =====
+        // España e Italia tienen idioma propio; el resto de Europa arranca en inglés
+        const EURO_PRICING_COUNTRIES = [
+            'ES', 'IT',
+            // Zona euro
+            'AT', 'BE', 'HR', 'CY', 'EE', 'FI', 'FR', 'DE', 'GR', 'IE', 'LV', 'LT', 'LU', 'MT', 'NL', 'PT', 'SK', 'SI',
+            // Resto de la UE / EEE
+            'BG', 'CZ', 'DK', 'HU', 'PL', 'RO', 'SE', 'IS', 'NO', 'LI',
+            // Resto de Europa
+            'GB', 'CH', 'AD', 'MC', 'SM', 'VA', 'ME', 'XK', 'AL', 'BA', 'MK', 'RS', 'MD', 'UA'
+        ];
+        function isEuroCountry() { return EURO_PRICING_COUNTRIES.includes(currentCountry); }
+
+        // En España solo se ofrecen ES (castellano de España) y CA
+        function configureLangToggle() {
+            const isSpain = currentCountry === 'ES';
+            ['en', 'pt', 'it'].forEach(l => {
+                const b = document.getElementById('btn-' + l);
+                if (b) b.style.display = isSpain ? 'none' : '';
+            });
+            const ca = document.getElementById('btn-ca');
+            if (ca) ca.style.display = isSpain ? '' : 'none';
+        }
+
         function closeWABubble(event) {
             event.preventDefault(); 
             event.stopPropagation();
@@ -1384,9 +1626,11 @@
         }
 
         function setLang(lang) {
+            if (lang === 'es' && currentCountry === 'ES') lang = 'es-ES';
             currentLang = lang;
+            document.documentElement.lang = lang;
             document.querySelectorAll('.lang-toggle button').forEach(btn => btn.classList.remove('active'));
-            document.getElementById('btn-' + lang).classList.add('active');
+            document.getElementById('btn-' + (lang === 'es-ES' ? 'es' : lang)).classList.add('active');
             
             if(translations[lang]) {
                 for (let key in translations[lang]) {
@@ -1412,6 +1656,9 @@
             const trialNotice = document.getElementById('free-trial-notice');
             const heroBadge = document.getElementById('hero-trial-badge');
             
+            const emailLink = document.getElementById('custom-email-link');
+            if (emailLink) emailLink.href = 'mailto:info@ligasfutbolamateur.com?subject=' + encodeURIComponent(langData['custom-email-subject'] || 'LFA');
+
             const waLinks = document.querySelectorAll('a[href^="https://wa.me/"]');
             const prefillText = langData['wa-prefill'] || "";
             const phoneNumber = "5491144169568"; 
@@ -1441,6 +1688,26 @@
                 const contactLink = document.getElementById('t1-contact');
                 if (contactLink) contactLink.style.display = 'none';
                 
+            } else if (isEuroCountry()) {
+                if(trialNotice) trialNotice.style.display = 'block';
+                if(heroBadge) heroBadge.style.display = 'inline-block';
+                document.getElementById('card-t2').style.display = 'none';
+                document.getElementById('card-t3').style.display = 'none';
+
+                const grid = document.getElementById('pricing-grid-container');
+                grid.style.gridTemplateColumns = '1fr';
+                grid.style.maxWidth = '450px';
+
+                if (langData['dyn-es-title']) document.getElementById('t1-title').innerHTML = langData['dyn-es-title'];
+                if (langData[`dyn-es-price-${currentTier}`]) document.getElementById('dyn-t1-price').innerHTML = langData[`dyn-es-price-${currentTier}`];
+                if (langData[`dyn-es-sub-${currentTier}`]) document.getElementById('dyn-t1-sub').innerHTML = langData[`dyn-es-sub-${currentTier}`];
+
+                const btn = document.getElementById('dyn-t1-btn');
+                if (btn && langData['dyn-es-btn']) btn.innerHTML = langData['dyn-es-btn'];
+
+                const contactLink = document.getElementById('t1-contact');
+                if (contactLink) contactLink.style.display = 'block';
+
             } else {
                 if(trialNotice) trialNotice.style.display = 'block';
                 if(heroBadge) heroBadge.style.display = 'inline-block';
@@ -1491,32 +1758,40 @@
                 }
             });
 
-            // Fetch IP location and set language
-            fetch('https://get.geojs.io/v1/ip/country.json')
-                .then(response => response.json())
-                .then(data => {
-                    currentCountry = data.country;
-                    
-                    const spanishSpeakingCountries = ['AR', 'MX', 'ES', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'PR', 'UY'];
-                    
-                    if (currentCountry === 'BR') {
-                        setLang('pt');
-                    } else if (currentCountry === 'IT') {
-                        setLang('it');
-                    } else if (spanishSpeakingCountries.includes(currentCountry)) {
-                        setLang('es');
-                    } else {
-                        setLang('en');
-                    }
-                    
-                    updateDynamicPricing();
-                })
-                .catch(error => {
-                    console.error('Error GeoJS:', error);
-                    currentCountry = 'ROW'; 
-                    setLang('en'); 
-                    updateDynamicPricing();
-                });
+            function applyCountry(country) {
+                currentCountry = country || 'ROW';
+                configureLangToggle();
+
+                const spanishSpeakingCountries = ['AR', 'MX', 'CO', 'CL', 'PE', 'VE', 'EC', 'GT', 'CU', 'BO', 'DO', 'HN', 'PY', 'SV', 'NI', 'CR', 'PA', 'PR', 'UY'];
+
+                if (currentCountry === 'ES') {
+                    // Si el navegador está en catalán, arranca en catalán
+                    const nav = (navigator.language || '').toLowerCase();
+                    setLang(nav.startsWith('ca') ? 'ca' : 'es-ES');
+                } else if (currentCountry === 'BR') {
+                    setLang('pt');
+                } else if (currentCountry === 'IT') {
+                    setLang('it');
+                } else if (spanishSpeakingCountries.includes(currentCountry)) {
+                    setLang('es');
+                } else {
+                    setLang('en');
+                }
+            }
+
+            // Para probar: ?country=ES (o AR, BR, IT...) fuerza el país
+            const forcedCountry = new URLSearchParams(window.location.search).get('country');
+            if (forcedCountry) {
+                applyCountry(forcedCountry.toUpperCase());
+            } else {
+                fetch('https://get.geojs.io/v1/ip/country.json')
+                    .then(response => response.json())
+                    .then(data => applyCountry(data.country))
+                    .catch(error => {
+                        console.error('Error GeoJS:', error);
+                        applyCountry('ROW');
+                    });
+            }
         });
     </script>
 
