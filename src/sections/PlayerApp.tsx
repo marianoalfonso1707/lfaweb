@@ -1,3 +1,4 @@
+import playerScreen from "@/assets/player-app.png";
 import { gsap } from "@/lib/gsap";
 import { phoneScroll, scrollReveal } from "@/lib/motion";
 import { useFinePointer } from "@/lib/use-media-query";
@@ -5,13 +6,6 @@ import { cn } from "@/lib/utils";
 import { usePrefersReducedMotion } from "@/lib/use-media-query";
 import { useLayoutEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
-
-const FEED = [
-  { label: "app.next", value: "app.nextWhen", accent: true },
-  { label: "app.vs", value: "app.pitch", accent: false },
-  { label: "app.table", value: "app.tableValue", accent: true },
-  { label: "app.scorers", value: "app.scorersValue", accent: true },
-] as const;
 
 export function PlayerApp() {
   const { t, i18n } = useTranslation();
@@ -71,37 +65,8 @@ export function PlayerApp() {
     <section className="app" id="app" ref={rootRef}>
       <div className="wrap">
         <div className={cn("phone rv", staticPhone && "is-static")} id="phone" ref={phoneRef}>
-          <div className="notch" />
           <div className="scr">
-            <div className="me">
-              <i />
-              <div>
-                <b>{t("app.player")}</b>
-                <small>{t("app.playerMeta")}</small>
-              </div>
-            </div>
-            <div className="kpi">
-              <div>
-                <b>{t("app.kpiGoalsValue")}</b>
-                <small>{t("app.kpiGoals")}</small>
-              </div>
-              <div>
-                <b>{t("app.kpiAstValue")}</b>
-                <small>{t("app.kpiAst")}</small>
-              </div>
-              <div>
-                <b>{t("app.kpiYellowValue")}</b>
-                <small>{t("app.kpiYellow")}</small>
-              </div>
-            </div>
-            <div className="feed">
-              {FEED.map((row) => (
-                <div key={row.label}>
-                  <span>{t(row.label)}</span>
-                  <span className={row.accent ? "y" : undefined}>{t(row.value)}</span>
-                </div>
-              ))}
-            </div>
+            <img src={playerScreen} alt={t("app.eyebrow")} width={272} height={572} loading="lazy" decoding="async" />
           </div>
         </div>
         <div>
