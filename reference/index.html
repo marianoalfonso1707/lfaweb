@@ -1,0 +1,517 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>LFA — Concepto "Matchday"</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Inter+Tight:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  --black:#0D0B0C; --ink:#141214; --ink2:#1c1a1d; --line:rgba(253,253,240,.08);
+  --yellow:#F3DD30; --white:#FDFDF0; --muted:#9a978f; --foul:#2c3346;
+  --head:'Oswald',sans-serif; --body:'Inter Tight',system-ui,sans-serif;
+  --ease:cubic-bezier(.22,1,.36,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:auto}
+body{background:var(--black);color:var(--white);font-family:var(--body);-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::before{content:"";position:fixed;inset:0;pointer-events:none;z-index:999;opacity:.045;mix-blend-mode:overlay;
+  background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/%3E%3C/filter%3E%3Crect width='160' height='160' filter='url(%23n)'/%3E%3C/svg%3E")}
+a{color:inherit;text-decoration:none}
+h1,h2,h3,.h{font-family:var(--head);text-transform:uppercase;line-height:.92;letter-spacing:-.01em;font-weight:700}
+.y{color:var(--yellow)}
+.it{font-style:italic}
+.wrap{width:min(1280px,calc(100% - 48px));margin:0 auto}
+.eyebrow{font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.22em;font-size:12px;color:var(--yellow);display:flex;align-items:center;gap:10px}
+.eyebrow::before{content:"";width:28px;height:2px;background:var(--yellow)}
+.btn{display:inline-flex;align-items:center;gap:10px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.06em;font-size:15px;padding:16px 26px;border-radius:4px;position:relative;overflow:hidden;transition:transform .35s var(--ease)}
+.btn:hover{transform:translateY(-2px)}
+.btn-y{background:var(--yellow);color:var(--black)}
+.btn-y::after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent 30%,rgba(255,255,255,.55) 50%,transparent 70%);transform:translateX(-120%);transition:transform .7s var(--ease)}
+.btn-y:hover::after{transform:translateX(120%)}
+.btn-g{border:1px solid rgba(253,253,240,.25);color:var(--white)}
+.btn-g:hover{border-color:var(--yellow);color:var(--yellow)}
+
+/* ticker */
+.ticker{position:fixed;top:0;left:0;right:0;z-index:60;height:30px;background:var(--yellow);color:var(--black);font-family:var(--head);font-weight:600;font-size:12px;letter-spacing:.14em;text-transform:uppercase;overflow:hidden;display:flex;align-items:center}
+.ticker .live{flex:none;padding:0 14px;height:100%;display:flex;align-items:center;gap:8px;background:var(--black);color:var(--yellow)}
+.ticker .live i{width:7px;height:7px;border-radius:50%;background:var(--yellow);animation:pulse 1.4s infinite}
+@keyframes pulse{0%,100%{transform:scale(1);opacity:1}50%{transform:scale(1.7);opacity:.5}}
+.ticker .track{display:flex;white-space:nowrap;animation:marq 40s linear infinite}
+.ticker .track span{padding:0 18px}
+.ticker .track span b{font-weight:700}
+@keyframes marq{to{transform:translateX(-50%)}}
+
+/* nav */
+nav{position:fixed;top:30px;left:0;right:0;z-index:50;height:68px;display:flex;align-items:center;transition:background .4s,backdrop-filter .4s}
+nav.scrolled{background:rgba(13,11,12,.7);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}
+nav .wrap{display:flex;align-items:center;justify-content:space-between}
+.logo{display:flex;align-items:center}
+.logo img{height:48px;width:auto;display:block;transition:transform .35s var(--ease)}
+.logo:hover img{transform:scale(1.04)}
+footer .logo img{height:40px;opacity:.9}
+nav ul{display:flex;gap:34px;list-style:none;font-size:14px;font-weight:500;color:var(--muted)}
+nav ul a{position:relative;transition:color .3s}
+nav ul a::after{content:"";position:absolute;left:0;right:100%;bottom:-6px;height:2px;background:var(--yellow);transition:right .35s var(--ease)}
+nav ul a:hover{color:var(--white)}nav ul a:hover::after{right:0}
+nav .right{display:flex;align-items:center;gap:18px}
+.lang{font-size:12px;letter-spacing:.12em;color:var(--muted)}
+.lang b{color:var(--yellow)}
+nav .btn{padding:11px 18px;font-size:13px}
+@media(max-width:900px){nav ul,.lang{display:none}}
+
+/* hero */
+.hero{min-height:100svh;position:relative;display:grid;align-items:center;padding-top:98px;overflow:hidden}
+.pitch{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.hero .wrap{position:relative;display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center}
+.hero h1{font-size:clamp(46px,6.6vw,100px)}
+.manifesto{padding:150px 0 30px;text-align:center}
+.manifesto .eyebrow{justify-content:center}.manifesto .eyebrow::before{display:none}
+.manifesto h2{font-size:clamp(40px,6vw,92px);max-width:14ch;margin:18px auto 0}
+.manifesto p{max-width:660px;margin:30px auto 0;color:var(--muted);font-size:18px;line-height:1.55}
+.manifesto p b{color:var(--white);font-weight:600}
+.sheet{position:relative;height:200px;display:grid;grid-template-columns:1fr 1fr;gap:12px;align-items:center}
+.sheet .paper{height:150px;border-radius:8px;background:repeating-linear-gradient(180deg,#f1ead6 0 22px,#d9d0b8 22px 23px);position:relative;overflow:hidden;transform:rotate(-3deg);box-shadow:0 10px 30px rgba(0,0,0,.5)}
+.sheet .paper::before{content:"Fecha 7 · Mendoza vs Rey del Sur\A Gómez ✓✓   Díaz 🟨\A Ruiz 🟥   Final 2-1";white-space:pre;position:absolute;left:12px;top:6px;font:italic 11px/22px 'Comic Sans MS',cursive;color:#3a3630}
+.sheet .paper i{position:absolute;left:0;right:0;height:2px;background:var(--yellow);box-shadow:0 0 16px var(--yellow);animation:scan 2.4s ease-in-out infinite}
+.sheet .out{font-size:12px;display:grid;gap:6px}
+.sheet .out div{display:flex;justify-content:space-between;background:rgba(253,253,240,.04);border-radius:6px;padding:6px 8px;animation:slideIn .6s var(--ease) both}
+.sheet .out div:nth-child(2){animation-delay:.2s}.sheet .out div:nth-child(3){animation-delay:.4s}.sheet .out div:nth-child(4){animation-delay:.6s}
+.sheet-sm{height:140px;gap:14px}.sheet-sm .paper{height:118px}.sheet-sm .paper::before{font-size:9px;line-height:22px}
+.sheet-sm .out div{animation:none;opacity:0;transform:translateX(16px)}
+.paper.done i{animation:none;opacity:0}.paper.done{box-shadow:0 0 0 2px var(--yellow),0 10px 30px rgba(0,0,0,.5)}
+/* signature */
+.signature{padding:150px 0 40px}
+.signature .wrap{display:grid;grid-template-columns:.9fr 1.1fr;gap:70px;align-items:center}
+.signature h2{font-size:clamp(40px,4.6vw,68px)}
+.signature p{color:var(--muted);font-size:18px;line-height:1.5;margin-top:24px;max-width:480px}
+.steps{list-style:none;margin-top:34px;display:grid;gap:16px}
+.steps li{display:flex;gap:16px;align-items:start;font-size:15px;color:var(--white);padding-top:16px;border-top:1px solid var(--line)}
+.steps b{font-family:var(--head);color:var(--yellow);font-size:14px;letter-spacing:.1em;padding-top:2px}
+.demo{background:linear-gradient(160deg,var(--ink2),var(--ink));border:1px solid rgba(243,221,48,.25);border-radius:24px;padding:30px;position:relative;box-shadow:0 60px 120px -50px rgba(243,221,48,.25)}
+.demo::before{content:"";position:absolute;inset:-1px;border-radius:24px;background:radial-gradient(500px 240px at 80% 0%,rgba(243,221,48,.12),transparent 60%);pointer-events:none}
+.dhead{display:flex;justify-content:space-between;align-items:center;margin-bottom:22px}
+.dstate{font-family:var(--head);font-size:12px;letter-spacing:.16em;text-transform:uppercase;color:var(--muted)}
+.dstate.ok{color:var(--yellow)}
+.sheet-xl{height:auto;grid-template-columns:1fr 1fr;gap:26px;align-items:center}
+.sheet-xl .paper{height:320px;transform:rotate(-2deg);background:repeating-linear-gradient(180deg,#f1ead6 0 30px,#d9d0b8 30px 31px)}
+.sheet-xl .paper::before{content:"FECHA 7 — Mendoza vs Rey del Sur\A Gómez  ✓✓     Vega  ✓\A Díaz  🟨 71'\A Ruiz  🟥 84'\A Asist: Pérez, Soto\A FINAL  2 - 1\A Árbitro: Ferreyra";font-size:14px;line-height:30px;left:16px;top:8px}
+.sheet-xl .out{font-size:15px;gap:10px}
+.sheet-xl .out div{padding:12px 14px;animation:none;opacity:0;transform:translateX(16px)}
+.dfoot{display:flex;justify-content:space-between;align-items:center;margin-top:22px;font-size:13px;color:var(--yellow);gap:14px;flex-wrap:wrap}
+.dfoot .dtime{color:var(--muted)}
+@media(max-width:1000px){.signature .wrap{grid-template-columns:1fr;gap:40px}}
+@media(max-width:600px){.sheet-xl{grid-template-columns:1fr}.sheet-xl .paper{height:220px}}
+.hero h1{line-height:1}
+.hero h1 .w{display:inline-block;overflow:hidden;vertical-align:bottom;padding:.14em .12em .02em .04em;margin:-.14em -.12em -.02em -.04em}
+.hero h1 .w span{display:inline-block;transform:translateY(115%)}
+.hero p{max-width:520px;font-size:clamp(16px,1.3vw,19px);line-height:1.5;color:var(--muted);margin:28px 0 36px}
+.hero .ctas{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.hero .trial{margin-top:22px;font-size:13px;color:var(--muted);display:flex;gap:8px;align-items:center}
+.hero .trial::before{content:"✓";color:var(--yellow);font-weight:700}
+.stage{position:relative;height:560px;perspective:1400px}
+.panel{position:absolute;background:linear-gradient(180deg,rgba(28,26,29,.96),rgba(20,18,20,.96));border:1px solid rgba(253,253,240,.1);border-radius:14px;box-shadow:0 40px 80px -30px rgba(0,0,0,.8),0 0 0 1px rgba(243,221,48,.06) inset;padding:18px;transform-style:preserve-3d;will-change:transform}
+.panel h4{font-family:var(--head);font-weight:600;letter-spacing:.12em;text-transform:uppercase;font-size:11px;color:var(--muted);display:flex;justify-content:space-between;margin-bottom:12px}
+.panel h4 b{color:var(--yellow)}
+.row{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:10px;padding:9px 0;border-top:1px solid var(--line);font-size:13px}
+.row:first-of-type{border-top:0}
+.row .s{font-family:var(--head);font-size:20px;font-weight:700;letter-spacing:.05em;color:var(--white);padding:2px 10px;background:rgba(253,253,240,.05);border-radius:4px}
+.row .r{text-align:right}
+.row.live .s{background:var(--yellow);color:var(--black)}
+.tbl{width:100%;font-size:12px;border-collapse:collapse}
+.tbl td{padding:7px 0;border-top:1px solid var(--line)}
+.tbl tr:first-child td{border-top:0;color:var(--muted);font-size:10px;letter-spacing:.14em;text-transform:uppercase}
+.tbl td:last-child{text-align:right;font-family:var(--head);font-size:15px;color:var(--yellow)}
+.tbl .pos{width:22px;color:var(--muted)}
+.bar{height:8px;background:rgba(253,253,240,.07);border-radius:4px;overflow:hidden;margin-top:6px}
+.bar i{display:block;height:100%;width:0;background:var(--yellow);border-radius:4px}
+.p1{left:0;top:40px;width:330px;z-index:2}
+.p2{right:0;top:0;width:290px;z-index:1}
+.p3{left:60px;bottom:30px;width:360px;z-index:3}
+.hero .scrollcue{position:absolute;left:50%;bottom:26px;transform:translateX(-50%);display:flex;flex-direction:column;align-items:center;gap:8px;font-size:10px;letter-spacing:.3em;text-transform:uppercase;color:var(--muted)}
+.hero .scrollcue i{width:1px;height:46px;background:rgba(253,253,240,.15);position:relative;overflow:hidden}
+.hero .scrollcue i::after{content:"";position:absolute;left:0;top:-10px;width:1px;height:10px;background:var(--yellow);animation:drop 2s infinite}
+@keyframes drop{to{top:56px}}
+@media(max-width:1000px){.hero{padding-top:120px}.hero .wrap{grid-template-columns:1fr;gap:28px}.stage{height:420px;width:100%;max-width:520px;justify-self:center}.p1{width:60%}.p2{width:50%}.p3{width:68%;left:20%}.hero .scrollcue{display:none}}
+@media(max-width:600px){.stage{height:400px}.p2{display:none}.p1{width:74%;left:0;top:0}.p3{width:82%;left:auto;right:0;bottom:0}.panel{padding:14px}.row .s{font-size:16px}.hero p{margin:20px 0 26px}.hero .ctas .btn{padding:14px 20px;font-size:14px}}
+@media(max-width:900px){nav{height:60px}.logo img{height:38px}nav .btn{padding:9px 14px;font-size:12px}nav .btn-g{display:none}}
+
+/* logos */
+.logos{padding:60px 0 20px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;position:relative}
+.logos .lbl{text-align:center;font-size:11px;letter-spacing:.26em;text-transform:uppercase;color:var(--muted);margin-bottom:34px}
+.logos .strip{display:flex;white-space:nowrap;animation:marq 22s linear infinite;margin-bottom:40px}
+.logos .strip:hover{animation-play-state:paused}
+.logos .strip span{display:inline-flex;align-items:center;gap:12px;margin:0 22px;padding:12px 22px;border:1px solid var(--line);border-radius:999px;font-family:var(--head);font-weight:600;text-transform:uppercase;letter-spacing:.08em;font-size:14px;color:var(--muted);transition:.35s}
+.logos .strip span i{width:26px;height:26px;border-radius:50%;background:conic-gradient(from 90deg,var(--yellow),var(--foul),var(--yellow));display:inline-block;filter:grayscale(1);opacity:.6;transition:.35s}
+.logos .strip span:hover{color:var(--white);border-color:var(--yellow)}
+.logos .strip span:hover i{filter:none;opacity:1}
+.logos::before,.logos::after{content:"";position:absolute;top:0;bottom:0;width:160px;z-index:2;pointer-events:none}
+.logos::before{left:0;background:linear-gradient(90deg,var(--black),transparent)}
+.logos::after{right:0;background:linear-gradient(-90deg,var(--black),transparent)}
+
+/* stats */
+.stats{padding:120px 0 80px}
+.stats .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:24px;margin-top:48px}
+@media(max-width:1000px){.stats .grid{grid-template-columns:1fr 1fr}}
+.stat{border-top:1px solid rgba(253,253,240,.18);padding-top:22px}
+.stat .n{font-family:var(--head);font-size:clamp(60px,8vw,120px);line-height:.9;font-weight:700;letter-spacing:-.03em}
+.stat .n sup{font-size:.4em;color:var(--yellow);vertical-align:top;margin-left:4px}
+.stat .l{margin-top:12px;color:var(--muted);font-size:15px}
+.stats .note{margin-top:30px;font-size:12px;color:var(--muted);opacity:.7}
+@media(max-width:800px){.stats .grid{grid-template-columns:1fr}}
+
+/* journey (horizontal) */
+.journey{position:relative}
+.journey .head{padding:60px 0 20px}
+.journey h2{font-size:clamp(44px,6.5vw,96px);max-width:14ch}
+.journey .sub{color:var(--muted);max-width:520px;margin-top:20px;font-size:17px;line-height:1.5}
+.pin{height:100svh;overflow:hidden;display:flex;align-items:center}
+.track{display:flex;gap:36px;padding:0 max(24px,calc((100vw - 1280px)/2));will-change:transform}
+.scene{flex:none;width:min(720px,80vw);height:min(560px,68svh);border:1px solid var(--line);border-radius:20px;background:linear-gradient(160deg,var(--ink2),var(--ink));padding:38px;display:grid;grid-template-columns:1fr 1fr;gap:30px;position:relative;overflow:hidden}
+.scene::before{content:attr(data-n);position:absolute;right:-10px;bottom:-40px;font-family:var(--head);font-size:260px;font-weight:700;line-height:1;color:rgba(253,253,240,.035);pointer-events:none}
+.scene .t{font-family:var(--head);font-size:13px;letter-spacing:.2em;color:var(--yellow);font-weight:600}
+.scene h3{font-size:clamp(34px,3.6vw,52px);margin:18px 0 16px}
+.scene p{color:var(--muted);line-height:1.5;font-size:16px;max-width:320px}
+.scene .ui{align-self:center;background:rgba(13,11,12,.6);border:1px solid var(--line);border-radius:14px;padding:18px;position:relative}
+.chip{display:inline-block;font-family:var(--head);font-size:11px;letter-spacing:.14em;padding:5px 10px;border-radius:4px;background:rgba(243,221,48,.12);color:var(--yellow);text-transform:uppercase;margin-bottom:12px}
+.fx .row{animation:slideIn .6s var(--ease) both}
+.fx .row:nth-child(2){animation-delay:.15s}.fx .row:nth-child(3){animation-delay:.3s}.fx .row:nth-child(4){animation-delay:.45s}
+@keyframes slideIn{from{opacity:0;transform:translateX(24px)}to{opacity:1;transform:none}}
+.face{display:grid;place-items:center;height:200px;position:relative}
+.face svg{width:150px;height:150px}
+.face .scan{position:absolute;left:20%;right:20%;height:2px;background:var(--yellow);box-shadow:0 0 18px var(--yellow);top:20%;animation:scan 2.4s ease-in-out infinite}
+@keyframes scan{0%,100%{top:18%}50%{top:82%}}
+.face .ok{position:absolute;bottom:10px;font-family:var(--head);font-size:12px;letter-spacing:.2em;color:var(--yellow)}
+.bracket{display:grid;grid-template-columns:1fr 1fr 1fr;gap:10px;font-size:11px;align-items:center}
+.bracket div{border:1px solid var(--line);border-radius:6px;padding:7px 9px;background:rgba(253,253,240,.03)}
+.bracket .w{border-color:var(--yellow);color:var(--yellow)}
+@media(max-width:900px){.pin{height:auto;display:block;overflow:visible}.track{flex-direction:column;padding:0 24px;transform:none!important}.scene{width:100%;height:auto;grid-template-columns:1fr}}
+
+/* bento */
+.bento{padding:140px 0}
+.bento h2{font-size:clamp(44px,6vw,88px);max-width:12ch}
+.bgrid{display:grid;grid-template-columns:repeat(6,1fr);gap:16px;margin-top:56px}
+.tile{grid-column:span 2;min-height:260px;border:1px solid var(--line);border-radius:18px;padding:28px;background:var(--ink);position:relative;overflow:hidden;transform-style:preserve-3d;transition:border-color .4s}
+.tile.wide{grid-column:span 3}
+.tile:hover{border-color:rgba(243,221,48,.4)}
+.tile .glow{position:absolute;width:300px;height:300px;border-radius:50%;background:radial-gradient(circle,rgba(243,221,48,.16),transparent 60%);top:var(--my,50%);left:var(--mx,50%);transform:translate(-50%,-50%);opacity:0;transition:opacity .4s;pointer-events:none}
+.tile:hover .glow{opacity:1}
+.tile .ic{width:44px;height:44px;border-radius:10px;background:rgba(243,221,48,.1);display:grid;place-items:center;color:var(--yellow);font-family:var(--head);font-weight:700;font-size:18px;margin-bottom:60px}
+.tile h3{font-size:26px;margin-bottom:10px}
+.tile p{color:var(--muted);font-size:14px;line-height:1.5}
+.tile .tag{position:absolute;top:24px;right:24px;font-size:10px;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+@media(max-width:900px){.bgrid{grid-template-columns:1fr 1fr}.tile,.tile.wide{grid-column:span 1}}
+@media(max-width:600px){.bgrid{grid-template-columns:1fr}}
+
+/* app */
+.app{padding:60px 0 140px;position:relative}
+.app .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center}
+.app h2{font-size:clamp(44px,5.5vw,80px)}
+.app p{color:var(--muted);font-size:17px;line-height:1.5;margin:24px 0 32px;max-width:460px}
+.app ul{list-style:none;display:grid;gap:12px;color:var(--white);font-size:15px}
+.app li::before{content:"→ ";color:var(--yellow)}
+.phone{width:300px;height:600px;margin:0 auto;border-radius:44px;border:1px solid rgba(253,253,240,.18);background:#0a090a;padding:14px;box-shadow:0 60px 120px -40px rgba(243,221,48,.25),0 0 0 8px #151315;position:relative;transform:rotate(-6deg)}
+.phone .scr{height:100%;border-radius:32px;background:linear-gradient(180deg,#1a181b,#0d0b0c);overflow:hidden;padding:26px 16px 16px;font-size:12px}
+.phone .notch{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:110px;height:26px;background:#0a090a;border-radius:0 0 16px 16px}
+.phone .me{display:flex;gap:12px;align-items:center;margin:14px 0 18px}
+.phone .me i{width:44px;height:44px;border-radius:50%;background:linear-gradient(135deg,var(--yellow),var(--foul))}
+.phone .me b{display:block;font-family:var(--head);font-size:16px}
+.phone .me small{color:var(--muted)}
+.kpi{display:grid;grid-template-columns:repeat(3,1fr);gap:8px;margin-bottom:16px}
+.kpi div{background:rgba(253,253,240,.05);border-radius:10px;padding:10px;text-align:center}
+.kpi b{display:block;font-family:var(--head);font-size:20px;color:var(--yellow)}
+.kpi small{color:var(--muted);font-size:10px}
+.feed{display:grid;gap:8px}
+.feed div{background:rgba(253,253,240,.04);border-radius:10px;padding:10px 12px;display:flex;justify-content:space-between;animation:slideIn .8s var(--ease) both}
+.feed div:nth-child(2){animation-delay:.2s}.feed div:nth-child(3){animation-delay:.4s}.feed div:nth-child(4){animation-delay:.6s}
+@media(max-width:900px){.app .wrap{grid-template-columns:1fr}.phone{transform:none;width:260px;height:520px}}
+
+/* pricing */
+.pricing{padding:120px 0;border-top:1px solid var(--line)}
+.pricing .top{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap}
+.pricing h2{font-size:clamp(44px,6vw,88px)}
+.toggle{display:inline-flex;background:var(--ink);border:1px solid var(--line);border-radius:999px;padding:4px;position:relative}
+.toggle button{border:0;background:transparent;color:var(--muted);font-family:var(--head);font-weight:600;letter-spacing:.1em;text-transform:uppercase;font-size:12px;padding:10px 20px;border-radius:999px;cursor:pointer;position:relative;z-index:1;transition:color .3s}
+.toggle button.on{color:var(--black)}
+.toggle .pill{position:absolute;top:4px;bottom:4px;left:4px;width:100px;background:var(--yellow);border-radius:999px;transition:left .45s var(--ease),width .45s var(--ease)}
+.pcard{margin-top:56px;display:grid;grid-template-columns:1.1fr .9fr;border:1px solid rgba(243,221,48,.35);border-radius:24px;overflow:hidden;background:linear-gradient(135deg,var(--ink2),var(--ink));position:relative}
+.pcard::before{content:"";position:absolute;inset:-1px;background:radial-gradient(600px 300px at 20% 0%,rgba(243,221,48,.14),transparent 60%);pointer-events:none}
+.pcard .l{padding:48px;border-right:1px solid var(--line)}
+.pcard .l .eyebrow{margin-bottom:18px}
+.price{display:flex;align-items:baseline;gap:8px;margin:14px 0 6px}
+.price .cur{font-family:var(--head);font-size:28px;color:var(--muted)}
+.price .num{font-family:var(--head);font-size:clamp(90px,10vw,150px);line-height:.85;font-weight:700;letter-spacing:-.04em}
+.price .per{color:var(--muted);font-size:16px}
+.price-note{color:var(--muted);font-size:14px;min-height:22px}
+.save{display:inline-block;margin-top:12px;font-family:var(--head);font-size:12px;letter-spacing:.14em;text-transform:uppercase;background:rgba(243,221,48,.12);color:var(--yellow);padding:6px 10px;border-radius:4px;transition:.3s}
+.pcard .r{padding:48px}
+.pcard .r ul{list-style:none;display:grid;gap:14px;font-size:15px}
+.pcard .r li{display:flex;gap:12px;align-items:start}
+.pcard .r li::before{content:"";flex:none;width:18px;height:18px;border-radius:50%;background:var(--yellow);margin-top:1px;
+  -webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23000'/%3E%3Cpath d='M7 12.5l3 3 7-7' stroke='%23fff' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") center/contain no-repeat;mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24'%3E%3Ccircle cx='12' cy='12' r='12' fill='%23000'/%3E%3Cpath d='M7 12.5l3 3 7-7' stroke='%23fff' stroke-width='2.5' fill='none'/%3E%3C/svg%3E") center/contain no-repeat}
+.pcard .r .btn{margin-top:30px;width:100%;justify-content:center}
+.pcard .r small{display:block;text-align:center;color:var(--muted);margin-top:12px;font-size:12px}
+.custom{margin-top:18px;display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;border:1px dashed rgba(253,253,240,.15);border-radius:16px;padding:22px 28px;color:var(--muted);font-size:15px}
+.custom a{color:var(--yellow);font-weight:600}
+@media(max-width:900px){.pcard{grid-template-columns:1fr}.pcard .l{border-right:0;border-bottom:1px solid var(--line)}}
+
+/* final */
+.final{padding:140px 0 80px;position:relative;overflow:hidden;text-align:center}
+.final .big{font-family:var(--head);font-weight:700;text-transform:uppercase;font-size:clamp(70px,14vw,220px);line-height:.85;letter-spacing:-.03em;white-space:nowrap;animation:marq 18s linear infinite;display:flex}
+.final .big span{padding-right:.35em}
+.final .big .o{-webkit-text-stroke:1.5px rgba(253,253,240,.5);color:transparent}
+.final .ctas{display:flex;gap:14px;justify-content:center;margin-top:50px;flex-wrap:wrap}
+.final p{color:var(--muted);margin-top:28px;font-size:16px}
+footer{border-top:1px solid var(--line);padding:30px 0;font-size:13px;color:var(--muted)}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+.wa{position:fixed;right:22px;bottom:22px;z-index:70;width:58px;height:58px;border-radius:50%;background:#25D366;display:grid;place-items:center;box-shadow:0 20px 40px -10px rgba(37,211,102,.5);transition:transform .3s var(--ease)}
+.wa:hover{transform:scale(1.08)}
+.wa svg{width:30px;height:30px;fill:#fff}
+
+.rv{opacity:0;transform:translateY(36px)}
+@media(prefers-reduced-motion:reduce){*{animation:none!important;transition:none!important}.rv{opacity:1;transform:none}.hero h1 .w span{transform:none}}
+</style>
+</head>
+<body>
+
+<div class="ticker"><div class="live"><i></i>LFA</div>
+<div class="track" id="ticker"></div></div>
+
+<nav id="nav"><div class="wrap">
+  <a class="logo" href="#" aria-label="LFA — Ligas Fútbol Amateur"><img src="logo.png" alt="LFA" width="380" height="283"></a>
+  <ul><li><a href="#journey">Cómo funciona</a></li><li><a href="#features">Funciones</a></li><li><a href="#app">App</a></li><li><a href="#pricing">Precios</a></li></ul>
+  <div class="right"><span class="lang"><b>ES</b> · EN · PT · IT</span><a class="btn btn-g" href="#">Login</a><a class="btn btn-y" href="#pricing">Probar gratis</a></div>
+</div></nav>
+
+<header class="hero">
+  <svg class="pitch" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMax slice" fill="none" stroke="#F3DD30">
+    <defs><radialGradient id="vg" cx="50%" cy="70%" r="70%"><stop offset="40%" stop-color="#fff"/><stop offset="100%" stop-color="#000"/></radialGradient><mask id="m"><rect width="1440" height="900" fill="url(#vg)"/></mask></defs>
+    <g mask="url(#m)" stroke-width="1.2" class="lines">
+      <path d="M120 900 L600 300 L840 300 L1320 900" opacity=".22"/>
+      <path d="M600 300 L840 300" opacity=".18"/>
+      <path d="M0 600 L1440 600" opacity=".26"/>
+      <ellipse cx="720" cy="600" rx="230" ry="62" opacity=".3"/>
+      <path d="M330 900 L470 640 L970 640 L1110 900" opacity=".22"/>
+      <path d="M470 640 L970 640" opacity=".22"/>
+      <path d="M520 900 L580 760 L860 760 L920 900" opacity=".22"/>
+      <path d="M580 760 L860 760" opacity=".22"/>
+      <circle cx="720" cy="600" r="4" fill="#F3DD30" opacity=".6"/>
+    </g>
+  </svg>
+  <div class="wrap">
+    <div>
+      <div class="eyebrow rv">Plataforma para organizadores de torneos</div>
+      <h1 style="margin-top:22px"><span class="w"><span>Revolucioná</span></span> <span class="w"><span>la</span></span><br><span class="w"><span class="y it">gestión</span></span> <span class="w"><span class="y it">de</span></span> <span class="w"><span class="y it">tu</span></span> <span class="w"><span class="y it">torneo.</span></span></h1>
+      <p class="rv">Tu liga es tu marca. Tus jugadores no solo participan en un torneo: viven una experiencia. Vos organizás el fútbol; LFA hace el resto.</p>
+      <div class="ctas rv"><a class="btn btn-y" href="#pricing">Empezar 30 días gratis</a><a class="btn btn-g" href="#journey">Ver cómo funciona <span>↓</span></a></div>
+      <div class="trial rv">Sin tarjeta. Tu liga online en menos de 10 minutos.</div>
+    </div>
+    <div class="stage" id="stage">
+      <div class="panel p1" data-depth="18"><h4>Fecha 7 <b>● En vivo</b></h4>
+        <div class="row live"><span>Mendoza FC</span><span class="s" id="liveScore">1 – 1</span><span class="r">Rey del Sur</span></div>
+        <div class="row"><span>La Villa</span><span class="s">0 – 0</span><span class="r">Soccer Pro</span></div>
+        <div class="row"><span>Del Sur</span><span class="s">2 – 1</span><span class="r">M90</span></div>
+      </div>
+      <div class="panel p2" data-depth="30"><h4>Posiciones <b>Zona A</b></h4>
+        <table class="tbl"><tr><td class="pos">#</td><td>Equipo</td><td>Pts</td></tr>
+        <tr><td class="pos">1</td><td>Rey del Sur</td><td>19</td></tr><tr><td class="pos">2</td><td>Mendoza FC</td><td>17</td></tr><tr><td class="pos">3</td><td>La Chilena</td><td>14</td></tr><tr><td class="pos">4</td><td>Terraza</td><td>12</td></tr></table>
+      </div>
+      <div class="panel p3" data-depth="10"><h4>Planilla de partido · IA <b id="aiState">Leyendo…</b></h4>
+        <div class="sheet sheet-sm"><div class="paper" id="aiPaper"><i></i></div>
+          <div class="out" id="aiOut"><div><span>Resultado</span><span class="y">2 – 1</span></div><div><span>⚽ R. Gómez</span><span>×2</span></div><div><span>🟨 L. Díaz</span><span>71'</span></div><div><span>🟥 M. Ruiz</span><span>84'</span></div></div></div>
+        <div id="aiDone" style="margin-top:10px;font-size:12px;color:var(--yellow);opacity:0">✓ Estadísticas del partido actualizadas automáticamente</div>
+      </div>
+    </div>
+  </div>
+  <div class="scrollcue"><i></i>Scroll</div>
+</header>
+
+<section class="logos">
+  <div class="lbl">Ligas que ya juegan con LFA</div>
+  <div class="strip" id="strip1"></div>
+</section>
+
+<section class="stats"><div class="wrap">
+  <div class="eyebrow rv">LFA en números</div>
+  <div class="grid">
+    <div class="stat rv"><div class="n"><span data-count="150">0</span><sup>+</sup></div><div class="l">torneos organizados con LFA</div></div>
+    <div class="stat rv"><div class="n"><span data-count="1200">0</span><sup>+</sup></div><div class="l">equipos registrados</div></div>
+    <div class="stat rv"><div class="n"><span data-count="12000">0</span><sup>+</sup></div><div class="l">jugadores con perfil y estadísticas</div></div>
+    <div class="stat rv"><div class="n"><span data-count="8000">0</span><sup>+</sup></div><div class="l">partidos jugados y publicados</div></div>
+  </div>
+  <div class="note rv">* Cifras ilustrativas para el prototipo — se reemplazan por los datos reales.</div>
+</div></section>
+
+<section class="signature" id="ia"><div class="wrap">
+  <div>
+    <div class="eyebrow rv">Del papel a la app · Función insignia</div>
+    <h2 class="rv" style="margin-top:18px">Importación de planilla de partido <span class="y it">automatizada con IA</span></h2>
+    <p class="rv">Cargás la planilla de partido escrita a mano y nuestra IA actualiza las estadísticas del partido automáticamente.</p>
+    <ol class="steps rv">
+      <li><b>01</b><span>Sacás una foto a la planilla, como siempre.</span></li>
+      <li><b>02</b><span>La IA lee resultado, goles, asistencias y tarjetas.</span></li>
+      <li><b>03</b><span>Tabla, goleadores y app de los jugadores, actualizados al instante.</span></li>
+    </ol>
+  </div>
+  <div class="demo rv" id="demo">
+    <div class="dhead"><span class="chip" style="margin:0">IA · Planilla de partido</span><span id="dState" class="dstate">● Leyendo…</span></div>
+    <div class="sheet sheet-xl"><div class="paper" id="dPaper"><i></i></div>
+      <div class="out" id="dOut"><div><span>Resultado</span><span class="y">2 – 1</span></div><div><span>⚽ R. Gómez</span><span>×2</span></div><div><span>⚽ T. Vega</span><span>×1</span></div><div><span>🟨 L. Díaz</span><span>71'</span></div><div><span>🟥 M. Ruiz</span><span>84'</span></div></div></div>
+    <div class="dfoot"><span id="dDone" style="opacity:0">✓ Estadísticas del partido actualizadas automáticamente</span><span class="dtime">⏱ 3 s · 0 datos cargados a mano</span></div>
+  </div>
+</div></section>
+
+<section class="journey" id="journey">
+  <div class="wrap head"><div class="eyebrow rv">Y el resto del torneo</div><h2 class="rv" style="margin-top:18px">Todo lo demás, <span class="y it">también solo</span>.</h2><p class="sub rv">Los jugadores ya no esperan días para ver los resultados, y vos ya no pasás horas cargando estadísticas a mano.</p></div>
+  <div class="pin" id="pin"><div class="track" id="track">
+    <article class="scene" data-n="01"><div><div class="t">Antes del torneo</div><h3>Armás el fixture en segundos</h3><p>Cargás equipos, canchas y horarios. El algoritmo genera todas las fechas sin cruces repetidos ni canchas superpuestas.</p></div>
+      <div class="ui fx"><span class="chip">Fixture inteligente</span><div class="row"><span>Mendoza FC</span><span class="s">vs</span><span class="r">La Villa</span></div><div class="row"><span>Rey del Sur</span><span class="s">vs</span><span class="r">M90</span></div><div class="row"><span>Terraza</span><span class="s">vs</span><span class="r">La Chilena</span></div><div class="row"><span>Soccer Pro</span><span class="s">vs</span><span class="r">Del Sur</span></div></div></article>
+    <article class="scene" data-n="02"><div><div class="t">Día de partido</div><h3>Face ID en la entrada de la cancha</h3><p>El jugador se verifica con la cara. Se acabaron los "primos" que juegan con el carnet de otro.</p></div>
+      <div class="ui"><span class="chip">Verificación</span><div class="face"><svg viewBox="0 0 100 100" fill="none" stroke="#F3DD30" stroke-width="1.5"><path d="M20 35V22a4 4 0 014-4h13M80 35V22a4 4 0 00-4-4H63M20 65v13a4 4 0 004 4h13M80 65v13a4 4 0 01-4 4H63" opacity=".8"/><ellipse cx="50" cy="48" rx="16" ry="20" opacity=".5"/><path d="M42 44h3M55 44h3M45 58q5 4 10 0" opacity=".5"/></svg><div class="scan"></div><div class="ok">✓ Juan P. · Habilitado</div></div></div></article>
+    <article class="scene" data-n="03"><div><div class="t">Al instante</div><h3>Tablas y goleadores se actualizan solos</h3><p>Apenas se carga el partido, la tabla, los goleadores, la web pública y la app de cada jugador se actualizan al mismo tiempo.</p></div>
+      <div class="ui fx"><span class="chip">● En vivo</span><div class="row live"><span>Mendoza FC</span><span class="s">2 – 1</span><span class="r">Rey del Sur</span></div><div style="margin-top:14px;font-size:12px;color:var(--muted)">⚽ 67' Gol · R. Gómez (MFC)</div><div style="font-size:12px;color:var(--muted);margin-top:6px">🟨 71' Amarilla · L. Díaz (RDS)</div><div class="bar"><i style="width:72%"></i></div></div></article>
+    <article class="scene" data-n="04"><div><div class="t">Sin discusiones</div><h3>Suspensiones y sanciones, automáticas</h3><p>Quinta amarilla o roja directa: LFA calcula la suspensión y bloquea al jugador en la próxima fecha. Vos no discutís con nadie.</p></div>
+      <div class="ui fx"><span class="chip">Tribunal</span><div class="row"><span>L. Díaz</span><span class="s" style="font-size:12px">5ª 🟨</span><span class="r y">1 fecha</span></div><div class="row"><span>M. Ruiz</span><span class="s" style="font-size:12px">🟥</span><span class="r y">2 fechas</span></div><div style="margin-top:12px;font-size:12px;color:var(--muted)">Aplicado al fixture de la Fecha 8 ✓</div></div></article>
+    <article class="scene" data-n="05"><div><div class="t">Fin de temporada</div><h3>Playoffs con llaves que se arman solas</h3><p>Terminó la fase regular y los cruces ya están. Compartís la llave y la final se vive en la app de cada jugador.</p></div>
+      <div class="ui"><span class="chip">Llaves</span><div class="bracket"><div>Rey del Sur</div><div class="w">Rey del Sur</div><div class="w">Campeón</div><div>Terraza</div><div>Mendoza FC</div><div></div><div class="w">Mendoza FC</div><div></div><div></div><div>La Villa</div><div></div><div></div></div></div></article>
+  </div></div>
+</section>
+
+<section class="manifesto"><div class="wrap">
+  <div class="eyebrow rv">Por qué existe LFA</div>
+  <h2 class="rv">Recuperá tu tiempo. <span class="y it">Expandí tu marca.</span></h2>
+  <p class="rv">LFA se trata de automatización: <b>menos horas cargando datos, más tiempo en la cancha</b>, con tus equipos y tus torneos. No es solo una plataforma: es un partner que acompaña tu crecimiento.</p>
+</div></section>
+
+<section class="bento" id="features"><div class="wrap">
+  <div class="eyebrow rv">Una solución a medida</div>
+  <h2 class="rv" style="margin-top:18px">Herramientas que <span class="y it">resuelven</span> y automatizan.</h2>
+  <div class="bgrid">
+    <div class="tile wide rv"><div class="glow"></div><span class="tag">Insignia · IA</span><div class="ic">✦</div><h3>Planilla a estadísticas con IA</h3><p>Foto de la planilla escrita a mano y listo: resultado, goles y tarjetas cargados solos. La hora que perdías cada fecha, de vuelta en tu bolsillo.</p></div>
+    <div class="tile wide rv"><div class="glow"></div><span class="tag">Admin</span><div class="ic">▦</div><h3>Portal web de administración</h3><p>Equipos, jugadores, canchas y árbitros en un panel pensado para usarse desde la tribuna o desde la oficina.</p></div>
+    <div class="tile rv"><div class="glow"></div><div class="ic">◉</div><h3>Face ID</h3><p>Verificación facial de jugadores en la cancha.</p></div>
+    <div class="tile rv"><div class="glow"></div><div class="ic">⌁</div><h3>Ediciones masivas</h3><p>Reprogramá una fecha entera en un clic.</p></div>
+    <div class="tile rv"><div class="glow"></div><div class="ic">⇩</div><h3>Exportaciones para redes</h3><p>Fixture, tablas y resultados en formato listo para publicar en Instagram y WhatsApp.</p></div>
+    <div class="tile wide rv"><div class="glow"></div><span class="tag">Marca</span><div class="ic">◎</div><h3>Tu liga, tu web pública</h3><p>Una página propia con el escudo, los colores y los sponsors de tu torneo. Lista para compartir por WhatsApp.</p></div>
+    <div class="tile wide rv"><div class="glow"></div><span class="tag">Jugadores</span><div class="ic">★</div><h3>Perfil del jugador</h3><p>Goles, tarjetas, asistencias y fotos. Cada jugador con su propia página, como un profesional.</p></div>
+  </div>
+</div></section>
+
+<section class="app" id="app"><div class="wrap">
+  <div class="phone rv" id="phone"><div class="notch"></div><div class="scr">
+    <div class="me"><i></i><div><b>Juan Pérez</b><small>Mendoza FC · #10</small></div></div>
+    <div class="kpi"><div><b>14</b><small>Goles</small></div><div><b>6</b><small>Asist.</small></div><div><b>2</b><small>🟨</small></div></div>
+    <div class="feed"><div><span>Próximo partido</span><span class="y">Dom 11:00</span></div><div><span>vs Rey del Sur</span><span>Cancha 3</span></div><div><span>Posición en tabla</span><span class="y">2º</span></div><div><span>Goleadores</span><span class="y">1º · 14</span></div></div>
+  </div></div>
+  <div>
+    <div class="eyebrow rv">LFA Player</div>
+    <h2 class="rv" style="margin-top:18px">Tus jugadores <span class="y it">viven una experiencia</span>.</h2>
+    <p class="rv">La app gratuita para cada jugador de tu liga: fixture, resultados, estadísticas personales y notificaciones. Ya no esperan días para ver cómo salió: lo ven en el momento, con tu marca adelante.</p>
+    <ul class="rv"><li>Perfil con goles, asistencias y tarjetas</li><li>Notificaciones de horario y cancha</li><li>Tabla y goleadores en vivo</li><li>Disponible en iOS y Android</li></ul>
+  </div>
+</div></section>
+
+<section class="pricing" id="pricing"><div class="wrap">
+  <div class="top"><div><div class="eyebrow rv">Precio simple</div><h2 class="rv" style="margin-top:18px">Un plan. <span class="y it">Todo</span> incluido.</h2></div>
+    <div class="toggle rv" id="toggle"><div class="pill"></div><button class="on" data-p="10" data-note="Facturado mes a mes" data-save="">Mensual</button><button data-p="8" data-note="US$48 cada 6 meses" data-save="Ahorrás 20%">Semestral</button><button data-p="6" data-note="US$72 por año" data-save="Ahorrás 40%">Anual</button></div></div>
+  <div class="pcard rv">
+    <div class="l"><div class="eyebrow">Por liga</div><div class="price"><span class="cur">US$</span><span class="num" id="priceNum">10</span><span class="per">/ mes</span></div><div class="price-note" id="priceNote">Facturado mes a mes</div><span class="save" id="priceSave" style="opacity:0">—</span>
+      <p style="color:var(--muted);margin-top:30px;max-width:380px;line-height:1.5;font-size:15px">Hasta 30 equipos por liga. Sin límite de jugadores, partidos ni temporadas. Para más equipos, hablamos.</p></div>
+    <div class="r"><ul><li>Importación de planilla de partido con IA</li><li>Fixture inteligente y llaves de playoffs</li><li>Resultados y tablas en tiempo real</li><li>Face ID para jugadores</li><li>Suspensiones automáticas</li><li>Web pública con tu marca</li><li>App LFA Player para tus jugadores</li><li>Exportaciones PDF y Excel</li><li>Soporte por WhatsApp</li></ul>
+      <a class="btn btn-y" href="#">Empezar 30 días gratis</a><small>Sin tarjeta · Cancelás cuando quieras</small></div>
+  </div>
+  <div class="custom rv"><span>¿Más de 30 equipos, varias sedes o una federación? Armamos un plan a medida.</span><a href="#">Hablar con el equipo →</a></div>
+</div></section>
+
+<section class="final">
+  <div class="big"><span>¿Arrancamos?</span><span class="o">¿Arrancamos?</span><span>¿Arrancamos?</span><span class="o">¿Arrancamos?</span></div>
+  <div class="ctas"><a class="btn btn-y" href="#pricing">Probar 30 días gratis</a><a class="btn btn-g" href="#">Escribinos por WhatsApp</a></div>
+  <p>Empresa argentina con sede en Atlanta, Georgia · Ligas Futbol Amateur, LLC</p>
+</section>
+<footer><div class="wrap"><span style="display:flex;align-items:center;gap:16px"><a class="logo" href="#"><img src="logo.png" alt="LFA" width="380" height="283"></a>© 2026 Ligas Futbol Amateur, LLC</span><span>Política de privacidad Face ID · soporte@ligasfutbolamateur.com</span></div></footer>
+
+<a class="wa" href="#" aria-label="WhatsApp"><svg viewBox="0 0 24 24"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.6.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.2-.4.7-1.3.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.8 12 12 0 004.6 4 5.3 5.3 0 003.2.7 2.7 2.7 0 001.8-1.3 2.2 2.2 0 00.2-1.3c-.1-.1-.3-.2-.5-.3z"/></svg></a>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://unpkg.com/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+gsap.registerPlugin(ScrollTrigger);
+const rm = matchMedia('(prefers-reduced-motion: reduce)').matches;
+const fine = matchMedia('(hover:hover) and (pointer:fine)').matches;
+
+/* ticker + logos */
+const phrase="Revolucionando <b>el fútbol amateur</b>";
+document.getElementById('ticker').innerHTML=Array(12).fill(`<span>${phrase}</span><span>●</span>`).join('');
+const leagues=["Torneos Mendoza","Copa Rey del Sur","Liga de Rabona","Soccer Pro Platinum","La Villa","M90 Deportivo","Terraza Fútbol","La Chilena","Las Cabañas","TDS","Deportivo M","La Tarumba"];
+document.getElementById('strip1').innerHTML=[...leagues,...leagues].map(l=>`<span><i></i>${l}</span>`).join('');
+
+/* smooth scroll */
+let lenis=null;
+if(!rm && fine && window.Lenis){lenis=new Lenis({lerp:.09});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);}
+document.querySelectorAll('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const id=a.getAttribute('href');if(id.length<2)return;const el=document.querySelector(id);if(!el)return;e.preventDefault();lenis?lenis.scrollTo(el,{offset:-90}):el.scrollIntoView({behavior:'smooth'});}));
+
+/* nav */
+const nav=document.getElementById('nav');addEventListener('scroll',()=>nav.classList.toggle('scrolled',scrollY>40),{passive:true});
+
+/* hero entrance */
+if(!rm){
+  const tl=gsap.timeline({defaults:{ease:'expo.out'}});
+  document.querySelectorAll('.pitch .lines path, .pitch .lines ellipse').forEach(p=>{const L=p.getTotalLength();p.style.strokeDasharray=L;p.style.strokeDashoffset=L;});
+  tl.to('.pitch .lines path, .pitch .lines ellipse',{strokeDashoffset:0,duration:1.4,stagger:.07,ease:'power2.out'},0)
+    .to('.hero h1 .w span',{y:0,duration:1.1,stagger:.08,ease:'expo.out'},.2)
+    .to('.hero .rv',{opacity:1,y:0,duration:.9,stagger:.1},.7)
+    .from('.panel',{y:80,opacity:0,rotateX:-12,duration:1.2,stagger:.15,ease:'expo.out'},.5)
+    .to('#aiOut div',{opacity:1,x:0,duration:.5,stagger:.22,ease:'expo.out'},2.0)
+    .add(()=>{document.getElementById('aiPaper').classList.add('done');document.getElementById('aiState').textContent='✓ Listo';},3.0)
+    .to('#aiDone',{opacity:1,duration:.5},3.0)
+    .add(()=>{const s=document.getElementById('liveScore');gsap.fromTo(s,{scale:1.35,background:'#fff'},{scale:1,background:'#F3DD30',duration:.6,ease:'back.out(2)'});s.textContent='2 – 1';},3.3);
+  gsap.to('.p1',{y:-14,duration:4,yoyo:true,repeat:-1,ease:'sine.inOut'});
+  gsap.to('.p2',{y:-18,duration:5,yoyo:true,repeat:-1,ease:'sine.inOut',delay:1});
+  gsap.to('.p3',{y:-10,duration:4.5,yoyo:true,repeat:-1,ease:'sine.inOut',delay:2});
+}else{document.querySelectorAll('.hero .rv').forEach(e=>e.classList.remove('rv'));document.querySelectorAll('#aiOut div').forEach(d=>{d.style.opacity=1;d.style.transform='none'});document.getElementById('aiDone').style.opacity=1;document.getElementById('aiPaper').classList.add('done');}
+
+/* mouse parallax on hero stage */
+if(fine && !rm){const st=document.getElementById('stage');addEventListener('mousemove',e=>{const x=(e.clientX/innerWidth-.5),y=(e.clientY/innerHeight-.5);
+  document.querySelectorAll('.panel').forEach(p=>{const d=+p.dataset.depth;gsap.to(p,{x:x*d,rotateY:x*6,rotateX:-y*6,duration:1.2,ease:'power3.out',overwrite:'auto'});});
+  gsap.to('.pitch',{x:x*-12,y:y*-8,duration:1.4,ease:'power3.out'});});}
+
+/* scroll reveals */
+gsap.utils.toArray('section .rv').forEach(el=>{gsap.to(el,{opacity:1,y:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}});});
+
+/* counters */
+gsap.utils.toArray('[data-count]').forEach(el=>{const end=+el.dataset.count;ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>gsap.to({v:0},{v:end,duration:1.8,ease:'power3.out',onUpdate:function(){el.textContent=Math.round(this.targets()[0].v).toLocaleString('es-AR')}})});});
+
+/* signature demo loop */
+(function(){const paper=document.getElementById('dPaper'),st=document.getElementById('dState'),done=document.getElementById('dDone'),rows=document.querySelectorAll('#dOut div');
+  if(rm){rows.forEach(r=>{r.style.opacity=1;r.style.transform='none'});paper.classList.add('done');st.textContent='✓ Listo';st.classList.add('ok');done.style.opacity=1;return;}
+  const loop=gsap.timeline({paused:true,repeat:-1,repeatDelay:1.2,onRepeat:()=>{paper.classList.remove('done');st.textContent='● Leyendo…';st.classList.remove('ok');}});
+  loop.set(rows,{opacity:0,x:16}).set(done,{opacity:0})
+      .to(rows,{opacity:1,x:0,duration:.5,stagger:.28,ease:'expo.out'},1.6)
+      .add(()=>{paper.classList.add('done');st.textContent='✓ Listo';st.classList.add('ok');},3.2)
+      .to(done,{opacity:1,duration:.5},3.2)
+      .to({},{duration:2.2});
+  ScrollTrigger.create({trigger:'#demo',start:'top 80%',onEnter:()=>loop.play(),onLeave:()=>loop.pause(),onEnterBack:()=>loop.play(),onLeaveBack:()=>loop.pause()});
+})();
+
+/* horizontal journey */
+ScrollTrigger.matchMedia({'(min-width: 901px)':()=>{const track=document.getElementById('track');const dist=()=>track.scrollWidth-innerWidth;
+  gsap.to(track,{x:()=>-dist(),ease:'none',scrollTrigger:{trigger:'#pin',start:'top top',end:()=>'+='+dist(),pin:true,scrub:1,invalidateOnRefresh:true,anticipatePin:1}});
+  gsap.utils.toArray('.scene').forEach((s,i)=>{if(i===0)return;gsap.from(s,{scale:.92,opacity:.4,ease:'none',scrollTrigger:{trigger:s,containerAnimation:ScrollTrigger.getAll().find(t=>t.vars.pin),start:'left 95%',end:'left 55%',scrub:true}});});}});
+
+/* tilt tiles */
+if(fine && !rm){document.querySelectorAll('.tile').forEach(t=>{t.addEventListener('mousemove',e=>{const r=t.getBoundingClientRect();const x=(e.clientX-r.left)/r.width,y=(e.clientY-r.top)/r.height;t.style.setProperty('--mx',x*100+'%');t.style.setProperty('--my',y*100+'%');gsap.to(t,{rotateY:(x-.5)*8,rotateX:(.5-y)*8,transformPerspective:900,duration:.6,ease:'power3.out'});});t.addEventListener('mouseleave',()=>gsap.to(t,{rotateY:0,rotateX:0,duration:.8,ease:'elastic.out(1,.6)'}));});
+  gsap.to('#phone',{rotate:0,y:-20,ease:'none',scrollTrigger:{trigger:'#app',start:'top 80%',end:'bottom 30%',scrub:1}});}
+
+/* pricing toggle */
+const tg=document.getElementById('toggle'),pill=tg.querySelector('.pill'),num=document.getElementById('priceNum'),note=document.getElementById('priceNote'),save=document.getElementById('priceSave');
+function setPill(b){pill.style.left=b.offsetLeft+'px';pill.style.width=b.offsetWidth+'px';}
+tg.querySelectorAll('button').forEach(b=>b.addEventListener('click',()=>{tg.querySelectorAll('button').forEach(x=>x.classList.remove('on'));b.classList.add('on');setPill(b);
+  const to=+b.dataset.p,from=+num.textContent;gsap.to({v:from},{v:to,duration:.6,ease:'power3.out',onUpdate:function(){num.textContent=Math.round(this.targets()[0].v)}});gsap.fromTo(num,{y:-10,opacity:.4},{y:0,opacity:1,duration:.5,ease:'expo.out'});
+  note.textContent=b.dataset.note;save.textContent=b.dataset.save||'—';save.style.opacity=b.dataset.save?1:0;}));
+addEventListener('load',()=>setPill(tg.querySelector('.on')));addEventListener('resize',()=>setPill(tg.querySelector('.on')));
+</script>
+</body>
+</html>
