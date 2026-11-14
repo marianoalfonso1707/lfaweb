@@ -1,4 +1,5 @@
-import { LINKS } from "@/lib/links";
+import { useGeo } from "@/geo/geo-provider";
+import { LINKS, whatsappUrl } from "@/lib/links";
 import { marquee } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { usePrefersReducedMotion } from "@/lib/use-media-query";
@@ -8,8 +9,12 @@ const MARKS = [false, true, false, true] as const;
 
 export function FinalCta() {
   const { t } = useTranslation();
+  const { hideTrial } = useGeo();
   const reduceMotion = usePrefersReducedMotion();
   const word = t("final.marquee");
+  const prefill = t("footer.waPrefill");
+  const primaryHref = hideTrial ? whatsappUrl(prefill) : LINKS.signup;
+  const primaryLabel = hideTrial ? t("pricing.arCtaUnder") : t("final.ctaPrimary");
 
   return (
     <section className="final">
@@ -26,10 +31,10 @@ export function FinalCta() {
         ))}
       </div>
       <div className="ctas">
-        <a className="btn btn-y" href={LINKS.signup} target="_blank" rel="noopener noreferrer">
-          {t("final.ctaPrimary")}
+        <a className="btn btn-y" href={primaryHref} target="_blank" rel="noopener noreferrer">
+          {primaryLabel}
         </a>
-        <a className="btn btn-g" href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer">
+        <a className="btn btn-g" href={whatsappUrl(prefill)} target="_blank" rel="noopener noreferrer">
           {t("final.ctaWhatsapp")}
         </a>
       </div>

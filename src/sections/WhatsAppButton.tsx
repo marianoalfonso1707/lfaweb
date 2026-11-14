@@ -1,4 +1,4 @@
-import { LINKS } from "@/lib/links";
+import { whatsappUrl } from "@/lib/links";
 import { useState, useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -59,7 +59,7 @@ export function WhatsAppButton() {
       ) : null}
       <a
         className="wa"
-        href={LINKS.whatsapp}
+        href={whatsappUrl(t("footer.waPrefill"))}
         target="_blank"
         rel="noopener noreferrer"
         aria-label={t("footer.whatsapp")}

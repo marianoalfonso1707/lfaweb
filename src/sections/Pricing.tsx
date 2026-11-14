@@ -1,16 +1,12 @@
+import { useGeo } from "@/geo/geo-provider";
 import { gsap } from "@/lib/gsap";
-import { LINKS } from "@/lib/links";
+import { LINKS, whatsappUrl } from "@/lib/links";
 import { priceToggle, scrollReveal } from "@/lib/motion";
+import { currencyFor, formatAmount, parseShownAmount, plansFor, showsBillingToggle } from "@/lib/pricing-geo";
 import { cn } from "@/lib/utils";
 import { usePrefersReducedMotion } from "@/lib/use-media-query";
 import { useLayoutEffect, useRef, useState } from "react";
 import { useTranslation } from "react-i18next";
-
-const PLANS = [
-  { labelKey: "pricing.monthly", price: 10, noteKey: "pricing.monthlyNote", saveKey: "" },
-  { labelKey: "pricing.semiannual", price: 8, noteKey: "pricing.semiannualNote", saveKey: "pricing.semiannualSave" },
-  { labelKey: "pricing.annual", price: 6, noteKey: "pricing.annualNote", saveKey: "pricing.annualSave" },
-] as const;
 
 const FEATURES = [
   "pricing.f1",
@@ -26,13 +22,22 @@ const FEATURES = [
 
 export function Pricing() {
   const { t, i18n } = useTranslation();
+  const { region } = useGeo();
   const rootRef = useRef<HTMLElement>(null);
   const toggleRef = useRef<HTMLDivElement>(null);
   const pillRef = useRef<HTMLDivElement>(null);
   const numRef = useRef<HTMLSpanElement>(null);
   const reduceMotion = usePrefersReducedMotion();
+  const [tier, setTier] = useState<"under30" | "over30">("under30");
   const [plan, setPlan] = useState(0);
-  const selected = PLANS[plan] ?? PLANS[0];
+  const plans = plansFor(region, tier);
+  const selected = plans[plan] ?? plans[0];
+  const currency = currencyFor(region);
+  const billingToggle = showsBillingToggle(region);
+
+  useLayoutEffect(() => {
+    setPlan(0);
+  }, [region]);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -86,21 +91,23 @@ export function Pricing() {
     return () => {
       window.removeEventListener("resize", onResize);
     };
-  }, [plan]);
+  }, [plan, billingToggle, i18n.language]);
+
+  const showAmount = (amount: number) => formatAmount(amount, region);
 
   const selectPlan = (index: number) => {
-    const next = PLANS[index];
+    const next = plans[index];
     const num = numRef.current;
-    if (!num) {
+    if (!next || !num || next.amount === null) {
       setPlan(index);
       return;
     }
-    const from = Number(num.textContent);
-    const to = next.price;
+    const from = parseShownAmount(num.textContent ?? "");
+    const to = next.amount;
     setPlan(index);
     gsap.killTweensOf(num);
     if (reduceMotion) {
-      num.textContent = String(to);
+      num.textContent = showAmount(to);
       return;
     }
     const proxy = { v: from };
@@ -109,7 +116,7 @@ export function Pricing() {
       duration: priceToggle.duration,
       ease: priceToggle.ease,
       onUpdate: () => {
-        num.textContent = String(Math.round(proxy.v));
+        num.textContent = showAmount(proxy.v);
       },
     });
     gsap.fromTo(
@@ -118,6 +125,9 @@ export function Pricing() {
       { y: 0, opacity: 1, duration: priceToggle.popDuration, ease: priceToggle.popEase },
     );
   };
+
+  const ctaHref = selected.href === LINKS.whatsapp ? whatsappUrl(t("footer.waPrefill")) : selected.href;
+  const amountLabel = selected.amount === null ? t("pricing.arPrice") : showAmount(selected.amount);
 
   return (
     <section className="pricing" id="pricing" ref={rootRef}>
@@ -129,31 +139,56 @@ export function Pricing() {
               {t("pricing.h2")} <span className="y it">{t("pricing.h2Accent")}</span> {t("pricing.h2End")}
             </h2>
           </div>
-          <div className="toggle rv" id="toggle" ref={toggleRef}>
-            <div className="pill" ref={pillRef} />
-            {PLANS.map((item, index) => (
+          <div className="toggles rv">
+            <div className="toggle tier" role="group" aria-label={t("pricing.tierUnder")}>
               <button
-                key={item.labelKey}
                 type="button"
-                className={cn(index === plan && "on")}
+                className={cn(tier === "under30" && "on")}
                 onClick={() => {
-                  selectPlan(index);
+                  setTier("under30");
                 }}
               >
-                {t(item.labelKey)}
+                {t("pricing.tierUnder")}
               </button>
-            ))}
+              <button
+                type="button"
+                className={cn(tier === "over30" && "on")}
+                onClick={() => {
+                  setTier("over30");
+                }}
+              >
+                {t("pricing.tierOver")}
+              </button>
+            </div>
+            {billingToggle ? (
+              <div className="toggle" id="toggle" ref={toggleRef}>
+                <div className="pill" ref={pillRef} />
+                {plans.map((item, index) => (
+                  <button
+                    key={item.id}
+                    type="button"
+                    className={cn(index === plan && "on")}
+                    onClick={() => {
+                      selectPlan(index);
+                    }}
+                  >
+                    {t(item.labelKey)}
+                  </button>
+                ))}
+              </div>
+            ) : null}
           </div>
         </div>
         <div className="pcard rv">
           <div className="l">
-            <div className="eyebrow">{t("pricing.perLeague")}</div>
-            <div className="price">
-              <span className="cur">{t("pricing.currency")}</span>
+            <div className="eyebrow">{t(selected.labelKey === "pricing.arTitle" ? "pricing.arTitle" : "pricing.perLeague")}</div>
+            <div className={cn("price", selected.amount === null && "is-consult", currency.suffix && "is-suffix")}>
+              {currency.suffix ? null : <span className="cur">{currency.code}</span>}
               <span className="num" id="priceNum" ref={numRef}>
-                {String(selected.price)}
+                {amountLabel}
               </span>
-              <span className="per">{t("pricing.per")}</span>
+              {currency.suffix ? <span className="cur">{currency.code}</span> : null}
+              {selected.amount === null ? null : <span className="per">{t("pricing.per")}</span>}
             </div>
             <div className="price-note" id="priceNote">
               {t(selected.noteKey)}
@@ -161,7 +196,6 @@ export function Pricing() {
             <span className="save" id="priceSave" style={{ opacity: selected.saveKey ? 1 : 0 }}>
               {selected.saveKey ? t(selected.saveKey) : "—"}
             </span>
-            <p className="limit">{t("pricing.limit")}</p>
           </div>
           <div className="r">
             <ul>
@@ -169,15 +203,15 @@ export function Pricing() {
                 <li key={key}>{t(key)}</li>
               ))}
             </ul>
-            <a className="btn btn-y" href={LINKS.signup} target="_blank" rel="noopener noreferrer">
-              {t("pricing.cta")}
+            <a className="btn btn-y" href={ctaHref} target="_blank" rel="noopener noreferrer">
+              {t(selected.ctaKey)}
             </a>
-            <small>{t("pricing.fine")}</small>
+            {region === "AR" ? null : <small>{t("pricing.fine")}</small>}
           </div>
         </div>
         <div className="custom rv">
           <span>{t("pricing.custom")}</span>
-          <a href={LINKS.whatsapp} target="_blank" rel="noopener noreferrer">
+          <a href={whatsappUrl(t("footer.waPrefill"))} target="_blank" rel="noopener noreferrer">
             {t("pricing.customCta")}
           </a>
         </div>

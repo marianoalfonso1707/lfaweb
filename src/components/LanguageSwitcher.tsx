@@ -1,3 +1,4 @@
+import { useGeo } from "@/geo/geo-provider";
 import { languages, type Language } from "@/i18n";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
@@ -7,13 +8,13 @@ type LanguageSwitcherProps = {
   onSelect?: () => void;
 };
 
-const visibleLanguages = languages.filter((code) => code !== "ca");
-
 export function LanguageSwitcher({ className, onSelect }: LanguageSwitcherProps) {
   const { i18n } = useTranslation();
+  const { country } = useGeo();
   const resolved = i18n.resolvedLanguage ?? i18n.language;
   const active: Language =
     languages.find((code) => resolved === code || resolved.startsWith(`${code}-`)) ?? "es";
+  const visible: Language[] = country === "ES" ? ["es", "ca"] : languages.filter((code) => code !== "ca");
 
   const pick = (code: Language) => {
     void i18n.changeLanguage(code);
@@ -22,7 +23,7 @@ export function LanguageSwitcher({ className, onSelect }: LanguageSwitcherProps)
 
   return (
     <span className={cn("lang", className)} role="group" aria-label="Language">
-      {visibleLanguages.map((code, index) => (
+      {visible.map((code, index) => (
         <span key={code}>
           {index > 0 ? " · " : null}
           {active === code ? (
@@ -41,23 +42,6 @@ export function LanguageSwitcher({ className, onSelect }: LanguageSwitcherProps)
           )}
         </span>
       ))}
-      {active === "ca" ? (
-        <b className="lang-ca" hidden>
-          CA
-        </b>
-      ) : (
-        <button
-          type="button"
-          className="lang-ca"
-          hidden
-          onClick={() => {
-            pick("ca");
-          }}
-          aria-label="CA"
-        >
-          CA
-        </button>
-      )}
     </span>
   );
 }

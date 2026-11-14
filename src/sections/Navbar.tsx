@@ -1,5 +1,6 @@
 import logo from "@/assets/logo.png";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
+import { useGeo } from "@/geo/geo-provider";
 import { LINKS } from "@/lib/links";
 import { navScrollBlurPx } from "@/lib/motion";
 import { cn } from "@/lib/utils";
@@ -31,6 +32,7 @@ const NAV_LINKS = [
 
 export function Navbar() {
   const { t } = useTranslation();
+  const { hideTrial } = useGeo();
   const menuId = useId();
   const [scrolled, setScrolled] = useState(false);
   const [open, setOpen] = useState(false);
@@ -75,9 +77,11 @@ export function Navbar() {
           <a className="btn btn-g" href={LINKS.admin} target="_blank" rel="noopener noreferrer">
             {t("nav.login")}
           </a>
-          <a className="btn btn-y" href="#pricing">
-            {t("nav.trial")}
-          </a>
+          {hideTrial ? null : (
+            <a className="btn btn-y" href="#pricing">
+              {t("nav.trial")}
+            </a>
+          )}
           <button
             type="button"
             className="nav-toggle"

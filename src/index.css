@@ -535,6 +535,9 @@ nav .btn {
   gap: 8px;
   align-items: center;
 }
+html[data-hide-trial="true"] .hero .trial {
+  display: none;
+}
 .hero .trial::before {
   content: "✓";
   color: var(--yellow);
@@ -1484,6 +1487,15 @@ nav .btn {
   gap: 30px;
   flex-wrap: wrap;
 }
+.pricing .toggles {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  gap: 10px;
+}
+.toggle.tier button.on {
+  background: var(--yellow);
+}
 .pricing h2 {
   font-size: clamp(44px, 6vw, 88px);
   margin-top: 18px;
@@ -1573,6 +1585,13 @@ nav .btn {
 .price .per {
   color: var(--muted);
   font-size: 16px;
+}
+.price.is-consult .num {
+  font-size: clamp(36px, 5vw, 72px);
+  letter-spacing: 0;
+}
+.price.is-suffix {
+  flex-wrap: wrap;
 }
 .price-note {
   color: var(--muted);
@@ -1941,6 +1960,13 @@ footer a {
   .app,
   .pricing {
     scroll-margin-top: 90px;
+  }
+  .pricing .toggles {
+    align-items: stretch;
+    width: 100%;
+  }
+  .pricing .toggle {
+    justify-content: center;
   }
   .app .wrap {
     grid-template-columns: 1fr;
