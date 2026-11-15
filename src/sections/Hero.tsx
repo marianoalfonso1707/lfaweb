@@ -9,25 +9,7 @@ function hasFinePointer() {
   return window.matchMedia("(hover: hover) and (pointer: fine)").matches;
 }
 
-function applyI18n(root: HTMLElement) {
-  root.querySelectorAll<HTMLElement>("[data-i18n]").forEach((el) => {
-    if (el.id === "aiState" || el.id === "liveScore") {
-      return;
-    }
-    const key = el.dataset.i18n;
-    if (!key) {
-      return;
-    }
-    el.textContent = i18n.t(key);
-  });
-}
-
 export function enhanceHero(root: HTMLElement) {
-  const onLanguage = () => {
-    applyI18n(root);
-  };
-  i18n.on("languageChanged", onLanguage);
-
   const reading = i18n.t("hero.aiReading");
   const startScore = i18n.t("hero.liveScoreStart");
   const paper = root.querySelector("#aiPaper");
@@ -57,9 +39,7 @@ export function enhanceHero(root: HTMLElement) {
 
   if (skipEntrance) {
     showFinalCopy();
-    return () => {
-      i18n.off("languageChanged", onLanguage);
-    };
+    return;
   }
 
   let cancelled = false;
@@ -224,7 +204,6 @@ export function enhanceHero(root: HTMLElement) {
 
   return () => {
     cancelled = true;
-    i18n.off("languageChanged", onLanguage);
     if (onMove) {
       window.removeEventListener("mousemove", onMove);
     }

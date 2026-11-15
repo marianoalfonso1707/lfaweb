@@ -242,8 +242,7 @@ nav a:focus-visible,
 .nav-toggle:focus-visible,
 footer a:focus-visible,
 .custom a:focus-visible,
-.wa:focus-visible,
-.wa-bubble-close:focus-visible {
+.wa:focus-visible {
   outline: 2px solid var(--yellow);
   outline-offset: 3px;
 }
@@ -1746,79 +1745,23 @@ footer a {
   text-underline-offset: 3px;
 }
 
-.wa-wrap {
+.wa {
   position: fixed;
   right: 22px;
   bottom: 22px;
   z-index: 70;
-  display: flex;
-  flex-direction: column;
-  align-items: flex-end;
-}
-.wa-bubble {
-  background: var(--white);
-  color: var(--black);
-  padding: 8px 12px 8px 15px;
-  border-radius: 8px;
-  margin-bottom: 12px;
-  margin-right: 4px;
-  font-size: 15px;
-  font-weight: 600;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
-  position: relative;
-  display: flex;
-  align-items: center;
-  gap: 8px;
-  animation: bounceIn 0.5s cubic-bezier(0.18, 0.89, 0.32, 1.28) both;
-}
-.wa-bubble::after {
-  content: "";
-  position: absolute;
-  bottom: -8px;
-  right: 22px;
-  border-width: 8px 8px 0;
-  border-style: solid;
-  border-color: var(--white) transparent transparent transparent;
-}
-.wa-bubble-close {
-  flex: none;
   width: 44px;
   height: 44px;
-  border: 0;
-  background: transparent;
-  font-size: 24px;
-  font-weight: 700;
-  color: #888;
-  cursor: pointer;
-  line-height: 1;
-  border-radius: 8px;
-}
-.wa-bubble-close:hover {
-  color: var(--foul);
-}
-@keyframes bounceIn {
-  from {
-    transform: scale(0);
-    opacity: 0;
-  }
-  to {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
-.wa {
-  width: 58px;
-  height: 58px;
   border-radius: 50%;
   background: #25d366;
   display: grid;
   place-items: center;
-  box-shadow: 0 20px 40px -10px rgba(37, 211, 102, 0.5);
+  box-shadow: 0 16px 32px -10px rgba(37, 211, 102, 0.5);
   transition: transform 0.3s var(--ease);
 }
 .wa svg {
-  width: 30px;
-  height: 30px;
+  width: 22px;
+  height: 22px;
   fill: #fff;
 }
 
@@ -2001,8 +1944,7 @@ footer a {
   .hero .scrollcue i::after,
   .sheet .paper i,
   .logos .strip,
-  .final .big,
-  .wa-bubble {
+  .final .big {
     animation: none !important;
   }
   .logos .strip {

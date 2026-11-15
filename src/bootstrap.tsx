@@ -1,6 +1,7 @@
 import { LenisProvider } from "@/app/lenis-provider";
 import App from "@/app/App";
 import { GeoProvider } from "@/geo/geo-provider";
+import { bindHeroCopy } from "@/sections/hero-i18n";
 import { StrictMode } from "react";
 import { createRoot } from "react-dom/client";
 
@@ -22,6 +23,7 @@ createRoot(root).render(
 
 const hero = document.getElementById("static-hero");
 if (hero) {
+  bindHeroCopy(hero);
   const fine = window.matchMedia("(hover: hover) and (pointer: fine)").matches;
   const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
   if (fine && !reduceMotion && performance.now() <= 2500) {
