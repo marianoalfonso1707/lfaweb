@@ -1,16 +1,17 @@
-import playerScreen from "@/assets/player-app.png";
+import playerPoster from "@/assets/player-app.png";
+import playerVideo from "@/assets/player_profile.mp4";
 import { gsap } from "@/lib/gsap";
 import { phoneScroll, scrollReveal } from "@/lib/motion";
-import { useFinePointer } from "@/lib/use-media-query";
+import { useFinePointer, usePrefersReducedMotion } from "@/lib/use-media-query";
 import { cn } from "@/lib/utils";
-import { usePrefersReducedMotion } from "@/lib/use-media-query";
-import { useLayoutEffect, useRef } from "react";
+import { useEffect, useLayoutEffect, useRef } from "react";
 import { useTranslation } from "react-i18next";
 
 export function PlayerApp() {
   const { t, i18n } = useTranslation();
   const rootRef = useRef<HTMLElement>(null);
   const phoneRef = useRef<HTMLDivElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
   const reduceMotion = usePrefersReducedMotion();
   const fine = useFinePointer();
   const staticPhone = !fine || reduceMotion;
@@ -61,12 +62,64 @@ export function PlayerApp() {
     };
   }, [i18n.language, reduceMotion, staticPhone, t]);
 
+  useEffect(() => {
+    const video = videoRef.current;
+    if (!video || reduceMotion) {
+      return;
+    }
+
+    const sync = (visible: boolean) => {
+      if (visible) {
+        void video.play().catch(() => undefined);
+      } else {
+        video.pause();
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        sync(Boolean(entry?.isIntersecting && entry.intersectionRatio >= 0.35));
+      },
+      { threshold: [0, 0.35, 0.7] },
+    );
+    observer.observe(video);
+
+    return () => {
+      observer.disconnect();
+      video.pause();
+    };
+  }, [reduceMotion]);
+
   return (
     <section className="app" id="app" ref={rootRef}>
       <div className="wrap">
         <div className={cn("phone rv", staticPhone && "is-static")} id="phone" ref={phoneRef}>
           <div className="scr">
-            <img src={playerScreen} alt={t("app.eyebrow")} width={272} height={572} loading="lazy" decoding="async" />
+            {reduceMotion ? (
+              <img
+                src={playerPoster}
+                alt={t("app.eyebrow")}
+                width={272}
+                height={572}
+                loading="lazy"
+                decoding="async"
+              />
+            ) : (
+              <video
+                ref={videoRef}
+                poster={playerPoster}
+                muted
+                loop
+                playsInline
+                preload="none"
+                disablePictureInPicture
+                width={272}
+                height={572}
+                aria-label={t("app.eyebrow")}
+              >
+                <source src={playerVideo} type="video/mp4" />
+              </video>
+            )}
           </div>
         </div>
         <div>

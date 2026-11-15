@@ -1,3 +1,4 @@
+import playoffsShot from "@/assets/playoffs.png";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { journeyPin, scrollReveal } from "@/lib/motion";
 import { getSmoothScroller, subscribeSmoothScroller } from "@/lib/smooth-scroll";
@@ -152,21 +153,6 @@ export function Journey() {
           </article>
           <article className="scene" data-n="02">
             <div>
-              <div className="t">{t("journey.s2Tag")}</div>
-              <h3>{t("journey.s2Title")}</h3>
-              <p>{t("journey.s2Body")}</p>
-            </div>
-            <div className="ui">
-              <span className="chip">{t("journey.s2Chip")}</span>
-              <div className="face">
-                <FaceIdMark />
-                <div className="scan" />
-                <div className="ok">{t("journey.s2Ok")}</div>
-              </div>
-            </div>
-          </article>
-          <article className="scene" data-n="03">
-            <div>
               <div className="t">{t("journey.s3Tag")}</div>
               <h3>{t("journey.s3Title")}</h3>
               <p>{t("journey.s3Body")}</p>
@@ -185,7 +171,7 @@ export function Journey() {
               </div>
             </div>
           </article>
-          <article className="scene" data-n="04">
+          <article className="scene" data-n="03">
             <div>
               <div className="t">{t("journey.s4Tag")}</div>
               <h3>{t("journey.s4Title")}</h3>
@@ -206,27 +192,35 @@ export function Journey() {
               <div className="evt evt-3">{t("journey.s4Note")}</div>
             </div>
           </article>
-          <article className="scene" data-n="05">
+          <article className="scene has-media" data-n="04">
             <div>
               <div className="t">{t("journey.s5Tag")}</div>
               <h3>{t("journey.s5Title")}</h3>
               <p>{t("journey.s5Body")}</p>
             </div>
+            <div className="ui shot">
+              <img
+                src={playoffsShot}
+                alt={t("journey.s5Title")}
+                width={590}
+                height={526}
+                loading="lazy"
+                decoding="async"
+              />
+            </div>
+          </article>
+          <article className="scene" data-n="05">
+            <div>
+              <div className="t">{t("journey.s2Tag")}</div>
+              <h3>{t("journey.s2Title")}</h3>
+              <p>{t("journey.s2Body")}</p>
+            </div>
             <div className="ui">
-              <span className="chip">{t("journey.s5Chip")}</span>
-              <div className="bracket">
-                <div>{t("journey.s5a")}</div>
-                <div className="w">{t("journey.s5a")}</div>
-                <div className="w">{t("journey.s5Winner")}</div>
-                <div>{t("journey.s5b")}</div>
-                <div>{t("journey.s5c")}</div>
-                <div />
-                <div className="w">{t("journey.s5c")}</div>
-                <div />
-                <div />
-                <div>{t("journey.s5d")}</div>
-                <div />
-                <div />
+              <span className="chip">{t("journey.s2Chip")}</span>
+              <div className="face">
+                <FaceIdMark />
+                <div className="scan" />
+                <div className="ok">{t("journey.s2Ok")}</div>
               </div>
             </div>
           </article>
