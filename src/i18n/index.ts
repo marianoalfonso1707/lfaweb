@@ -3,10 +3,9 @@ import { initReactI18next } from "react-i18next";
 import ca from "./ca.json";
 import en from "./en.json";
 import es from "./es.json";
-import it from "./it.json";
 import pt from "./pt.json";
 
-export const languages = ["es", "en", "pt", "it", "ca"] as const;
+export const languages = ["es", "en", "pt", "ca"] as const;
 export type Language = (typeof languages)[number];
 
 export const STORAGE_KEY = "i18nextLng";
@@ -38,7 +37,6 @@ void i18n.use(initReactI18next).init({
     es: { translation: es },
     en: { translation: bundleOrEs(en) },
     pt: { translation: bundleOrEs(pt) },
-    it: { translation: bundleOrEs(it) },
     ca: { translation: bundleOrEs(ca) },
   },
   lng: "es",

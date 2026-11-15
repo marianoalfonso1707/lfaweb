@@ -97,9 +97,6 @@ export function languageForCountry(country: string): Language {
   if (country === "BR") {
     return "pt";
   }
-  if (country === "IT") {
-    return "it";
-  }
   if ((SPANISH_SPEAKING as readonly string[]).includes(country)) {
     return "es";
   }

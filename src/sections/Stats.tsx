@@ -24,9 +24,6 @@ function countLocale(language: string): string {
   if (language.startsWith("pt")) {
     return "pt-BR";
   }
-  if (language.startsWith("it")) {
-    return "it-IT";
-  }
   return "en-US";
 }
 
