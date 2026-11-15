@@ -135,7 +135,6 @@ export function Stats() {
             </div>
           ))}
         </div>
-        <div className="note rv">{t("stats.note")}</div>
       </div>
     </section>
   );
