@@ -1,10 +1,31 @@
+import fixtureShot from "@/assets/fixture.png";
 import playoffsShot from "@/assets/playoffs.png";
+import scorersShot from "@/assets/scorers.png";
+import suspensionsShot from "@/assets/suspensions.png";
 import { gsap, ScrollTrigger } from "@/lib/gsap";
 import { journeyPin, scrollReveal } from "@/lib/motion";
 import { getSmoothScroller, subscribeSmoothScroller } from "@/lib/smooth-scroll";
 import { usePrefersReducedMotion } from "@/lib/use-media-query";
 import { useLayoutEffect, useRef, useSyncExternalStore } from "react";
 import { useTranslation } from "react-i18next";
+
+function SceneShot({
+  src,
+  alt,
+  width,
+  height,
+}: {
+  src: string;
+  alt: string;
+  width: number;
+  height: number;
+}) {
+  return (
+    <div className="ui shot">
+      <img src={src} alt={alt} width={width} height={height} loading="lazy" decoding="async" />
+    </div>
+  );
+}
 
 function FaceIdMark() {
   return (
@@ -107,8 +128,6 @@ export function Journey() {
     };
   }, [i18n.language, reduceMotion, scroller, t]);
 
-  const vs = t("journey.s1m1Vs");
-
   return (
     <section className="journey" id="journey" ref={rootRef}>
       <div className="wrap head">
@@ -121,76 +140,29 @@ export function Journey() {
       </div>
       <div className="pin" id="pin" ref={pinRef}>
         <div className="track" id="track" ref={trackRef}>
-          <article className="scene" data-n="01">
+          <article className="scene has-media" data-n="01">
             <div>
               <div className="t">{t("journey.s1Tag")}</div>
               <h3>{t("journey.s1Title")}</h3>
               <p>{t("journey.s1Body")}</p>
             </div>
-            <div className="ui fx">
-              <span className="chip">{t("journey.s1Chip")}</span>
-              <div className="row">
-                <span>{t("journey.s1m1Home")}</span>
-                <span className="s">{vs}</span>
-                <span className="r">{t("journey.s1m1Away")}</span>
-              </div>
-              <div className="row">
-                <span>{t("journey.s1m2Home")}</span>
-                <span className="s">{vs}</span>
-                <span className="r">{t("journey.s1m2Away")}</span>
-              </div>
-              <div className="row">
-                <span>{t("journey.s1m3Home")}</span>
-                <span className="s">{vs}</span>
-                <span className="r">{t("journey.s1m3Away")}</span>
-              </div>
-              <div className="row">
-                <span>{t("journey.s1m4Home")}</span>
-                <span className="s">{vs}</span>
-                <span className="r">{t("journey.s1m4Away")}</span>
-              </div>
-            </div>
+            <SceneShot src={fixtureShot} alt={t("journey.s1Title")} width={796} height={1024} />
           </article>
-          <article className="scene" data-n="02">
+          <article className="scene has-media" data-n="02">
             <div>
               <div className="t">{t("journey.s3Tag")}</div>
               <h3>{t("journey.s3Title")}</h3>
               <p>{t("journey.s3Body")}</p>
             </div>
-            <div className="ui fx">
-              <span className="chip">{t("journey.s3Chip")}</span>
-              <div className="row live">
-                <span>{t("journey.s3Home")}</span>
-                <span className="s">{t("journey.s3Score")}</span>
-                <span className="r">{t("journey.s3Away")}</span>
-              </div>
-              <div className="evt">{t("journey.s3Goal")}</div>
-              <div className="evt evt-2">{t("journey.s3Card")}</div>
-              <div className="bar">
-                <i style={{ width: "72%" }} />
-              </div>
-            </div>
+            <SceneShot src={scorersShot} alt={t("journey.s3Title")} width={812} height={333} />
           </article>
-          <article className="scene" data-n="03">
+          <article className="scene has-media" data-n="03">
             <div>
               <div className="t">{t("journey.s4Tag")}</div>
               <h3>{t("journey.s4Title")}</h3>
               <p>{t("journey.s4Body")}</p>
             </div>
-            <div className="ui fx">
-              <span className="chip">{t("journey.s4Chip")}</span>
-              <div className="row">
-                <span>{t("journey.s4p1")}</span>
-                <span className="s s-sm">{t("journey.s4p1Card")}</span>
-                <span className="r y">{t("journey.s4p1Ban")}</span>
-              </div>
-              <div className="row">
-                <span>{t("journey.s4p2")}</span>
-                <span className="s s-sm">{t("journey.s4p2Card")}</span>
-                <span className="r y">{t("journey.s4p2Ban")}</span>
-              </div>
-              <div className="evt evt-3">{t("journey.s4Note")}</div>
-            </div>
+            <SceneShot src={suspensionsShot} alt={t("journey.s4Title")} width={1024} height={872} />
           </article>
           <article className="scene has-media" data-n="04">
             <div>
@@ -198,16 +170,7 @@ export function Journey() {
               <h3>{t("journey.s5Title")}</h3>
               <p>{t("journey.s5Body")}</p>
             </div>
-            <div className="ui shot">
-              <img
-                src={playoffsShot}
-                alt={t("journey.s5Title")}
-                width={590}
-                height={526}
-                loading="lazy"
-                decoding="async"
-              />
-            </div>
+            <SceneShot src={playoffsShot} alt={t("journey.s5Title")} width={590} height={526} />
           </article>
           <article className="scene" data-n="05">
             <div>
