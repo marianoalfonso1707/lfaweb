@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Página no encontrada | LFA</title>
+    <meta name="robots" content="noindex" />
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@400;600&family=Oswald:wght@700&display=swap"
+      rel="stylesheet"
+    />
+    <style>
+      :root {
+        --black: #0d0b0c;
+        --yellow: #f3dd30;
+        --white: #fdfdf0;
+        --muted: #a3a3a3;
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        min-height: 100svh;
+        display: grid;
+        place-items: center;
+        background: var(--black);
+        color: var(--white);
+        font-family: "Inter Tight", system-ui, sans-serif;
+        padding: 40px 24px;
+        text-align: center;
+      }
+      h1 {
+        font-family: Oswald, sans-serif;
+        font-size: clamp(64px, 12vw, 140px);
+        font-style: italic;
+        letter-spacing: -0.04em;
+        margin: 0;
+        color: var(--yellow);
+      }
+      p {
+        color: var(--muted);
+        font-size: 18px;
+        max-width: 32ch;
+        margin: 18px auto 36px;
+        line-height: 1.5;
+      }
+      a {
+        display: inline-block;
+        background: var(--yellow);
+        color: var(--black);
+        text-decoration: none;
+        font-weight: 600;
+        padding: 12px 22px;
+        border-radius: 6px;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>404</h1>
+      <p>Esa URL no existe. Volvé al inicio de LFA, el software para torneos de fútbol amateur.</p>
+      <a href="/">Volver a LFA</a>
+    </main>
+  </body>
+</html>
