@@ -98,10 +98,10 @@
     "equipos": "equipos registrados",
     "jugadores": "jugadores con perfil y estadísticas",
     "partidos": "partidos jugados y publicados",
-    "torneosValue": "286",
-    "equiposValue": "3642",
-    "jugadoresValue": "28979",
-    "partidosValue": "17492"
+    "torneosValue": "300",
+    "equiposValue": "3600",
+    "jugadoresValue": "30000",
+    "partidosValue": "18000"
   },
   "ai": {
     "eyebrow": "Del papel a la app · Función insignia",

@@ -99,10 +99,10 @@
     "equipos": "times cadastrados",
     "jugadores": "jogadores com perfil e estatísticas",
     "partidos": "jogos disputados e publicados",
-    "torneosValue": "286",
-    "equiposValue": "3642",
-    "jugadoresValue": "28979",
-    "partidosValue": "17492"
+    "torneosValue": "300",
+    "equiposValue": "3600",
+    "jugadoresValue": "30000",
+    "partidosValue": "18000"
   },
   "ai": {
     "eyebrow": "Do papel ao app · Função principal",

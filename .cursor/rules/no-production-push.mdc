@@ -1,0 +1,14 @@
+---
+description: Never push LFA Web production without explicit approval in this turn
+alwaysApply: true
+---
+
+# No production push without asking
+
+Never publish [ligasfutbolamateur.com](https://ligasfutbolamateur.com) unless the user explicitly says to in **this** turn.
+
+That includes `git push origin main` on `marianoalfonso1707/lfaweb`, overlaying `dist` onto `main`, and any Cloudflare Pages production deploy.
+
+Build locally or push `preview` / `matchday` when asked. Then ask before production.
+
+“Remove X”, “change Y”, or a deploy from an earlier message is not permission to ship live.

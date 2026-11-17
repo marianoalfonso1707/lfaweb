@@ -98,10 +98,10 @@
     "equipos": "registered teams",
     "jugadores": "players with a profile and stats",
     "partidos": "matches played and published",
-    "torneosValue": "286",
-    "equiposValue": "3642",
-    "jugadoresValue": "28979",
-    "partidosValue": "17492"
+    "torneosValue": "300",
+    "equiposValue": "3600",
+    "jugadoresValue": "30000",
+    "partidosValue": "18000"
   },
   "ai": {
     "eyebrow": "From paper to the app · Flagship feature",
