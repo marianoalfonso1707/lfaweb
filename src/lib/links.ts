@@ -10,7 +10,7 @@ export const LINKS = {
   signup: "https://admin.ligasfutbolamateur.com/login?signup=1",
   whatsapp: whatsappUrl(),
   privacy: "/privacy.html",
-  logo: "https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/LFA_transparent.png",
+  logo: "/logo.png",
   capi: "https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/CAPI.png",
   youtube: "https://www.youtube.com/@ligasfutbolamateur",
   pricing: "#pricing",

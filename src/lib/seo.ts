@@ -59,7 +59,7 @@ export function buildJsonLd(locale: PageLocale, t: TFunction) {
         name: SITE_NAME,
         legalName: "Ligas Futbol Amateur, LLC",
         url: `${SITE_ORIGIN}/`,
-        logo: LINKS.logo,
+        logo: absoluteUrl("/logo.png"),
         sameAs: [LINKS.youtube],
         email: t("footer.email"),
       },
