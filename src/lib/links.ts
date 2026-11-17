@@ -12,6 +12,6 @@ export const LINKS = {
   privacy: "/privacy.html",
   logo: "https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/LFA_transparent.png",
   capi: "https://storage.googleapis.com/ligas-futbol-amateur.appspot.com/uploads/CAPI.png",
-  youtube: "https://youtube.com/@ligasfutbolamateur?si=J8pq9jfMqvleKlqI",
+  youtube: "https://www.youtube.com/@ligasfutbolamateur",
   pricing: "#pricing",
 } as const;

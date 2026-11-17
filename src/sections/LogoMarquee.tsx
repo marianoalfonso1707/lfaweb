@@ -57,7 +57,14 @@ export function LogoMarquee() {
             rel="noopener noreferrer"
             title={league.name}
           >
-            <img src={league.logoUrl} alt="" width={26} height={26} loading="lazy" decoding="async" />
+            <img
+              src={league.logoUrl}
+              alt={t("logos.alt", { name: league.name })}
+              width={26}
+              height={26}
+              loading="lazy"
+              decoding="async"
+            />
             {league.name}
           </a>
         ))}

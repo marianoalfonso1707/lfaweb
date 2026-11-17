@@ -1,5 +1,4 @@
-import i18n from "@/i18n";
-import { detectCountry, regionForCountry, languageForCountry, type PricingRegion } from "@/lib/geo";
+import { detectCountry, regionForCountry, type PricingRegion } from "@/lib/geo";
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 type GeoContextValue = {
@@ -24,28 +23,30 @@ function applyDocumentFlags(country: string, hideTrial: boolean) {
   document.documentElement.dataset.hideTrial = hideTrial ? "true" : "false";
 }
 
+function isPrerender(): boolean {
+  return typeof window !== "undefined" && window.__LFA_PRERENDER__ === true;
+}
+
 export function GeoProvider({ children }: { children: ReactNode }) {
   const [country, setCountry] = useState("ROW");
   const [ready, setReady] = useState(false);
 
   useEffect(() => {
+    if (isPrerender()) {
+      setCountry("ROW");
+      setReady(true);
+      return;
+    }
     const controller = new AbortController();
     void detectCountry(controller.signal)
       .then((next) => {
         setCountry(next);
-        const lang = languageForCountry(next);
-        if ((i18n.resolvedLanguage ?? i18n.language) !== lang) {
-          void i18n.changeLanguage(lang);
-        }
       })
       .catch((error: unknown) => {
         if (typeof error === "object" && error !== null && "name" in error && error.name === "AbortError") {
           return;
         }
         setCountry("ROW");
-        if ((i18n.resolvedLanguage ?? i18n.language) !== "en") {
-          void i18n.changeLanguage("en");
-        }
       })
       .finally(() => {
         if (!controller.signal.aborted) {

@@ -2,6 +2,7 @@ import logo from "@/assets/logo.png";
 import { LanguageSwitcher } from "@/components/LanguageSwitcher";
 import { useGeo } from "@/geo/geo-provider";
 import { LINKS } from "@/lib/links";
+import { localeHome, pageLocale } from "@/lib/site";
 import { navScrollBlurPx } from "@/lib/motion";
 import { cn } from "@/lib/utils";
 import { useEffect, useId, useState } from "react";
@@ -62,7 +63,7 @@ export function Navbar() {
   return (
     <nav id="nav" className={cn(scrolled && "scrolled")}>
       <div className="wrap">
-        <a className="logo" href="/" aria-label={t("nav.logoAria")}>
+        <a className="logo" href={localeHome(pageLocale())} aria-label={t("nav.logoAria")}>
           <img src={logo} alt={t("nav.logoAlt")} width={129} height={96} decoding="async" />
         </a>
         <ul>

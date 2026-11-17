@@ -73,6 +73,10 @@ export function Stats() {
           return;
         }
 
+        counters.forEach((el) => {
+          el.textContent = "0";
+        });
+
         gsap.utils.toArray<HTMLElement>(".rv").forEach((el) => {
           gsap.to(el, {
             opacity: 1,
@@ -128,7 +132,9 @@ export function Stats() {
           {STATS.map((stat, index) => (
             <div className="stat rv" key={stat.valueKey}>
               <div className="n">
-                <span data-count={String(values[index] ?? 0)}>0</span>
+                <span data-count={String(values[index] ?? 0)} suppressHydrationWarning>
+                  {formatCount(values[index] ?? 0, locale)}
+                </span>
                 <sup>+</sup>
               </div>
               <div className="l">{t(stat.labelKey)}</div>

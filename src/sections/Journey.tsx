@@ -29,7 +29,7 @@ function SceneShot({
 
 function FaceIdMark() {
   return (
-    <svg viewBox="0 0 100 100" fill="none" stroke="#F3DD30" strokeWidth="1.5">
+    <svg viewBox="0 0 100 100" fill="none" stroke="#F3DD30" strokeWidth="1.5" aria-hidden="true">
       <path d="M20 35V22a4 4 0 014-4h13M80 35V22a4 4 0 00-4-4H63M20 65v13a4 4 0 004 4h13M80 65v13a4 4 0 01-4 4H63" opacity=".8" />
       <ellipse cx="50" cy="48" rx="16" ry="20" opacity=".5" />
       <path d="M42 44h3M55 44h3M45 58q5 4 10 0" opacity=".5" />

@@ -1,0 +1,56 @@
+LFA — Ligas Futbol Amateur
+https://ligasfutbolamateur.com/
+
+ESPAÑOL
+LFA es software para organizar torneos y campeonatos de fútbol amateur. Está pensado para organizadores de ligas, no para el jugador final.
+
+Qué hace
+- Fixture automático y llaves de playoffs
+- Importación de planilla de partido con IA: se fotografía la planilla escrita a mano y el sistema lee resultado, goles, asistencias y tarjetas
+- Resultados, tablas y goleadores en vivo
+- Face ID para verificar jugadores
+- App LFA Player para los atletas de la liga
+- Web pública con la marca de cada liga
+- Suspensiones automáticas y exportaciones PDF/Excel
+
+Para quién
+Organizadores de ligas amateur que hoy cargan planillas a mano y necesitan una operación más rápida, con marca propia y app para jugadores.
+
+Precio
+USD por liga por mes: USD 10 mensual, USD 8 en el plan semestral y USD 6 en el anual. Prueba 30 días sin tarjeta. Planes a medida para más de 30 equipos.
+
+Países e idiomas
+Sitio en español (https://ligasfutbolamateur.com/) y portugués (https://ligasfutbolamateur.com/pt/). Empresa argentina con sede en Atlanta, Georgia (Ligas Futbol Amateur, LLC).
+
+Contacto
+soporte@ligasfutbolamateur.com
+WhatsApp: https://wa.me/5491144169568
+Privacidad Face ID: https://ligasfutbolamateur.com/privacy.html
+Alta: https://admin.ligasfutbolamateur.com/login?signup=1
+
+PORTUGUÊS (DRAFT — revisão do dono antes do deploy)
+A LFA é um software para organizar campeonatos de futebol amador. É feita para organizadores de ligas, não para o atleta final.
+
+O que faz
+- Tabela automática e chaves de playoffs
+- Importação de súmula com IA: foto da súmula escrita à mão; o sistema lê resultado, gols, assistências e cartões
+- Resultados, tabelas e artilharia ao vivo
+- Face ID para verificar jogadores
+- App LFA Player para os atletas da liga
+- Site público com a marca de cada liga
+- Suspensões automáticas e exportações PDF/Excel
+
+Para quem
+Organizadores de ligas amadoras que ainda lançam súmulas à mão e precisam de operação mais rápida, marca própria e app para jogadores.
+
+Preço
+USD por liga por mês: USD 10 mensal, USD 8 no plano semestral e USD 6 no anual. Teste de 30 dias sem cartão. Planos sob medida para mais de 30 times.
+
+Países e idiomas
+Site em espanhol (https://ligasfutbolamateur.com/) e português (https://ligasfutbolamateur.com/pt/). Empresa argentina com sede em Atlanta, Georgia (Ligas Futbol Amateur, LLC).
+
+Contato
+soporte@ligasfutbolamateur.com
+WhatsApp: https://wa.me/5491144169568
+Privacidade Face ID: https://ligasfutbolamateur.com/privacy.html
+Cadastro: https://admin.ligasfutbolamateur.com/login?signup=1
