@@ -12,6 +12,7 @@ Qué hace
 - App LFA Player para los atletas de la liga
 - Web pública con la marca de cada liga
 - Suspensiones automáticas y exportaciones PDF/Excel
+- Soporte por sistema de tickets
 
 Para quién
 Organizadores de ligas amateur que hoy cargan planillas a mano y necesitan una operación más rápida, con marca propia y app para jugadores.
@@ -23,9 +24,10 @@ Países e idiomas
 Sitio en español (https://ligasfutbolamateur.com/) y portugués (https://ligasfutbolamateur.com/pt/). Empresa argentina con sede en Atlanta, Georgia (Ligas Futbol Amateur, LLC).
 
 Contacto
-soporte@ligasfutbolamateur.com
+Soporte: sistema de tickets
+info@ligasfutbolamateur.com
 WhatsApp: https://wa.me/5491144169568
-Privacidad Face ID: https://ligasfutbolamateur.com/privacy.html
+Privacidad: https://ligasfutbolamateur.com/privacy.html
 Alta: https://admin.ligasfutbolamateur.com/login?signup=1
 
 PORTUGUÊS
@@ -39,6 +41,7 @@ O que faz
 - App LFA Player para os atletas da liga
 - Site público com a marca de cada liga
 - Suspensões automáticas e exportações PDF/Excel
+- Suporte por sistema de tickets
 
 Para quem
 Organizadores de ligas amadoras que ainda lançam súmulas à mão e precisam de operação mais rápida, marca própria e app para jogadores.
@@ -50,7 +53,8 @@ Países e idiomas
 Site em espanhol (https://ligasfutbolamateur.com/) e português (https://ligasfutbolamateur.com/pt/). Empresa argentina com sede em Atlanta, Georgia (Ligas Futbol Amateur, LLC).
 
 Contato
-soporte@ligasfutbolamateur.com
+Suporte: sistema de tickets
+info@ligasfutbolamateur.com
 WhatsApp: https://wa.me/5491144169568
-Privacidade Face ID: https://ligasfutbolamateur.com/privacy.html
+Privacidade: https://ligasfutbolamateur.com/privacy.html
 Cadastro: https://admin.ligasfutbolamateur.com/login?signup=1
