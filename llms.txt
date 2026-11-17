@@ -28,8 +28,8 @@ WhatsApp: https://wa.me/5491144169568
 Privacidad Face ID: https://ligasfutbolamateur.com/privacy.html
 Alta: https://admin.ligasfutbolamateur.com/login?signup=1
 
-PORTUGUÊS (DRAFT — revisão do dono antes do deploy)
-A LFA é um software para organizar campeonatos de futebol amador. É feita para organizadores de ligas, não para o atleta final.
+PORTUGUÊS
+A LFA é um software para organizar campeonatos de futebol amador. Destina-se a organizadores de ligas, não ao atleta final.
 
 O que faz
 - Tabela automática e chaves de playoffs
