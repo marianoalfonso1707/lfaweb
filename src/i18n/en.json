@@ -296,7 +296,7 @@
     "f9": "WhatsApp support",
     "cta": "Start 30 days free",
     "fine": "No credit card · Cancel anytime",
-    "custom": "More than 30 teams, several venues, or a federation? We’ll build a custom plan.",
+    "custom": "Federation or a large organization? We’ll build a custom plan.",
     "customCta": "Talk to the team →"
   },
   "final": {
@@ -313,5 +313,30 @@
     "whatsapp": "WhatsApp",
     "bubble": "Message us on WhatsApp",
     "closeBubble": "Dismiss notice"
+  },
+  "faq": {
+    "eyebrow": "FAQ",
+    "h2": "Before you start",
+    "q1": "What is LFA and who is it for?",
+    "a1": "LFA is software for organizing amateur football tournaments and championships. It is built for league organizers, not for the player.",
+    "q2": "How much does it cost?",
+    "a2": "Pricing is per league, all-inclusive, and shown in your country’s currency. There are plans by number of teams, and six-month and yearly plans cost less per month. For federations and large organizations, we build a custom plan.",
+    "pricingLink": "See prices for your country in the plans section.",
+    "q3": "Is there a free trial?",
+    "a3": "Yes, 30 days free, no credit card. Cancel anytime.",
+    "q4": "How does AI match-sheet import work?",
+    "a4": "You photograph the handwritten match sheet and the system reads the result, goals, assists, and cards. Nothing has to be entered by hand.",
+    "q5": "Does LFA build the fixture automatically?",
+    "a5": "Yes. It generates the tournament fixture and playoff brackets, and standings and scorers tables update on their own with every result.",
+    "q6": "Does it calculate card suspensions?",
+    "a6": "Yes, suspensions and sanctions are calculated automatically.",
+    "q7": "Do my players get an app?",
+    "a7": "Yes, LFA Player, for iOS and Android. Players see their matches, results, tables, and their profile.",
+    "q8": "Does my league get its own website?",
+    "a8": "Yes, each league has a public site with its brand, with live results and tables.",
+    "q9": "Does it work for every football format?",
+    "a9": "Yes. LFA works for 5-a-side, 7-a-side, 11-a-side, and any other format. You set players per team and your tournament rules, and the system adapts.",
+    "q10": "What support do you offer?",
+    "a10": "LFA customers get support through a ticketing system. Each question opens a ticket, and the LFA team follows it until it is resolved."
   }
 }

@@ -778,7 +778,8 @@ html[data-hide-trial="true"] .hero .trial {
 .manifesto .rv,
 .bento .rv,
 .app .rv,
-.pricing .rv {
+.pricing .rv,
+.faq .rv {
   opacity: 0;
   transform: translateY(36px);
 }
@@ -1473,6 +1474,39 @@ html[data-hide-trial="true"] .hero .trial {
   animation-delay: 0.6s;
 }
 
+.faq {
+  padding: 120px 0 40px;
+  border-top: 1px solid var(--line);
+  scroll-margin-top: 98px;
+}
+.faq h2 {
+  font-size: clamp(40px, 5vw, 72px);
+  max-width: 16ch;
+  margin-top: 18px;
+}
+.faq-list {
+  margin-top: 48px;
+  max-width: 760px;
+}
+.faq-item {
+  border-top: 1px solid var(--line);
+  padding: 22px 0;
+}
+.faq-item h3 {
+  font-family: var(--head);
+  font-size: clamp(20px, 2.4vw, 26px);
+  margin: 0 0 10px;
+  text-transform: none;
+}
+.faq-item p {
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.55;
+}
+.faq-item a {
+  color: var(--yellow);
+}
+
 .pricing {
   padding: 120px 0;
   border-top: 1px solid var(--line);
@@ -1964,7 +1998,8 @@ footer a {
   .manifesto .rv,
   .bento .rv,
   .app .rv,
-  .pricing .rv {
+  .pricing .rv,
+  .faq .rv {
     opacity: 1;
     transform: none;
   }

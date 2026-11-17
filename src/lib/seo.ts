@@ -31,6 +31,8 @@ export const HREFLANG = [
 
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 } as const;
 
+const FAQ_IDS = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10] as const;
+
 // TODO: add Instagram URL to Organization.sameAs once the official profile is confirmed.
 
 export function pageSeo(locale: PageLocale) {
@@ -95,6 +97,17 @@ export function buildJsonLd(locale: PageLocale, t: TFunction) {
           },
         ],
         featureList,
+      },
+      {
+        "@type": "FAQPage",
+        mainEntity: FAQ_IDS.map((id) => ({
+          "@type": "Question",
+          name: t(`faq.q${String(id)}`),
+          acceptedAnswer: {
+            "@type": "Answer",
+            text: id === 2 ? `${t("faq.a2")} ${t("faq.pricingLink")}` : t(`faq.a${String(id)}`),
+          },
+        })),
       },
     ],
   };

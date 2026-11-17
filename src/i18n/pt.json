@@ -297,7 +297,7 @@
     "f9": "Suporte pelo WhatsApp",
     "cta": "Começar 30 dias grátis",
     "fine": "Sem cartão · Cancele quando quiser",
-    "custom": "Mais de 30 times, várias sedes ou uma federação? Montamos um plano sob medida.",
+    "custom": "Federação ou uma organização grande? Montamos um plano sob medida.",
     "customCta": "Falar com a equipe →"
   },
   "final": {
@@ -314,5 +314,30 @@
     "whatsapp": "WhatsApp",
     "bubble": "Fale conosco no WhatsApp",
     "closeBubble": "Fechar aviso"
+  },
+  "faq": {
+    "eyebrow": "Perguntas frequentes",
+    "h2": "Antes de começar",
+    "q1": "O que é a LFA e para quem é?",
+    "a1": "A LFA é um software para organizar campeonatos de futebol amador. Destina-se a organizadores de ligas, não ao atleta final.",
+    "q2": "Quanto custa?",
+    "a2": "O preço é por liga, com tudo incluso, e aparece na moeda do seu país. Há planos conforme a quantidade de times, e os planos semestral e anual saem mais baratos por mês. Para federações e grandes organizações, montamos um plano sob medida.",
+    "pricingLink": "Veja os preços para o seu país na seção de planos.",
+    "q3": "Há teste grátis?",
+    "a3": "Sim, 30 dias grátis, sem cartão. Cancele quando quiser.",
+    "q4": "Como funciona a importação de súmula com IA?",
+    "a4": "Você tira uma foto da súmula escrita à mão e o sistema lê o resultado, os gols, as assistências e os cartões. Não é preciso lançar nada à mão.",
+    "q5": "A LFA monta o fixture automaticamente?",
+    "a5": "Sim. Gera o fixture do torneio e as chaves de playoffs, e as tabelas de classificação e artilharia se atualizam sozinhas a cada resultado.",
+    "q6": "Calcula as suspensões por cartões?",
+    "a6": "Sim, as suspensões e sanções são calculadas automaticamente.",
+    "q7": "Meus jogadores têm um app?",
+    "a7": "Sim, o LFA Player, para iOS e Android. Os jogadores veem seus jogos, resultados, tabelas e o próprio perfil.",
+    "q8": "Minha liga tem um site próprio?",
+    "a8": "Sim, cada liga tem um site público com a sua marca, com resultados e tabelas ao vivo.",
+    "q9": "Serve para todos os formatos de futebol?",
+    "a9": "Sim. A LFA serve para torneios de futebol 5, futebol 7, futebol 11 e qualquer outro formato. Você configura a quantidade de jogadores por time e as regras do seu torneio, e o sistema se adapta.",
+    "q10": "Que suporte vocês têm?",
+    "a10": "Os clientes da LFA têm suporte por um sistema de tickets. Cada consulta gera um ticket, e a equipe da LFA faz o acompanhamento até resolver."
   }
 }

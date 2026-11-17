@@ -39,7 +39,7 @@ async function snapshot(browser, route, outfile) {
   await page.waitForFunction(
     () =>
       document.documentElement.dataset.seoReady === "1" &&
-      document.querySelector("#pricing") !== null &&
+      document.querySelector(".faq") !== null &&
       document.querySelectorAll("h2").length >= 7,
     { timeout: 60_000 },
   );
