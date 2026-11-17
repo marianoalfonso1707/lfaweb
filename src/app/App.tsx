@@ -1,7 +1,6 @@
 import { SeoHead } from "@/components/SeoHead";
 import { useHashScroll } from "@/lib/use-hash-scroll";
 import { AiImport } from "@/sections/AiImport";
-import { Faq } from "@/sections/Faq";
 import { Features } from "@/sections/Features";
 import { FinalCta } from "@/sections/FinalCta";
 import { Footer } from "@/sections/Footer";
@@ -32,7 +31,6 @@ export default function App() {
         <Features />
         <PlayerApp />
         <Pricing />
-        <Faq />
         <FinalCta />
       </main>
       <Footer />

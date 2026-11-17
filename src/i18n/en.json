@@ -313,23 +313,5 @@
     "whatsapp": "WhatsApp",
     "bubble": "Message us on WhatsApp",
     "closeBubble": "Dismiss notice"
-  },
-  "faq": {
-    "eyebrow": "FAQ",
-    "h2": "Before you start",
-    "q1": "Is there a free trial? Do I need a card?",
-    "a1": "Yes. There is a 30-day trial and we don’t ask for a card to start.",
-    "q2": "How much does it cost and in what currency?",
-    "a2": "Public pricing is USD per league per month: USD 10 monthly, USD 8 on the six-month plan, and USD 6 on the yearly plan. TODO: confirm regional exceptions (AR / BR / EU).",
-    "q3": "How many teams can I have?",
-    "a3": "The plan includes up to 30 teams per league, with no limit on players, matches, or seasons. For more teams, we build a custom plan.",
-    "q4": "Do players pay anything for the app?",
-    "a4": "TODO: confirm whether players pay for the LFA Player app.",
-    "q5": "How does AI match-sheet import work?",
-    "a5": "You photograph the handwritten match sheet. The AI reads the result, goals, assists, and cards, and updates tables, scorers, and the player app.",
-    "q6": "What happens with Face ID data?",
-    "a6": "TODO: confirm the processing details. The Face ID privacy policy is published at",
-    "q7": "Does it work in Argentina, Colombia, and Brazil / in Portuguese?",
-    "a7": "The site is in Spanish and Portuguese. TODO: confirm operational coverage in Argentina, Colombia, and Brazil."
   }
 }

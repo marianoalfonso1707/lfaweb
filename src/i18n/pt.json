@@ -314,23 +314,5 @@
     "whatsapp": "WhatsApp",
     "bubble": "Fale conosco no WhatsApp",
     "closeBubble": "Fechar aviso"
-  },
-  "faq": {
-    "eyebrow": "Perguntas frequentes",
-    "h2": "Antes de começar",
-    "q1": "Há teste grátis? Preciso de cartão?",
-    "a1": "Sim. Há 30 dias de teste e não pedimos cartão para começar.",
-    "q2": "Quanto custa e em que moeda se paga?",
-    "a2": "O preço público é em USD por liga por mês: USD 10 mensal, USD 8 no plano semestral e USD 6 no anual. TODO: confirmar exceções regionais (AR / BR / EU).",
-    "q3": "Quantos times posso ter?",
-    "a3": "O plano inclui até 30 times por liga, sem limite de jogadores, jogos ou temporadas. Para mais times, montamos um plano sob medida.",
-    "q4": "Os jogadores pagam alguma coisa pelo app?",
-    "a4": "TODO: confirmar se os jogadores pagam pelo app LFA Player.",
-    "q5": "Como funciona a importação de súmula com IA?",
-    "a5": "Você tira uma foto da súmula escrita à mão. A IA lê resultado, gols, assistências e cartões, e atualiza tabelas, artilharia e o app dos jogadores.",
-    "q6": "O que acontece com os dados do Face ID?",
-    "a6": "TODO: confirmar o detalhe do tratamento. A política de privacidade do Face ID está publicada em",
-    "q7": "Funciona na Argentina, na Colômbia e no Brasil / em português?",
-    "a7": "O site está em espanhol e português. TODO: confirmar cobertura operacional na Argentina, na Colômbia e no Brasil."
   }
 }

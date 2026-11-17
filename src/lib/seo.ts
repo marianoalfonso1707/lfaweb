@@ -31,16 +31,6 @@ export const HREFLANG = [
 
 export const OG_IMAGE_SIZE = { width: 1200, height: 630 } as const;
 
-const FAQ_KEYS = [
-  ["faq.q1", "faq.a1"],
-  ["faq.q2", "faq.a2"],
-  ["faq.q3", "faq.a3"],
-  ["faq.q4", "faq.a4"],
-  ["faq.q5", "faq.a5"],
-  ["faq.q6", "faq.a6"],
-  ["faq.q7", "faq.a7"],
-] as const;
-
 // TODO: add Instagram URL to Organization.sameAs once the official profile is confirmed.
 
 export function pageSeo(locale: PageLocale) {
@@ -60,13 +50,6 @@ export function buildJsonLd(locale: PageLocale, t: TFunction) {
     t("pricing.f8"),
     t("pricing.f9"),
   ];
-
-  const faqText = (answerKey: (typeof FAQ_KEYS)[number][1]) => {
-    if (answerKey === "faq.a6") {
-      return `${t("faq.a6")} ${absoluteUrl(LINKS.privacy)}`;
-    }
-    return t(answerKey);
-  };
 
   return {
     "@context": "https://schema.org",
@@ -112,17 +95,6 @@ export function buildJsonLd(locale: PageLocale, t: TFunction) {
           },
         ],
         featureList,
-      },
-      {
-        "@type": "FAQPage",
-        mainEntity: FAQ_KEYS.map(([q, a]) => ({
-          "@type": "Question",
-          name: t(q),
-          acceptedAnswer: {
-            "@type": "Answer",
-            text: faqText(a),
-          },
-        })),
       },
     ],
   };
