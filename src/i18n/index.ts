@@ -1,15 +1,18 @@
-import { isPortuguesePath } from "@/lib/site";
+import { isItalianPath, isPortuguesePath } from "@/lib/site";
 import i18n from "i18next";
 import { initReactI18next } from "react-i18next";
 import ca from "./ca.json";
 import en from "./en.json";
 import es from "./es.json";
-import pt from "./pt.json"; // DRAFT: Portuguese copy pending owner review before deploy.
+import it from "./it.json";
+import pt from "./pt.json";
 
-export const languages = ["es", "en", "pt", "ca"] as const;
+export const languages = ["es", "en", "pt", "it", "ca"] as const;
 export type Language = (typeof languages)[number];
 
 export const STORAGE_KEY = "i18nextLng";
+
+const URL_LOCKED: ReadonlySet<string> = new Set(["pt", "it"]);
 
 function setDocumentLang(lng: string) {
   if (typeof document === "undefined") {
@@ -35,7 +38,7 @@ function storedLanguage(): Language | null {
   }
   try {
     const value = window.localStorage.getItem(STORAGE_KEY);
-    if (value === "es" || value === "en" || value === "pt" || value === "ca") {
+    if (value === "es" || value === "en" || value === "pt" || value === "it" || value === "ca") {
       return value;
     }
   } catch {
@@ -45,11 +48,16 @@ function storedLanguage(): Language | null {
 }
 
 function initialLanguage(): Language {
-  if (typeof window !== "undefined" && isPortuguesePath()) {
-    return "pt";
+  if (typeof window !== "undefined") {
+    if (isPortuguesePath()) {
+      return "pt";
+    }
+    if (isItalianPath()) {
+      return "it";
+    }
   }
   const stored = storedLanguage();
-  if (stored && stored !== "pt") {
+  if (stored && !URL_LOCKED.has(stored)) {
     return stored;
   }
   return "es";
@@ -64,6 +72,7 @@ void i18n.use(initReactI18next).init({
     es: { translation: es },
     en: { translation: bundleOrEs(en) },
     pt: { translation: bundleOrEs(pt) },
+    it: { translation: bundleOrEs(it) },
     ca: { translation: bundleOrEs(ca) },
   },
   lng: initialLanguage(),

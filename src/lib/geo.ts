@@ -70,7 +70,7 @@ const SPANISH_SPEAKING = [
 ] as const;
 
 export type PricingRegion = "AR" | "EU" | "BR" | "ROW";
-export type TeamTier = "under30" | "over30";
+export type TeamTier = "under30" | "over30" | "over80";
 
 export function isEuroCountry(country: string): boolean {
   return (EURO_PRICING_COUNTRIES as readonly string[]).includes(country);
@@ -96,6 +96,9 @@ export function languageForCountry(country: string): Language {
   }
   if (country === "BR") {
     return "pt";
+  }
+  if (country === "IT") {
+    return "it";
   }
   if ((SPANISH_SPEAKING as readonly string[]).includes(country)) {
     return "es";

@@ -1,6 +1,6 @@
 import { useGeo } from "@/geo/geo-provider";
 import { languages, type Language } from "@/i18n";
-import { localeHome, pageLocale } from "@/lib/site";
+import { hrefLang, localeHome, pageLocale, type PageLocale } from "@/lib/site";
 import { cn } from "@/lib/utils";
 import { useTranslation } from "react-i18next";
 
@@ -10,11 +10,8 @@ type LanguageSwitcherProps = {
 };
 
 function hrefFor(code: Language): string | null {
-  if (code === "es") {
-    return localeHome("es");
-  }
-  if (code === "pt") {
-    return localeHome("pt");
+  if (code === "es" || code === "pt" || code === "it") {
+    return localeHome(code);
   }
   return null;
 }
@@ -25,8 +22,8 @@ export function LanguageSwitcher({ className, onSelect }: LanguageSwitcherProps)
   const resolved = i18n.resolvedLanguage ?? i18n.language;
   const pathLocale = pageLocale();
   const active: Language =
-    pathLocale === "pt"
-      ? "pt"
+    pathLocale === "pt" || pathLocale === "it"
+      ? pathLocale
       : (languages.find((code) => resolved === code || resolved.startsWith(`${code}-`)) ?? "es");
   const visible: Language[] = country === "ES" ? ["es", "ca"] : languages.filter((code) => code !== "ca");
 
@@ -45,7 +42,7 @@ export function LanguageSwitcher({ className, onSelect }: LanguageSwitcherProps)
             {active === code ? (
               <b>{code.toUpperCase()}</b>
             ) : href ? (
-              <a href={href} hrefLang={code === "pt" ? "pt-BR" : "es"} onClick={onSelect}>
+              <a href={href} hrefLang={hrefLang(code as PageLocale)} onClick={onSelect}>
                 {code.toUpperCase()}
               </a>
             ) : (

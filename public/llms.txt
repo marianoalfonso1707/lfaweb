@@ -21,7 +21,7 @@ Precio
 USD por liga por mes: USD 10 mensual, USD 8 en el plan semestral y USD 6 en el anual. En el sitio el precio se muestra en la moneda del país, con USD como referencia. Prueba 30 días sin tarjeta. Planes a medida para federaciones y grandes organizaciones.
 
 Países e idiomas
-Sitio en español (https://ligasfutbolamateur.com/) y portugués (https://ligasfutbolamateur.com/pt/). Empresa argentina con sede en Atlanta, Georgia (Ligas Futbol Amateur, LLC).
+Sitio en español (https://ligasfutbolamateur.com/), portugués (https://ligasfutbolamateur.com/pt/) e italiano (https://ligasfutbolamateur.com/it/). Empresa argentina con sede en Atlanta, Georgia (Ligas Futbol Amateur, LLC).
 
 Contacto
 Soporte: sistema de tickets
@@ -50,7 +50,7 @@ Preço
 USD por liga por mês: USD 10 mensal, USD 8 no plano semestral e USD 6 no anual. No site o preço aparece na moeda do país, com USD como referência. Teste de 30 dias sem cartão. Planos sob medida para federações e grandes organizações.
 
 Países e idiomas
-Site em espanhol (https://ligasfutbolamateur.com/) e português (https://ligasfutbolamateur.com/pt/). Empresa argentina com sede em Atlanta, Georgia (Ligas Futbol Amateur, LLC).
+Site em espanhol (https://ligasfutbolamateur.com/), português (https://ligasfutbolamateur.com/pt/) e italiano (https://ligasfutbolamateur.com/it/). Empresa argentina com sede em Atlanta, Georgia (Ligas Futbol Amateur, LLC).
 
 Contato
 Suporte: sistema de tickets
@@ -58,3 +58,32 @@ info@ligasfutbolamateur.com
 WhatsApp: https://wa.me/5491144169568
 Privacidade: https://ligasfutbolamateur.com/privacy.html
 Cadastro: https://admin.ligasfutbolamateur.com/login?signup=1
+
+ITALIANO
+LFA è un software per organizzare tornei e campionati di calcio amatoriale. È pensata per gli organizzatori di leghe, non per il giocatore finale.
+
+Cosa fa
+- Calendario automatico e tabelloni playoff
+- Importazione del referto di gara con IA: si fotografa il referto scritto a mano e il sistema legge risultato, gol, assist e cartellini
+- Risultati, classifiche e marcatori in diretta
+- Face ID per verificare i giocatori
+- App LFA Player per gli atleti della lega
+- Sito pubblico con il brand di ogni lega
+- Squalifiche automatiche ed export PDF/Excel
+- Supporto con sistema di ticket
+
+Per chi
+Organizzatori di leghe amatoriali che oggi caricano i referti a mano e hanno bisogno di un'operazione più veloce, con brand proprio e app per i giocatori.
+
+Prezzo
+USD per lega al mese: USD 10 mensile, USD 8 nel piano semestrale e USD 6 nell'annuale. Sul sito il prezzo è mostrato nella valuta del Paese, con USD come riferimento. Prova di 30 giorni senza carta. Piani su misura per federazioni e grandi organizzazioni.
+
+Paesi e lingue
+Sito in spagnolo (https://ligasfutbolamateur.com/), portoghese (https://ligasfutbolamateur.com/pt/) e italiano (https://ligasfutbolamateur.com/it/). Azienda argentina con sede ad Atlanta, Georgia (Ligas Futbol Amateur, LLC).
+
+Contatto
+Supporto: sistema di ticket
+info@ligasfutbolamateur.com
+WhatsApp: https://wa.me/5491144169568
+Privacy: https://ligasfutbolamateur.com/privacy.html
+Registrazione: https://admin.ligasfutbolamateur.com/login?signup=1

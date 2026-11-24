@@ -1,5 +1,5 @@
 import { buildJsonLd, HREFLANG, OG_IMAGE_SIZE, pageSeo } from "@/lib/seo";
-import { absoluteUrl, pageLocale } from "@/lib/site";
+import { absoluteUrl, htmlLang, pageLocale } from "@/lib/site";
 import { useLayoutEffect } from "react";
 import { useTranslation } from "react-i18next";
 
@@ -38,7 +38,7 @@ export function SeoHead() {
 
   useLayoutEffect(() => {
     document.title = seo.title;
-    document.documentElement.lang = locale === "pt" ? "pt-BR" : "es";
+    document.documentElement.lang = htmlLang(locale);
     upsertMeta("name", "description", seo.description);
     upsertMeta("property", "og:title", seo.title);
     upsertMeta("property", "og:description", seo.description);

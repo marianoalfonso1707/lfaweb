@@ -65,6 +65,7 @@ const browser = await puppeteer.launch({
 try {
   await snapshot(browser, "/", path.join(distDir, "index.html"));
   await snapshot(browser, "/pt/", path.join(distDir, "pt", "index.html"));
+  await snapshot(browser, "/it/", path.join(distDir, "it", "index.html"));
 } finally {
   await browser.close();
   await server.close();

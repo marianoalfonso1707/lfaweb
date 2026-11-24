@@ -7,13 +7,19 @@ import { defineConfig, type Plugin } from "vite";
 
 const rootDir = fileURLToPath(new URL(".", import.meta.url));
 
-function rewritePortuguese(): Plugin {
+const LOCALE_PREFIXES = ["/pt", "/it"] as const;
+
+function isLocalePath(pathname: string): boolean {
+  return LOCALE_PREFIXES.some((prefix) => pathname === prefix || pathname === `${prefix}/`);
+}
+
+function rewriteLocales(): Plugin {
   return {
-    name: "rewrite-pt",
+    name: "rewrite-locales",
     configureServer(server) {
       server.middlewares.use((req, _res, next) => {
         const pathname = req.url?.split("?")[0] ?? "";
-        if (pathname === "/pt" || pathname === "/pt/") {
+        if (isLocalePath(pathname)) {
           req.url = "/index.html";
         }
         next();
@@ -22,9 +28,15 @@ function rewritePortuguese(): Plugin {
     configurePreviewServer(server) {
       server.middlewares.use((req, _res, next) => {
         const pathname = req.url?.split("?")[0] ?? "";
-        const ptFile = path.join(rootDir, "dist", "pt", "index.html");
-        if ((pathname === "/pt" || pathname === "/pt/" || pathname === "/pt/index.html") && !fs.existsSync(ptFile)) {
-          req.url = "/index.html";
+        for (const prefix of LOCALE_PREFIXES) {
+          const localeFile = path.join(rootDir, "dist", prefix.slice(1), "index.html");
+          if (
+            (pathname === prefix || pathname === `${prefix}/` || pathname === `${prefix}/index.html`) &&
+            !fs.existsSync(localeFile)
+          ) {
+            req.url = "/index.html";
+            break;
+          }
         }
         next();
       });
@@ -36,7 +48,7 @@ export default defineConfig({
   plugins: [
     react(),
     tailwindcss(),
-    rewritePortuguese(),
+    rewriteLocales(),
     {
       name: "async-css",
       transformIndexHtml(html) {

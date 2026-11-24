@@ -21,11 +21,21 @@ export const SEO = {
     ogImage: "/og-pt.jpg",
     canonical: `${SITE_ORIGIN}/pt/`,
   },
+  it: {
+    title: "Software per tornei e campionati di calcio amatoriale | LFA",
+    description:
+      "Calendario automatico, referto di gara con IA, risultati in diretta e app per i giocatori. Organizza la tua lega di calcio amatoriale. 30 giorni gratis.",
+    locale: "it_IT",
+    localeAlternate: "es_AR",
+    ogImage: "/og-es.jpg",
+    canonical: `${SITE_ORIGIN}/it/`,
+  },
 } as const;
 
 export const HREFLANG = [
   { lang: "es", href: `${SITE_ORIGIN}/` },
   { lang: "pt-BR", href: `${SITE_ORIGIN}/pt/` },
+  { lang: "it", href: `${SITE_ORIGIN}/it/` },
   { lang: "x-default", href: `${SITE_ORIGIN}/` },
 ] as const;
 

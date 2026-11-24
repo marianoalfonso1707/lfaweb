@@ -24,6 +24,9 @@ function countLocale(language: string): string {
   if (language.startsWith("pt")) {
     return "pt-BR";
   }
+  if (language.startsWith("it")) {
+    return "it-IT";
+  }
   return "en-US";
 }
 
@@ -32,7 +35,7 @@ function formatCount(value: number, locale: string): string {
     useGrouping: true,
     maximumFractionDigits: 0,
   });
-  if (locale === "es-AR") {
+  if (locale === "es-AR" || locale === "it-IT") {
     return formatted.replaceAll(/[\u00a0\u202f\s]/g, ".");
   }
   return formatted;
