@@ -1,4 +1,5 @@
-import { detectCountry, regionForCountry, type PricingRegion } from "@/lib/geo";
+import { STORAGE_KEY } from "@/i18n";
+import { detectCountry, italianHomeIfNeeded, regionForCountry, type PricingRegion } from "@/lib/geo";
 import { createContext, useContext, useEffect, useMemo, useState, type ReactNode } from "react";
 
 type GeoContextValue = {
@@ -64,6 +65,23 @@ export function GeoProvider({ children }: { children: ReactNode }) {
   useEffect(() => {
     applyDocumentFlags(country, hideTrial);
   }, [country, hideTrial]);
+
+  useEffect(() => {
+    if (!ready || isPrerender()) {
+      return;
+    }
+    let stored: string | null = null;
+    try {
+      stored = window.localStorage.getItem(STORAGE_KEY);
+    } catch {
+      /* private mode */
+    }
+    const href = italianHomeIfNeeded(country, window.location.pathname, stored);
+    if (!href) {
+      return;
+    }
+    window.location.replace(`${href}${window.location.search}${window.location.hash}`);
+  }, [country, ready]);
 
   const value = useMemo(
     () => ({ country, region, hideTrial, ready }),

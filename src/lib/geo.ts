@@ -1,4 +1,5 @@
 import type { Language } from "@/i18n";
+import { localeHome, pageLocale } from "@/lib/site";
 
 export const EURO_PRICING_COUNTRIES = [
   "ES",
@@ -104,6 +105,30 @@ export function languageForCountry(country: string): Language {
     return "es";
   }
   return "en";
+}
+
+/** Languages someone can pick on `/` without being sent back to `/it/`. */
+const HOMEPAGE_LANGUAGE_STICKS: ReadonlySet<string> = new Set(["es", "en", "ca"]);
+
+/**
+ * Italy gets `/it/` when they open the Spanish homepage and have not already
+ * chosen another language on that page. `/pt/` and `/it/` stay as they are.
+ */
+export function italianHomeIfNeeded(
+  country: string,
+  pathname: string,
+  storedLanguage: string | null,
+): string | null {
+  if (pageLocale(pathname) !== "es") {
+    return null;
+  }
+  if (languageForCountry(country) !== "it") {
+    return null;
+  }
+  if (storedLanguage && HOMEPAGE_LANGUAGE_STICKS.has(storedLanguage)) {
+    return null;
+  }
+  return localeHome("it");
 }
 
 export function countryFromQuery(): string | null {

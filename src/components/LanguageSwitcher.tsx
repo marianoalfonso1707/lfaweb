@@ -42,7 +42,14 @@ export function LanguageSwitcher({ className, onSelect }: LanguageSwitcherProps)
             {active === code ? (
               <b>{code.toUpperCase()}</b>
             ) : href ? (
-              <a href={href} hrefLang={hrefLang(code as PageLocale)} onClick={onSelect}>
+              <a
+                href={href}
+                hrefLang={hrefLang(code as PageLocale)}
+                onClick={() => {
+                  void i18n.changeLanguage(code);
+                  onSelect?.();
+                }}
+              >
                 {code.toUpperCase()}
               </a>
             ) : (
