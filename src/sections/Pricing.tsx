@@ -28,16 +28,22 @@ export function Pricing() {
   const pillRef = useRef<HTMLDivElement>(null);
   const numRef = useRef<HTMLSpanElement>(null);
   const reduceMotion = usePrefersReducedMotion();
-  const [tier, setTier] = useState<"under30" | "over30">("under30");
+  const [tier, setTier] = useState<"under30" | "over30" | "over80">("under30");
   const [plan, setPlan] = useState(0);
   const plans = plansFor(region, tier);
   const selected = plans[plan] ?? plans[0];
   const currency = currencyFor(region);
-  const billingToggle = showsBillingToggle(region);
+  const billingToggle = showsBillingToggle(region, tier);
+
+  useLayoutEffect(() => {
+    if (region !== "EU" && tier === "over80") {
+      setTier("over30");
+    }
+  }, [region, tier]);
 
   useLayoutEffect(() => {
     setPlan(0);
-  }, [region]);
+  }, [region, tier]);
 
   useLayoutEffect(() => {
     const root = rootRef.current;
@@ -159,6 +165,17 @@ export function Pricing() {
               >
                 {t("pricing.tierOver")}
               </button>
+              {region === "EU" ? (
+                <button
+                  type="button"
+                  className={cn(tier === "over80" && "on")}
+                  onClick={() => {
+                    setTier("over80");
+                  }}
+                >
+                  {t("pricing.tierOver80")}
+                </button>
+              ) : null}
             </div>
             {billingToggle ? (
               <div className="toggle" id="toggle" ref={toggleRef}>

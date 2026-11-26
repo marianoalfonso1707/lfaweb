@@ -39,8 +39,11 @@ export function parseShownAmount(text: string): number {
   return Number.isFinite(value) ? value : 0;
 }
 
-export function showsBillingToggle(region: PricingRegion): boolean {
-  return region === "ROW" || region === "BR";
+export function showsBillingToggle(region: PricingRegion, tier: TeamTier = "under30"): boolean {
+  if (region === "ROW" || region === "BR") {
+    return true;
+  }
+  return region === "EU" && tier === "over80";
 }
 
 export function plansFor(region: PricingRegion, tier: TeamTier): GeoPlan[] {
@@ -59,6 +62,16 @@ export function plansFor(region: PricingRegion, tier: TeamTier): GeoPlan[] {
   }
 
   if (region === "EU") {
+    if (tier === "over80") {
+      return cyclePlans(
+        { monthly: 69.99, semiannual: 56.67, annual: 50 },
+        {
+          monthly: "pricing.euroNote",
+          semiannual: "pricing.euroSemiannualNoteOver80",
+          annual: "pricing.euroAnnualNoteOver80",
+        },
+      );
+    }
     return [
       {
         id: "monthly",
